@@ -1,0 +1,177 @@
+#inside-vehicle {
+  font-family: 'Source Han Sans CN';
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  background-color: #fff;
+  position: relative;
+  .main-wp {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 65%;
+    height: 85%;
+    border: 1px solid #f2f2f2;
+    border-radius: 6px;
+    box-sizing: border-box;
+    .main-ctn {
+      padding: 30px 15px;
+      .title {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 700;
+        padding: 0 15px;
+        .el-checkbox {
+          margin-left: 10px;
+          .el-checkbox__label {
+            font-size: 12px;
+            color: #ccc;
+          }
+        }
+      }
+      .input-wp {
+        margin: 0 0 15px;
+        display: flex;
+        flex-wrap: wrap;
+        .input-item {
+          width: 33%;
+          padding: 15px;
+          box-sizing: border-box;
+          .name {
+            color: #666;
+            font-size: 14px;
+            line-height: 20px;
+            margin-bottom: 10px;
+            height: 20px;
+            .del {
+              float: right;
+              font-size: 16px;
+              cursor: pointer;
+              line-height: 20px;
+              color: #ccc;
+              display: none;
+            }
+          }
+          .el-select {
+            width: 100%;
+          }
+          .el-date-editor {
+            width: 100%;
+            background-color: #f2f2f2;
+            border: none;
+          }
+          .add-plate {
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            background-color: #e1f8df;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            font-size: 14px;
+            i {
+              color: #3ebb75;
+              margin-right: 10px;
+            }
+            > span {
+              color: #3ebb75;
+            }
+          }
+        }
+        .input-item:hover {
+          .name {
+            .del {
+              display: block;
+            }
+          }
+        }
+      }
+      .remark-wp {
+        padding: 0 15px;
+        margin-bottom: 30px;
+        .name {
+          color: #666;
+          font-size: 14px;
+          line-height: 20px;
+          margin-bottom: 10px;
+        }
+        .el-textarea {
+          .el-textarea__inner {
+            background-color: #f2f2f2;
+            border: none;
+            font-size: 14px;
+          }
+        }
+      }
+      .village-select {
+        background-color: #fff;
+        border: 1px dashed #3ebb75;
+        border-radius: 6px;
+        padding: 20px 5px;
+        margin: 10px 15px;
+        .city-wp {
+          list-style: none;
+          .city-item {
+            padding: 5px 0 10px;
+            .city-name {
+              padding: 0 20px;
+              font-size: 14px;
+              color: #666;
+              line-height: 20px;
+              .el-checkbox {
+                margin-left: 10px;
+                .el-checkbox__label {
+                  font-size: 12px;
+                  color: #ccc;
+                }
+              }
+            }
+            .label-wp {
+              list-style: none;
+              display: flex;
+              flex-wrap: wrap;
+              padding: 0 10px;
+              .label-item {
+                width: 25%;
+                padding: 10px;
+                box-sizing: border-box;
+                .label {
+                  width: 100%;
+                  height: 40px;
+                  line-height: 40px;
+                  font-size: 14px;
+                  color: #333;
+                  border-radius: 6px;
+                  background-color: #f2f2f2;
+                  padding: 0 15px;
+                  box-sizing: border-box;
+                  display: flex;
+                  .el-checkbox {
+                    margin-right: 10px;
+                  }
+                  > span {
+                    flex: 1;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                  }
+                }
+              }
+            }
+          }
+          .city-item:last-child {
+            padding-bottom: 0;
+          }
+        }
+      }
+      .btn-wp {
+        margin-top: 30px;
+        text-align: center;
+        .el-button + .el-button {
+          margin-left: 100px !important;
+        }
+      }
+    }
+  }
+}

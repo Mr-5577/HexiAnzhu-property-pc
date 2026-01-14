@@ -1,0 +1,49 @@
+{
+	"commonet": {
+		"label": "列名称",
+		"prop": "字段名称",
+		"width": "列宽度",
+		"type": "text/number/checkbox(0,1)/button",
+		"action": "抛出的方法名称",
+		"role": "type存在时使用操作加载对应的权限名",
+		"show": "显示/隐藏列",
+		"btns": {
+			"name": "按钮名称",
+			"type": "按钮样式",
+			"size": "按钮大小",
+			"round": "是否圆角",
+			"class": "自定义class",
+			"action": "抛出的方法名称"
+		}
+	},
+	"list": [
+		{
+			"label": "项目名称",
+			"prop": "villagename",
+			"show": true
+		},
+		{
+			"type": "img",
+			"width": 200,
+			"label": "图标",
+			"prop": "image_host",
+			"show": true
+		},
+		{
+			"type": "checkbox",
+			"label": "默认开启",
+			"prop": "status",
+			"action": "toOpen",
+			"role": "toOpen",
+			"show": true,
+			"token": "empty"
+		},
+		{
+			"type": "input",
+			"width": 100,
+			"label": "排序",
+			"prop": "sort",
+			"show": true
+		}
+	]
+}

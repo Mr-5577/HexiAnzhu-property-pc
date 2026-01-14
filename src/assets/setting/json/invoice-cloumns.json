@@ -1,0 +1,151 @@
+{
+	"commonet": {
+		"label": "列名称",
+		"prop": "字段名称",
+		"width": "列宽度",
+		"type": "text/number/checkbox(0,1)/button",
+		"action": "抛出的方法名称",
+		"role": "type存在时使用操作加载对应的权限名",
+		"show": "显示/隐藏列",
+		"btns": {
+			"name": "按钮名称",
+			"type": "按钮样式",
+			"size": "按钮大小",
+			"round": "是否圆角",
+			"class": "自定义class",
+			"action": "抛出的方法名称"
+		}
+	},
+	"list": [
+		{
+			"label": "发票编码",
+			"prop": "fpdm",
+			"show": true
+		},
+		{
+			"label": "首张单号",
+			"prop": "first",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "末张单号",
+			"prop": "last",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "面值",
+			"prop": "face_value",
+			"show": true
+		},
+		{
+			"label": "数量",
+			"prop": "num",
+			"show": true,
+			"color": "#69da61"
+		},
+		{
+			"label": "金额",
+			"prop": "count_money",
+			"show": true,
+			"color": "#ffcb3c"
+		},
+		{
+			"label": "状态",
+			"prop": "status_text",
+			"show": true
+		},
+		{
+			"label": "发放人",
+			"prop": "gname",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "领用时间",
+			"prop": "collar_time",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "领用项目",
+			"prop": "vname",
+			"show": true
+		},
+		{
+			"label": "录入审核人",
+			"prop": "user",
+			"show": true
+		},
+		{
+			"label": "操作",
+			"prop": "",
+			"width": 200,
+			"type": "button",
+			"show": true,
+			"btns": [
+				{
+					"name": "通过",
+					"type": "primary empty",
+					"size": "small",
+					"round": true,
+					"action": "enterPass",
+					"role": "enterPass",
+					"hide": "passHide",
+					"token": "Btn-YtoO8p5SN3qFjwyyinA36YZV"
+				},
+				{
+					"name": "驳回",
+					"type": "danger empty",
+					"size": "small",
+					"round": true,
+					"action": "enterReject",
+					"role": "enterReject",
+					"hide": "rejectHide",
+					"token": "Btn-YtoO8p5SN3qFjwyyinA36YZV"
+				},
+				{
+					"name": "通过",
+					"type": "primary empty",
+					"size": "small",
+					"round": true,
+					"action": "cancelPass",
+					"role": "cancelPass",
+					"hide": "cpassHide",
+					"token": "Btn-Up6M61GGH2Pk8yq2vsNPpAVJ"
+				},
+				{
+					"name": "驳回",
+					"type": "danger empty",
+					"size": "small",
+					"round": true,
+					"action": "cancelReject",
+					"role": "cancelReject",
+					"hide": "crejectHide",
+					"token": "Btn-Up6M61GGH2Pk8yq2vsNPpAVJ"
+				},
+				{
+					"name": "发放",
+					"type": "primary",
+					"size": "small",
+					"round": true,
+					"action": "send",
+					"role": "send",
+					"hide": "sendHide",
+					"token": "Btn-XmjOfoiI0fW0gzqC1Lveo3fY"
+				},
+				{
+					"name": "移交",
+					"type": "warning",
+					"size": "small",
+					"round": true,
+					"action": "turnover",
+					"role": "turnover",
+					"hide": "turnHide",
+					"token": "Btn-O3YVRDw40KkuuSnt4osbqk49"
+				}
+			]
+		}
+	]
+}

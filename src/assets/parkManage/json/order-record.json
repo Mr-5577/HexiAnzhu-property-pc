@@ -1,0 +1,106 @@
+{
+  "commonet": {
+    "label": "列名称",
+    "prop": "字段名称",
+    "width": "列宽度",
+    "type": "text/number/checkbox(0,1)/button",
+    "action": "抛出的方法名称",
+    "role": "type存在时使用操作加载对应的权限名",
+    "show": "显示/隐藏列",
+    "btns": {
+      "name": "按钮名称",
+      "type": "按钮样式",
+      "size": "按钮大小",
+      "round": "是否圆角",
+      "class": "自定义class",
+      "action": "抛出的方法名称"
+    }
+  },
+  "list": [
+    {
+      "label": "项目名称",
+      "prop": "villagename",
+      "show": true,
+      "width": 120,
+      "color": "#999"
+    },
+    {
+      "label": "车场名称",
+      "prop": "ct_name",
+      "show": true,
+      "width": 120,
+      "color": "#999"
+    },
+    {
+      "label": "闸机名称",
+      "prop": "name",
+      "show": true
+    },
+    {
+      "label": "闸机编号",
+      "prop": "number",
+      "show": true,
+      "width": 120
+    },
+    {
+      "label": "卡片号码",
+      "prop": "gc_card_code",
+      "show": true,
+      "width": 120
+    },
+    {
+      "label": "指令标识",
+      "prop": "gc_sn",
+      "show": true,
+      "width": 150,
+      "color": "#999"
+    },
+    {
+      "label": "指令说明",
+      "prop": "gc_desc",
+      "show": true,
+      "width": 200,
+      "color": "#999"
+    },
+	
+    {
+      "label": "下发时间",
+      "prop": "gc_issue_time",
+      "show": true,
+      "width": 160
+    },
+    {
+      "label": "回复时间",
+      "prop": "gc_reply_time",
+      "show": true,
+      "width": 160
+    },
+    {
+      "label": "指令状态描述",
+      "prop": "gc_status_text",
+      "show": true,
+      "color": "#999",
+      "width": 150
+    },
+    {
+      "label": "指令类型描述",
+      "prop": "gc_type_text",
+      "show": true,
+      "color": "#999",
+      "width": 150
+    },
+		{
+		  "label": "操作人",
+		  "prop": "creator",
+		  "show": true,
+		  "width": 100
+		},
+		{
+		  "label": "创建时间",
+		  "prop": "create_time",
+		  "show": true,
+		  "width": 160,
+		  "color": "#999"
+		}
+  ]
+}

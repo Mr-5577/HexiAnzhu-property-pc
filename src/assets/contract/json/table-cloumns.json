@@ -1,0 +1,191 @@
+{
+	"commonet": {
+		"label": "列名称",
+		"prop": "字段名称",
+		"width": "列宽度",
+		"type": "text/number/checkbox(0,1)/button",
+		"action": "抛出的方法名称",
+		"role": "type存在时使用操作加载对应的权限名",
+		"show": "显示/隐藏列",
+		"btns": {
+			"name": "按钮名称",
+			"type": "按钮样式",
+			"size": "按钮大小",
+			"round": "是否圆角",
+			"class": "自定义class",
+			"action": "抛出的方法名称"
+		}
+	},
+	"list": [
+		{
+			"label": "待审计划",
+			"prop": "plan_count",
+			"show": true,
+			"cstcolor": "statusColor",
+			"color": "#999"
+		},
+		{
+			"label": "合同编号",
+			"prop": "co_sn",
+			"show": true,
+			"cstcolor": "statusColor",
+			"width": 180
+		},
+		{
+			"label": "合同标题",
+			"prop": "co_title",
+			"show": true,
+			"color": "#999",
+			"cstcolor": "statusColor",
+			"width": 180
+		},
+		{
+			"label": "对方单位",
+			"prop": "supname",
+			"show": true,
+			"color": "#999",
+			"cstcolor": "statusColor",
+			"width": 150
+		},
+		{
+			"label": "所属项目",
+			"prop": "villagename",
+			"show": true,
+			"color": "#999",
+			"cstcolor": "statusColor",
+			"width": 150
+		},
+		{
+			"label": "项目类别",
+			"prop": "vtype",
+			"show": true,
+			"cstcolor": "statusColor",
+			"color": "#999"
+		},
+		{
+			"label": "含税金额",
+			"prop": "co_money",
+			"show": true,
+			"color": "#ffcb3c",
+			"cstcolor": "statusColor",
+			"width": 100
+		},
+		{
+			"label": "不含税金额",
+			"prop": "conottax_money",
+			"show": true,
+			"color": "#999",
+			"cstcolor": "statusColor",
+			"width": 100
+		},
+		{
+			"label": "税率",
+			"prop": "con_rate",
+			"show": true,
+			"cstcolor": "statusColor",
+			"color": "#69da61"
+		},
+		{
+			"label": "税额",
+			"prop": "con_tax_amount",
+			"show": true,
+			"color": "#999",
+			"cstcolor": "statusColor",
+			"width": 100
+		},
+		{
+			"label": "结算金额",
+			"prop": "co_balance",
+			"show": true,
+			"color": "#ffcb3c",
+			"cstcolor": "statusColor",
+			"width": 100
+		},
+		{
+			"label": "已收款金额",
+			"prop": "plan_sum",
+			"show": true,
+			"color": "#ffcb3c",
+			"cstcolor": "statusColor",
+			"width": 100
+		},
+		{
+			"label": "未收款金额",
+			"prop": "uncollected",
+			"show": true,
+			"cstcolor": "statusColor",
+			"color": "#ffcb3c",
+			"width": 100
+		},
+		{
+			"label": "经办人",
+			"prop": "cname",
+			"show": true,
+			"cstcolor": "statusColor",
+			"color": "#999"
+		},
+		{
+			"label": "发起时间",
+			"prop": "co_createtime",
+			"show": true,
+			"color": "#999",
+			"cstcolor": "statusColor",
+			"width": 150
+		},
+		{
+			"label": "开始日期",
+			"prop": "exec_start_time",
+			"show": true,
+			"color": "#999",
+			"cstcolor": "statusColor",
+			"width": 150
+		},
+		{
+			"label": "结束日期",
+			"prop": "exec_end_time",
+			"show": true,
+			"color": "#999",
+			"cstcolor": "statusColor",
+			"width": 150
+		},
+		{
+			"label": "操作",
+			"prop": "",
+			"width": 260,
+			"type": "button",
+			"show": true,
+			"fixed": "right",
+			"btns": [
+				{
+					"name": "详情",
+					"type": "primary",
+					"size": "small",
+					"round": true,
+					"action": "detail",
+					"role": "detail",
+					"token": "empty"
+				},
+				{
+					"name": "日期",
+					"type": "primary",
+					"class": "empty",
+					"size": "small",
+					"round": true,
+					"action": "setDate",
+					"role": "setDate",
+					"token": "Btn-DaBjOmn7CcU7907P9TfalsEt"
+				},
+				{
+					"name": "类型",
+					"type": "warning",
+					"class": "empty",
+					"size": "small",
+					"round": true,
+					"action": "setType",
+					"role": "setType",
+					"token": "Btn-nszP1Wzf38lWcncnTbUsQ4BJ"
+				}
+			]
+		}
+	]
+}

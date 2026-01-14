@@ -1,0 +1,110 @@
+{
+	"commonet": {
+		"label": "列名称",
+		"prop": "字段名称",
+		"width": "列宽度",
+		"type": "text/number/checkbox(0,1)/button",
+		"action": "抛出的方法名称",
+		"role": "type存在时使用操作加载对应的权限名",
+		"show": "显示/隐藏列",
+		"btns": {
+			"name": "按钮名称",
+			"type": "按钮样式",
+			"size": "按钮大小",
+			"round": "是否圆角",
+			"class": "自定义class",
+			"action": "抛出的方法名称"
+		}
+	},
+	"list": [
+		{
+			"label": "票据单号",
+			"prop": "receipt_num",
+			"show": true,
+			"color": "#999",
+			"width": 140
+		},
+		{
+			"label": "项目名称",
+			"prop": "vname",
+			"show": true,
+			"color": "#999",
+			"width": 120
+		},
+		{
+			"label": "客户名称",
+			"prop": "oname",
+			"show": true
+		},
+		{
+			"label": "房号",
+			"prop": "roomname",
+			"show": true,
+			"width": 150
+		},
+		{
+			"label": "收款方式",
+			"prop": "payname",
+			"show": true
+		},
+		{
+			"label": "缴费内容",
+			"prop": "remark",
+			"show": true,
+			"color": "#999",
+			"width": 200
+		},
+		{
+			"label": "收款金额",
+			"prop": "money",
+			"show": true
+		},
+		{
+			"label": "票据状态",
+			"prop": "status_text",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "经手人",
+			"prop": "cname",
+			"show": true
+		},
+		{
+			"label": "收款时间",
+			"prop": "pay_time",
+			"show": true,
+			"color": "#999",
+			"width": 160
+		},
+		{
+			"label": "操作",
+			"prop": "",
+			"width": 200,
+			"type": "button",
+			"show": true,
+			"btns": [
+				{
+					"name": "打印",
+					"type": "primary",
+					"size": "small",
+					"round": true,
+					"action": "print",
+					"role": "print",
+					"hide": "dyhide",
+					"token": "Btn-SR2vrHHeEv8btSOy9oHtTzV4"
+				},
+				{
+					"name": "作废",
+					"type": "danger",
+					"size": "small",
+					"round": true,
+					"action": "cancel",
+					"role": "cancel",
+					"hide": "zfhide",
+					"token": "Btn-Bqx9NBYg9Iuan79rztWEVo4R"
+				}
+			]
+		}
+	]
+}

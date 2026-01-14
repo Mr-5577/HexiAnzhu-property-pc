@@ -1,0 +1,130 @@
+#contract {
+  font-family: 'Source Han Sans CN';
+  width: 100%;
+  height: 100%;
+  .msg-wp {
+    height: 40px;
+    width: 100%;
+    background-color: #d7eed5;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    padding: 0 30px 0 40px;
+    position: relative;
+    box-sizing: border-box;
+    > i {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      font-size: 20px;
+      color: #3dba74;
+    }
+    #content {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      ul {
+        position: absolute;
+        left: 0;
+        top: 0;
+        list-style: none;
+        height: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        li {
+          display: inline-block;
+          margin-right: 50px;
+          line-height: 40px;
+          font-size: 14px;
+          color: #3ebb75;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .top {
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 10px 10px 0 0;
+    padding: 15px 30px;
+    .common-left {
+      .el-cascader {
+        margin-right: 20px;
+      }
+      .el-date-editor {
+        border: none;
+        background-color: #f2f2f2;
+        width: 260px;
+        vertical-align: middle;
+        margin-left: 20px;
+        .el-range__icon,
+        .el-range-separator,
+        .el-input__icon {
+          line-height: 34px;
+        }
+      }
+      input {
+        margin-left: 0;
+      }
+    }
+    .common-right {
+      .last-ico {
+        i {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  .main-wp {
+    border-radius: 0 0 10px 10px;
+    border-top: 1px solid #ebebeb;
+    overflow: hidden;
+    height: calc(100% - 136px);
+    background-color: #fff;
+    .select-wp {
+      padding: 15px 30px;
+      .el-select {
+        margin-right: 20px;
+      }
+    }
+    .table-wp {
+      height: calc(100% - 70px);
+      position: relative;
+      .el-table th {
+        background-color: #f7f7f7;
+      }
+    }
+  }
+
+  .setDialog {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 40%;
+      .el-dialog__body {
+        height: calc(100% - 158px);
+        padding: 0 15px;
+        box-sizing: border-box;
+        .el-form {
+          display: flex;
+          flex-wrap: wrap;
+          padding: 20px 0;
+          .el-form-item {
+            width: 50%;
+            padding: 0 15px;
+            box-sizing: border-box;
+            margin-bottom: 30px !important;
+            .el-date-editor {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "commonet": {
+    "label": "列名称",
+    "prop": "字段名称",
+    "width": "列宽度",
+    "type": "text/number/checkbox(0,1)/button",
+    "action": "抛出的方法名称",
+    "role": "type存在时使用操作加载对应的权限名",
+    "show": "显示/隐藏列",
+    "btns": {
+      "name": "按钮名称",
+      "type": "按钮样式",
+      "size": "按钮大小",
+      "round": "是否圆角",
+      "class": "自定义class",
+      "action": "抛出的方法名称"
+    }
+  },
+  "list": [
+    {
+      "label": "模板名称",
+      "prop": "title",
+      "show": true,
+      "width": 120
+    },
+    {
+      "label": "收费模式",
+      "prop": "mode_text",
+      "show": true,
+      "color": "#999",
+      "width": 120
+    },
+    {
+      "label": "收费标准",
+      "prop": "standard_text",
+      "show": true
+    },
+    {
+      "label": "添加人",
+      "prop": "uname",
+      "show": true,
+      "color": "#999",
+      "width": 120
+    },
+    {
+      "label": "添加时间",
+      "prop": "create_time",
+      "show": true,
+      "color": "#999"
+    },
+    {
+      "label": "资费说明",
+      "prop": "remark",
+      "show": true,
+      "color": "#999"
+    },
+    {
+      "label": "启用状态",
+      "prop": "status",
+      "width": 120,
+      "type": "checkbox",
+      "action": "setVal",
+      "role": "setVal",
+      "show": true,
+      "token": "Btn-DCD6FA941A0BBED81532EB1A"
+    },
+    {
+      "label": "应用车场",
+      "prop": "",
+      "width": 200,
+      "type": "button",
+      "show": true,
+      "btns": [
+        {
+          "name": "详情",
+          "type": "primary",
+          "size": "small",
+          "round": true,
+          "action": "detail",
+          "role": "detail",
+          "token": "empty"
+        },
+        {
+          "name": "编辑",
+          "type": "primary empty",
+          "size": "small",
+          "round": true,
+          "action": "edit",
+          "role": "edit",
+          "token": "Btn-DEFCD9C5A89FACC8C9452F8F"
+        }
+      ]
+    }
+  ]
+}

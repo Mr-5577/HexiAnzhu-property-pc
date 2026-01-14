@@ -1,0 +1,72 @@
+#charge {
+  height: 100%;
+
+  .top-menus-ul {
+    list-style: none;
+    white-space: nowrap;
+
+    .top-menus-li {
+      display: inline-block;
+      width: 120px;
+      height: 36px;
+      line-height: 36px;
+      background-color: #d7eed5;
+      border-radius: 18px;
+      text-align: center;
+      margin-right: 20px;
+      font-size: 14px;
+      color: #3ebb75;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    .top-menus-li:hover {
+      background-color: #ace5a8;
+    }
+    .top-menus-li.active {
+      background-color: #3ebb75;
+      color: #fff;
+    }
+    .top-menus-li:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .menu {
+    height: 46px;
+    display: flex;
+    .menu-left {
+      flex: 1;
+      padding: 13px 0;
+      >span {
+        display: inline-block;
+        color: #ccc;
+        font-size: 14px;
+        line-height: 20px;
+        .raw {
+          margin: 0 10px;
+        }
+        .name {
+          cursor: pointer;
+        }
+      }
+      >span:last-child {
+        font-size: 15px;
+        color: #333;
+      }
+    }
+    .menu-right {
+      padding: 3px 0;
+      .el-button {
+        width: 120px;
+      }
+    }
+  }
+
+  .row {
+    margin-top: 10px;
+    height: calc(100% - 60px);
+  }
+}

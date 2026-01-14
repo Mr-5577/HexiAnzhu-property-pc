@@ -1,0 +1,117 @@
+{
+	"commonet": {
+		"label": "列名称",
+		"prop": "字段名称",
+		"width": "列宽度",
+		"type": "text/number/checkbox(0,1)/button",
+		"action": "抛出的方法名称",
+		"role": "type存在时使用操作加载对应的权限名",
+		"show": "显示/隐藏列",
+		"btns": {
+			"name": "按钮名称",
+			"type": "按钮样式",
+			"size": "按钮大小",
+			"round": "是否圆角",
+			"class": "自定义class",
+			"action": "抛出的方法名称"
+		}
+	},
+	"list": [
+		{
+			"label": "单号",
+			"prop": "id",
+			"show": true
+		},
+		{
+			"label": "项目",
+			"prop": "vname",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "业主姓名",
+			"prop": "name",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "房号",
+			"prop": "room",
+			"show": true
+		},
+		{
+			"label": "报修类型",
+			"prop": "tname",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "联系电话",
+			"prop": "tel",
+			"show": true
+		},
+		{
+			"label": "处理情况",
+			"prop": "status_text",
+			"show": true
+		},
+		{
+			"label": "提交时间",
+			"prop": "create_time",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "来源",
+			"prop": "from_text",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "处理时间",
+			"prop": "followtime",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "处理人",
+			"prop": "handler",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "升级次数",
+			"prop": "upgrade_num",
+			"show": true,
+			"color": "#3ebb75"
+		},
+		{
+			"label": "操作",
+			"prop": "",
+			"width": 170,
+			"type": "button",
+			"show": true,
+			"btns": [
+				{
+					"name": "详情",
+					"type": "primary",
+					"size": "small",
+					"round": true,
+					"action": "detail",
+					"role": "detail",
+					"token": "empty"
+				},
+				{
+					"name": "闭单",
+					"type": "warning",
+					"size": "small",
+					"hide": "bdhide",
+					"round": true,
+					"action": "orderClose",
+					"role": "orderClose",
+					"token": "empty"
+				}
+			]
+		}
+	]
+}

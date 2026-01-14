@@ -1,0 +1,98 @@
+{
+  "commonet": {
+    "label": "列名称",
+    "prop": "字段名称",
+    "width": "列宽度",
+    "type": "text/number/checkbox(0,1)/button",
+    "action": "抛出的方法名称",
+    "role": "type存在时使用操作加载对应的权限名",
+    "show": "显示/隐藏列",
+    "btns": {
+      "name": "按钮名称",
+      "type": "按钮样式",
+      "size": "按钮大小",
+      "round": "是否圆角",
+      "class": "自定义class",
+      "action": "抛出的方法名称"
+    }
+  },
+  "list": [
+    {
+      "label": "交款人",
+      "prop": "cname",
+      "show": true
+    },
+    {
+      "label": "开始时间",
+      "prop": "stime",
+      "show": true,
+      "color": "#999"
+    },
+    {
+      "label": "结束时间",
+      "prop": "etime",
+      "show": true,
+      "color": "#999"
+    },
+    {
+      "label": "金额",
+      "prop": "money",
+      "show": true,
+      "color": "#ffcb3c"
+    },
+    {
+      "label": "交款时间",
+      "prop": "create_time",
+      "show": true,
+      "color": "#999"
+    },
+    {
+      "label": "状态",
+      "prop": "status_text",
+      "show": true
+    },
+    {
+      "label": "操作",
+      "width": 120,
+      "show": true,
+      "type": "dropdown",
+      "items": [
+        {
+          "id": 1,
+          "name": "查看详情",
+          "hide": "xqhide",
+          "action": "detail",
+          "token": "empty"
+        },
+        {
+          "id": 2,
+          "name": "撤回订单",
+          "hide": "chhide",
+          "action": "revocation",
+          "token": "empty"
+        },
+        {
+          "id": 3,
+          "name": "打印订单",
+          "hide": "dyhide",
+          "action": "print",
+          "token": "empty"
+        },
+        {
+          "id": 4,
+          "name": "重新交账",
+          "hide": "cxhide",
+          "action": "accountAgain",
+          "token": "empty"
+        },
+        {
+          "id": 5,
+          "name": "删除交账",
+          "hide": "schide",
+          "action": "accountDel",
+          "token": "empty"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+	"commonet": {
+		"label": "列名称",
+		"prop": "字段名称",
+		"width": "列宽度",
+		"type": "text/number/checkbox(0,1)/button",
+		"action": "抛出的方法名称",
+		"role": "type存在时使用操作加载对应的权限名",
+		"show": "显示/隐藏列",
+		"btns": {
+			"name": "按钮名称",
+			"type": "按钮样式",
+			"size": "按钮大小",
+			"round": "是否圆角",
+			"class": "自定义class",
+			"action": "抛出的方法名称"
+		}
+	},
+	"list": [
+		{
+			"label": "项目",
+			"prop": "vname",
+			"show": true
+		},
+		{
+			"label": "交款人",
+			"prop": "uname",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "金额",
+			"prop": "money",
+			"show": true,
+			"color": "#ffcb3c"
+		},
+		{
+			"label": "交账时间",
+			"prop": "ctime",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "状态",
+			"prop": "status_text",
+			"show": true
+		},
+		{
+			"label": "开始时间",
+			"prop": "stime",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "结束时间",
+			"prop": "etime",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "明细",
+			"width": "100",
+			"type": "icon",
+			"icon": "detail",
+			"show": true,
+			"action": "orderDetail",
+			"token": "Btn-bMqZx0T2Sj3aeQIgokfVDu1s"
+		},
+		{
+			"label": "账单",
+			"width": "60",
+			"type": "icon",
+			"icon": "account",
+			"show": true,
+			"action": "billDetail",
+			"token": "Btn-T1wbgXfPpHtcUxIKBl0iFAJs"
+		},
+		{
+			"label": "操作",
+			"width": "200",
+			"type": "button",
+			"show": true,
+			"btns": [
+				{
+					"name": "通过",
+					"type": "primary",
+					"size": "small",
+					"round": true,
+					"hide": "sphide",
+					"action": "pass",
+					"role": "pass",
+					"token": "Btn-HUb65FVrEwjn1tWy3GATPcZD"
+				},
+				{
+					"name": "驳回",
+					"type": "danger",
+					"size": "small",
+					"round": true,
+					"hide": "sphide",
+					"action": "reject",
+					"role": "reject",
+					"token": "Btn-HUb65FVrEwjn1tWy3GATPcZD"
+				}
+			]
+		}
+	]
+}

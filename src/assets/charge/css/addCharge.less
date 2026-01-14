@@ -1,0 +1,697 @@
+.el-autocomplete.prestore-search {
+  width: calc(100% - 50px);
+  margin: 20px 25px;
+}
+.my-autocomplete {
+  li {
+    padding: 0;
+    line-height: 40px;
+    .tr-item {
+      display: flex;
+      justify-content: space-between;
+      .td-item {
+        flex: 1;
+        text-align: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+    .tr-item:hover {
+      background-color: #e1f8df;
+    }
+    .load-more {
+      text-align: center;
+      color: #ccc;
+      background: #fff;
+    }
+  }
+  li:first-child {
+    color: #999;
+    cursor: default;
+    pointer-events: none;
+  }
+  li:hover {
+    background-color: #fff;
+  }
+}
+
+#add-charge {
+  font-family: 'Source Han Sans CN';
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  .tree-wp {
+    width: 250px;
+    min-width: 250px;
+    background-color: #fff;
+    margin-right: 15px;
+    border-radius: 6px;
+  }
+  .preselect-wp {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 6px;
+    .preselect {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 40px;
+      border: 1px solid #f2f2f2;
+      border-radius: 6px;
+      width: 650px;
+      box-sizing: border-box;
+
+      .title {
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 30px;
+      }
+      .common-chose-info {
+        position: absolute;
+        top: 33px;
+        right: 40px;
+        height: 36px;
+        border-radius: 5px;
+        background-color: #e1f8df;
+        line-height: 36px;
+        padding: 0 15px;
+        color: #3ebb75;
+        cursor: pointer;
+        font-size: 14px;
+      }
+      .input-wp {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .input-item {
+          width: 47%;
+          padding: 20px 0;
+          box-sizing: border-box;
+          .name {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+          }
+          .el-select {
+            width: 100%;
+          }
+        }
+      }
+      .btn-wp {
+        padding: 30px 30px 0;
+        text-align: center;
+      }
+    }
+  }
+
+  > .main-wp {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 6px;
+    overflow: hidden;
+    .empty-tip {
+      color: #ccc;
+      font-size: 14px;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      padding-top: 50px;
+      box-sizing: border-box;
+      background-color: #fff;
+      border-radius: 6px;
+    }
+    .left-wp {
+      width: 250px;
+      overflow: hidden;
+      border-right: 1px solid #ebebeb;
+      .el-scrollbar__view {
+        min-height: 100%;
+        background-color: #fff;
+      }
+      .room-info,
+      .other-info {
+        border-radius: 6px;
+        background-color: #fff;
+        .top-wp {
+          padding: 25px 20px;
+          position: relative;
+          border-bottom: 1px solid #ebebeb;
+          line-height: 20px;
+          .title {
+            color: #333;
+            font-size: 16px;
+            font-weight: 700;
+          }
+          .el-select {
+            position: absolute;
+            top: 50%;
+            right: 30px;
+            transform: translateY(-50%);
+            width: 120px;
+            input {
+              background-color: #e1f8df !important;
+              color: #3ebb75 !important;
+            }
+            .el-select__caret {
+              color: #3ebb75 !important;
+            }
+          }
+        }
+        .bottom-wp {
+          padding: 15px 20px 0;
+          .wallet {
+            background-color: #f7f7f7;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            .money {
+              font-size: 18px;
+              font-weight: 700;
+              color: #333;
+              margin-bottom: 8px;
+              text-align: center;
+            }
+            .name {
+              color: #ccc;
+              font-size: 12px;
+              text-align: center;
+            }
+          }
+          .btn-wp {
+            text-align: center;
+            .btn-top {
+              display: flex;
+              .el-button {
+                flex: 1;
+                padding: 10px 12px;
+              }
+              .el-button + .el-button {
+                margin-left: 10px !important;
+              }
+            }
+            .vip-btn {
+              width: 100%;
+              margin-top: 15px;
+            }
+          }
+
+          .resource-icon {
+            padding: 30px 0 10px;
+            display: flex;
+            justify-content: space-between;
+            i {
+              font-size: 20px;
+              color: #ccc;
+            }
+            i.active {
+              color: #3ebb75;
+            }
+          }
+
+          .rooms-wp,
+          .stall-wp {
+            margin-top: 20px;
+            padding-bottom: 20px;
+            .title {
+              display: flex;
+              line-height: 20px;
+              margin-bottom: 15px;
+              cursor: pointer;
+              i {
+                color: #3ebb75;
+                margin-right: 10px;
+              }
+              .value {
+                font-size: 15px;
+              }
+            }
+            .content {
+              padding: 15px;
+              background-color: #f7f7f7;
+              border-radius: 6px;
+              .info-item {
+                margin-bottom: 12px;
+                display: flex;
+                .name {
+                  display: inline-block;
+                  width: 80px;
+                  color: #ccc;
+                  font-size: 14px;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                }
+                .value {
+                  flex: 1;
+                  font-size: 14px;
+                  color: #333;
+                  overflow: hidden;
+                  white-space: nowrap;
+                  text-overflow: ellipsis;
+                }
+                .value.green {
+                  color: #69da61;
+                }
+                .el-date-editor {
+                  width: 100px;
+                  .el-input__inner {
+                    padding: 0;
+                    background-color: transparent !important;
+                    border-bottom: 1px solid #69da61 !important;
+                    border-radius: 0 !important;
+                  }
+                  .el-input__prefix {
+                    display: none;
+                  }
+                }
+              }
+              .info-item.btn {
+                display: block;
+                white-space: nowrap;
+                overflow: hidden;
+                .name {
+                  vertical-align: middle;
+                }
+                .value {
+                  vertical-align: middle;
+                  box-sizing: border-box;
+                  display: inline-block;
+                  padding: 4px 16px;
+                  border: 1px solid #24b5ff;
+                  color: #24b5ff;
+                  background-color: #d3f0ff;
+                  border-radius: 15px;
+                  cursor: pointer;
+                }
+                .value.yet {
+                  border-color: #3ebb75;
+                  color: #3ebb75;
+                  background-color: #e1f8df;
+                }
+                .value.being {
+                  border-color: #ffcb3c;
+                  color: #ffcb3c;
+                  background-color: #fff5dc;
+                }
+              }
+              .info-item:last-child {
+                margin-bottom: 0;
+              }
+            }
+          }
+          .car-wp {
+            margin-bottom: 0;
+          }
+        }
+      }
+      .other-info {
+        border-radius: 0;
+        .bottom-wp {
+          padding: 0 20px;
+          .other-empty {
+            color: #ccc;
+            font-size: 14px;
+            line-height: 20px;
+            padding: 15px 0;
+            text-align: center;
+          }
+        }
+        .top-wp {
+          border: none;
+          padding: 25px 20px 20px;
+          .el-switch {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+          }
+        }
+      }
+    }
+    .right-wp {
+      flex: 1;
+      overflow: hidden;
+      .charge-interface {
+        width: 100%;
+        height: 100%;
+        border-radius: 6px;
+        display: flex;
+        flex-direction: column;
+        .main-content {
+          height: calc(100% - 98px);
+          flex: 1;
+          background-color: #fff;
+          .option-wp {
+            list-style: none;
+            display: flex;
+            height: 60px;
+            background-color: #f5f7fa;
+            border: 1px solid #ebebeb;
+            border-left: none;
+            box-sizing: border-box;
+            border-radius: 0 6px 0 0;
+            position: relative;
+            .option-item {
+              height: 100%;
+              line-height: 20px;
+              width: 110px;
+              text-align: center;
+              font-size: 14px;
+              color: #666;
+              padding: 20px 0;
+              box-sizing: border-box;
+              cursor: pointer;
+              > i {
+                font-size: 14px;
+              }
+            }
+            .option-item.active {
+              position: relative;
+              z-index: 100;
+              background-color: #fff;
+              color: #3ebb75;
+              border-left: 1px solid #ebebeb;
+              border-right: 1px solid #ebebeb;
+              border-bottom: 1px solid #fff;
+              box-sizing: content-box;
+              height: 18px;
+            }
+            .option-item:first-child.active {
+              border-left: none;
+            }
+            > .el-select {
+              position: absolute;
+              top: 10px;
+              right: 15px;
+              width: 180px;
+              input {
+                background-color: #fff!important;
+              }
+            }
+          }
+          > .btn-wp {
+            border-bottom: 1px solid #ebebeb;
+            background-color: #fff;
+            padding: 15px 20px;
+            box-sizing: border-box;
+            .el-button {
+              width: 140px;
+            }
+            .el-button + .el-button {
+              margin-left: 25px !important;
+            }
+            .el-button.purple {
+              background-color: #f2efff;
+              color: #9a84f9;
+            }
+            .el-button.purple:hover {
+              opacity: 0.7;
+              background-color: #f2efff !important;
+              color: #9a84f9 !important;
+            }
+          }
+          .charge-record {
+            margin-top: 10px;
+            background-color: #fff;
+            height: calc(100% - 150px);
+            .title {
+              padding: 15px 20px;
+              display: flex;
+              .name {
+                flex: 1;
+                font-size: 16px;
+                color: #333;
+                font-weight: 700;
+              }
+              .receipt {
+                height: 40px;
+                line-height: 40px;
+                padding: 0 15px;
+                background-color: #e1f8df;
+                color: #3ebb75;
+                font-size: 14px;
+                border-radius: 5px;
+                margin-right: 20px;
+              }
+            }
+            .table-wp {
+              height: calc(100% - 62px);
+              > #CusTable {
+                > .el-table {
+                  height: 100%;
+                  th {
+                    background-color: #f7f7f7;
+                  }
+                  > .el-table__body-wrapper {
+                    height: calc(100% - 50px);
+                    overflow-y: auto;
+                  }
+                }
+              }
+            }
+            .total-ct {
+              display: flex;
+              background-color: #f7f7f7;
+              .total-wp {
+                flex: 1;
+                padding: 20px;
+                text-align: left;
+                .name {
+                  font-size: 14px;
+                  color: #999;
+                }
+                .value {
+                  font-size: 16px;
+                  font-weight: 700;
+                  padding: 0 25px 0 10px;
+                }
+                .value.yellow {
+                  color: #69da61;
+                }
+              }
+              .total {
+                padding: 20px 30px;
+                text-align: right;
+                color: #333;
+                font-size: 16px;
+                font-weight: 700;
+              }
+            }
+          }
+          .pay-record,
+          .prepay-wp,
+          .payment-list {
+            border-top: 15px solid #f2f2f2;
+            background-color: #fff;
+            overflow: hidden;
+            .title {
+              padding: 15px 20px;
+              color: #333;
+              font-size: 16px;
+              font-weight: 700;
+            }
+            .table-wp {
+              .el-table th {
+                background-color: #f7f7f7;
+              }
+            }
+            .total-wp {
+              padding: 20px;
+              background-color: #f7f7f7;
+              text-align: right;
+              .name {
+                font-size: 14px;
+                color: #999;
+              }
+              .value {
+                font-size: 16px;
+                font-weight: 700;
+                padding: 0 25px 0 10px;
+              }
+              .value.yellow {
+                color: #69da61;
+              }
+            }
+          }
+          .pay-record,
+          .prepay-wp {
+            padding-bottom: 15px;
+          }
+          .charge-btn {
+            padding: 20px;
+            text-align: center;
+            background-color: #fff;
+            .el-button + .el-button {
+              margin-left: 80px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .moveDialog {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 62%;
+      .el-dialog__body {
+        height: calc(100% - 158px);
+        padding: 0;
+        box-sizing: border-box;
+        .el-form {
+          display: flex;
+          flex-wrap: wrap;
+          padding: 0 15px;
+          .el-form-item {
+            width: 50%;
+            padding: 0 2%;
+            box-sizing: border-box;
+            margin-bottom: 30px !important;
+            .tip {
+              font-size: 12px;
+              color: #999;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .vipDialog {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 55%;
+      .el-dialog__body {
+        height: calc(100% - 158px);
+        box-sizing: border-box;
+        padding: 0 15px;
+        .el-form {
+          .el-form-item {
+            display: inline-block;
+            width: 50%;
+            padding: 15px 15px 5px;
+            box-sizing: border-box;
+            margin-bottom: 0 !important;
+            .el-cascader,
+            .el-select,
+            .el-date-editor {
+              width: 100%;
+            }
+            .el-date-editor {
+              background-color: #f2f2f2;
+              border: none;
+            }
+          }
+        }
+        .tip {
+          margin-top: 15px;
+          font-size: 12px;
+          color: #3ebb75;
+          padding: 0 15px;
+        }
+      }
+    }
+  }
+
+  .paymentDialog {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 75%;
+      .el-dialog__body {
+        height: calc(100% - 158px);
+        padding: 0;
+        box-sizing: border-box;
+        .el-scrollbar__wrap {
+          padding: 0 15px;
+          .el-form {
+            .el-form-item {
+              display: inline-block;
+              width: 33.3%;
+              padding: 10px 15px;
+              box-sizing: border-box;
+              margin-bottom: 0 !important;
+              .el-date-editor {
+                width: 100%;
+              }
+              .balance {
+                position: absolute;
+                top: 0;
+                right: 0;
+                font-size: 12px;
+                color: #999;
+              }
+              .el-upload {
+                .el-button {
+                  width: 100px;
+                  position: absolute;
+                  top: 0;
+                  left: 120px;
+                }
+              }
+            }
+            .el-form-item.remark {
+              display: block;
+              width: 100%;
+              .el-textarea {
+                width: 100%;
+                textarea {
+                  border: none;
+                  background-color: #f2f2f2;
+                }
+              }
+            }
+            .tips {
+              padding: 0 15px;
+              color: #3ebb75;
+              font-size: 12px;
+              line-height: 20px;
+              margin-top: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .status-text {
+    font-size: 14px;
+    vertical-align: middle;
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 4px 16px;
+    border: 1px solid #24b5ff;
+    color: #24b5ff;
+    background-color: #d3f0ff;
+    border-radius: 15px;
+  }
+
+  .bg-red {
+    border-color: #F0170A;
+    color: #F0170A;
+    background-color: rgba(240, 23, 10, 0.1);
+    cursor: pointer;
+  }
+
+  .bg-green {
+    border-color: #3ebb75;
+    color: #3ebb75;
+    background-color: #e1f8df;
+  }
+}

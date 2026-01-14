@@ -1,0 +1,108 @@
+{
+	"commonet": {
+		"label": "列名称",
+		"prop": "字段名称",
+		"width": "列宽度",
+		"type": "text/number/checkbox(0,1)/button",
+		"action": "抛出的方法名称",
+		"role": "type存在时使用操作加载对应的权限名",
+		"show": "显示/隐藏列",
+		"btns": {
+			"name": "按钮名称",
+			"type": "按钮样式",
+			"size": "按钮大小",
+			"round": "是否圆角",
+			"class": "自定义class",
+			"action": "抛出的方法名称"
+		}
+	},
+	"list": [
+		{
+			"label": "科目名称",
+			"prop": "subject_name",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "实收金额",
+			"prop": "real_money",
+			"show": true
+		},
+		{
+			"label": "收款人",
+			"prop": "payee",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "类型",
+			"prop": "resources_model_type_name",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "收款时间",
+			"prop": "pay_time",
+			"show": true,
+			"color": "#999",
+			"width": 150
+		},
+		{
+			"label": "退款状态",
+			"prop": "refund_status_text",
+			"show": true,
+			"color": "#69da61"
+		},
+		{
+			"label": "可退金额",
+			"prop": "ktmoney",
+			"show": true,
+			"color": "#ffcb3c"
+		},
+		{
+			"label": "已退金额",
+			"prop": "refund_money",
+			"show": true
+		},
+		{
+			"label": "退款时间",
+			"prop": "last_refund_cost_time",
+			"show": true,
+			"width": 160
+		},
+		{
+			"label": "票据号",
+			"prop": "sn",
+			"show": true,
+			"color": "#999",
+			"width": 210
+		},
+		{
+			"label": "缴费内容",
+			"prop": "describe",
+			"show": true,
+			"color": "#999",
+			"width": 200
+		},
+		{
+			"label": "操作",
+			"prop": "",
+			"width": 100,
+			"type": "button",
+			"show": true,
+			"btns": [
+				{
+					"name": "退款",
+					"type": "primary",
+					"size": "small",
+					"round": true,
+					"disabled": "disabled",
+					"class": "sys-btn",
+					"action": "refund",
+					"role": "refund",
+					"token": "empty"
+				}
+			]
+		}
+	]
+}

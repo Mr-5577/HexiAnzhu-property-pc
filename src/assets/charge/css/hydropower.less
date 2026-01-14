@@ -1,0 +1,167 @@
+#hydropower {
+  font-family: 'Source Han Sans CN';
+  width: 100%;
+  height: 100%;
+  .top {
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 10px 10px 0 0;
+    padding: 15px 30px;
+
+    .main {
+      .common-left {
+        .el-date-editor {
+          margin-left: 20px;
+        }
+      }
+      .common-right {
+        .el-button {
+          width: 120px;
+        }
+        .el-button + .el-button {
+          margin-left: 30px !important;
+        }
+      }
+    }
+  }
+  .main-wp {
+    border-radius: 0 0 10px 10px;
+    border-top: 1px solid #ebebeb;
+    overflow: hidden;
+    height: calc(100% - 71px);
+    background-color: #fff;
+    .select-wp {
+      padding: 15px 30px;
+      position: relative;
+      .el-select {
+        margin-right: 20px;
+      }
+      .el-input {
+        width: 215px;
+      }
+      .btn-wp {
+        position: absolute;
+        top: 15px;
+        right: 30px;
+        > div {
+          display: inline-block;
+          margin-right: 30px;
+        }
+        .el-button {
+          width: 120px;
+        }
+      }
+    }
+    .table-wp {
+      height: calc(100% - 70px);
+      position: relative;
+      .el-table th {
+        background-color: #f7f7f7;
+      }
+      .btn-wp {
+        position: absolute;
+        bottom: 10px;
+        left: 30px;
+      }
+    }
+  }
+
+  .enterDialog,
+  .editDialog {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 62%;
+      .el-dialog__body {
+        height: calc(100% - 158px);
+        padding: 0 20px;
+        box-sizing: border-box;
+        .search-wp {
+          width: 100%;
+          box-sizing: border-box;
+          padding: 20px 15px 0;
+          .el-autocomplete.hy-search {
+            width: 100%;
+            margin: 0;
+          }
+        }
+        .el-form {
+          .el-form-item {
+            display: inline-block;
+            width: 50%;
+            padding: 15px 15px 5px;
+            box-sizing: border-box;
+            margin-bottom: 0 !important;
+            .el-cascader,
+            .el-select,
+            .el-date-editor {
+              width: 100%;
+              border-radius: 5px !important;
+            }
+            .el-date-editor {
+              background-color: #f2f2f2;
+              border: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  .editDialog {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 40%;
+    }
+  }
+  .recordDialog {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 90%;
+      .el-dialog__body {
+        height: calc(100% - 68px);
+        padding: 0;
+        .filter-wp {
+          padding: 15px 30px;
+        }
+        .table-wp {
+          height: calc(100% - 70px);
+          position: relative;
+          > #CusTable {
+            .el-table {
+              th {
+                background-color: #f7f7f7;
+              }
+            }
+          }
+          > .el-button {
+            position: absolute;
+            bottom: 10px;
+            left: 30px;
+          }
+        }
+      }
+    }
+  }
+  .logDialog {
+    .el-dialog {
+      height: 70%;
+      .el-dialog__body {
+        height: calc(100% - 68px);
+        padding: 0;
+        .table-wp {
+          height: 100%;
+        }
+      }
+    }
+  }
+}

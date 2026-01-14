@@ -1,0 +1,83 @@
+{
+  "commonet": {
+    "label": "列名称",
+    "prop": "字段名称",
+    "width": "列宽度",
+    "type": "text/number/checkbox(0,1)/button",
+    "action": "抛出的方法名称",
+    "role": "type存在时使用操作加载对应的权限名",
+    "show": "显示/隐藏列",
+    "btns": {
+      "name": "按钮名称",
+      "type": "按钮样式",
+      "size": "按钮大小",
+      "round": "是否圆角",
+      "class": "自定义class",
+      "action": "抛出的方法名称"
+    }
+  },
+  "list": [
+    {
+      "label": "车场名称",
+      "prop": "name",
+      "show": true,
+      "color": "#999"
+    },
+    {
+      "label": "入口数量",
+      "prop": "gates_count",
+      "show": true
+    },
+    {
+      "label": "充电桩数量",
+      "prop": "chargepiles_count",
+      "show": true
+    },
+    {
+      "label": "临停收费方式",
+      "prop": "method_name",
+      "show": true,
+      "color": "#999"
+    },
+    {
+      "label": "道闸离线统计",
+      "prop": "gate_offline",
+      "show": true
+    },
+    {
+      "label": "充电桩离线统计",
+      "prop": "charge_offline",
+      "show": true
+    },
+    {
+      "label": "临停收费合计",
+      "prop": "money",
+      "show": true,
+      "color": "#ffcb3c"
+    },
+    {
+      "label": "充电收费合计",
+      "prop": "charge_money",
+      "show": true,
+      "color": "#69da61"
+    },
+    {
+      "label": "操作",
+      "prop": "",
+      "width": 130,
+      "type": "button",
+      "show": true,
+      "btns": [
+        {
+          "name": "详情",
+          "type": "primary",
+          "size": "small",
+          "round": true,
+          "action": "detail",
+          "role": "detail",
+          "token": "Btn-30D4CB3F825C57B854C57483"
+        }
+      ]
+    }
+  ]
+}

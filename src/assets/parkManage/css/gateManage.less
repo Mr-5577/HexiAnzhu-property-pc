@@ -1,0 +1,161 @@
+#gate-manage {
+  font-family: 'Source Han Sans CN';
+  width: 100%;
+  height: 100%;
+  .top {
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 10px 10px 0 0;
+    padding: 15px 30px;
+
+    .main {
+      .common-left {
+        .common-chose-info {
+          padding: 0 20px 0 10px;
+          position: relative;
+          > i.close {
+            display: none;
+            position: absolute;
+            top: 12px;
+            right: 7px;
+            font-size: 15px;
+            color: #c0c4cc;
+            cursor: pointer;
+            margin-right: 0;
+          }
+        }
+        .common-chose-info:hover {
+          > i.close {
+            display: block;
+          }
+        }
+        .el-select {
+          margin: 0 0 0 20px;
+        }
+      }
+      .common-right {
+        .el-button + .el-button {
+          margin-left: 20px !important;
+        }
+      }
+    }
+  }
+  .main-wp {
+    border-radius: 0 0 10px 10px;
+    border-top: 1px solid #ebebeb;
+    overflow: hidden;
+    height: calc(100% - 71px);
+    background-color: #fff;
+    .table-wp {
+      height: 100%;
+      position: relative;
+      .el-table th {
+        background-color: #fff;
+      }
+      .total {
+        position: absolute;
+        bottom: 15px;
+        left: 30px;
+        font-size: 15px;
+        font-weight: 700;
+        .money {
+          color: rgb(255, 203, 60);
+          font-weight: 400;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+  .gateDialog {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 53%;
+      .el-dialog__body {
+        height: calc(100% - 158px);
+        padding: 0 15px;
+        box-sizing: border-box;
+        .el-form {
+          .el-form-item {
+            display: inline-block;
+            width: 33%;
+            padding: 15px 15px 5px;
+            box-sizing: border-box;
+            margin-bottom: 0 !important;
+            .el-cascader,
+            .el-select,
+            .el-date-editor {
+              width: 100%;
+            }
+            .el-date-editor {
+              background-color: #f2f2f2;
+              border: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .unlockDialog,
+  .addCardDialog {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 50%;
+      .el-dialog__body {
+        height: calc(100% - 150px);
+        padding: 20px 30px;
+        box-sizing: border-box;
+        .title {
+          color: #333;
+          font-size: 14px;
+          line-height: 20px;
+          margin-bottom: 15px;
+        }
+        .el-textarea {
+          textarea {
+            border: none;
+            background-color: #f2f2f2;
+            border-radius: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .addCardDialog {
+    .el-dialog {
+      height: 40%;
+      .tip {
+        margin-top: 20px;
+        color: #3ebb75;
+      }
+    }
+  }
+
+  .orderDialog {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 90%;
+      .el-dialog__body {
+        height: calc(100% - 68px);
+        padding: 0;
+        box-sizing: border-box;
+        .table-wp {
+          height: 100%;
+        }
+      }
+    }
+  }
+}

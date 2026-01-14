@@ -1,0 +1,59 @@
+{
+  "list": [
+    {
+      "label": "资源名称",
+      "prop": "model_text",
+      "show": true
+    },
+    {
+      "label": "客户姓名",
+      "prop": "realname",
+      "show": true,
+      "color": "#999"
+    },
+    {
+      "label": "计费科目",
+      "prop": "subject_text",
+      "show": true,
+      "color": "#999"
+    },
+    {
+      "label": "金额",
+      "prop": "money",
+      "show": true,
+      "color": "#ffcb3c"
+    },
+    {
+      "label": "费用描述",
+      "prop": "describe",
+      "show": true
+    },
+    {
+      "label": "状态",
+      "prop": "status_text",
+      "show": true
+    },
+    {
+      "label": "应收日期",
+      "prop": "ymonth",
+      "show": true,
+      "color": "#999"
+    },
+    {
+      "label": "计费方式",
+      "prop": "formula_text",
+      "show": true
+    },
+    {
+      "label": "计费人",
+      "prop": "operator_text",
+      "show": true
+    },
+    {
+      "label": "备注",
+      "prop": "remarks",
+      "show": true,
+      "color": "#999"
+    }
+  ]
+}

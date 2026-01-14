@@ -1,0 +1,21 @@
+{
+  "list": [
+    {
+      "label": "领卡数量",
+      "prop": "number",
+      "show": true
+    },
+    {
+      "label": "领卡时间",
+      "prop": "receive_time",
+      "show": true,
+      "color": "#999"
+    },
+    {
+      "label": "领用人员",
+      "prop": "user",
+      "show": true,
+      "color": "#999"
+    }
+  ]
+}

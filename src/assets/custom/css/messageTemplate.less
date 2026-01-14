@@ -1,0 +1,187 @@
+#message-template {
+  font-family: 'Source Han Sans CN';
+  width: 100%;
+  height: 100%;
+  position: relative;
+  .top {
+    position: absolute;
+    top: -60px;
+    right: 0;
+  }
+  .main-wp {
+    border-radius: 10px;
+    overflow: hidden;
+    height: 100%;
+    background-color: #fff;
+    position: relative;
+    .title {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      padding: 25px 30px;
+    }
+    > .addbtn {
+      position: absolute;
+      top: 15px;
+      right: 30px;
+    }
+    .table-wp {
+      height: calc(100% - 60px);
+      position: relative;
+      .el-table th {
+        background-color: #f7f7f7;
+      }
+      > .btn-wp {
+        position: absolute;
+        left: 30px;
+        bottom: 15px;
+        .el-button + .el-button {
+          margin-left: 30px !important;
+        }
+      }
+      > #CusTable {
+        > .pagination {
+          padding: 10px 30px;
+        }
+      }
+    }
+  }
+
+  .editDialog {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 80%;
+      .el-dialog__body {
+        height: calc(100% - 158px);
+        padding: 0 20px;
+        box-sizing: border-box;
+        ul {
+          list-style: none;
+          display: flex;
+          flex-wrap: wrap;
+          padding: 10px 0;
+          li {
+            padding: 8px 12px;
+            background-color: #f7f7f7;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #999;
+            margin: 10px 10px 4px;
+            cursor: pointer;
+          }
+        }
+        .type-code {
+          display: flex;
+          padding: 0 10px;
+          margin-top: 10px;
+          margin-bottom: 20px;
+          > .el-select,
+          > .el-input {
+            flex: 1;
+          }
+          > .el-input:last-child {
+            margin-left: 20px;
+          }
+          > .el-select + .el-select {
+            margin-left: 20px;
+          }
+        }
+        .title {
+          padding: 0 10px;
+          margin-bottom: 15px;
+          color: #666;
+        }
+        .content.el-textarea {
+          padding: 0 10px;
+          box-sizing: border-box;
+          margin-bottom: 20px;
+          .el-textarea__inner {
+            border: none;
+            background-color: #f2f2f2;
+            color: #333;
+          }
+        }
+      }
+    }
+  }
+
+  .useDialog {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 80%;
+      .el-dialog__body {
+        height: calc(100% - 158px);
+        padding: 0;
+        box-sizing: border-box;
+        .el-tabs {
+          height: 100%;
+          .el-tabs__nav {
+            width: 100%;
+            display: flex;
+            .el-tabs__item {
+              flex: 1;
+              height: 50px;
+              line-height: 50px;
+              text-align: center;
+            }
+          }
+          .el-tabs__content {
+            height: calc(100% - 65px);
+            .el-tab-pane {
+              height: 100%;
+              .content {
+                .cname {
+                  line-height: 22px;
+                  font-size: 14px;
+                  color: #333;
+                  margin: 0 25px 5px;
+                  font-weight: 700;
+                }
+                ul {
+                  display: flex;
+                  list-style: none;
+                  flex-wrap: wrap;
+                  padding: 0 13px 20px;
+                  li {
+                    width: 130px;
+                    height: 36px;
+                    margin: 6px 12px 10px;
+                    line-height: 36px;
+                    text-align: center;
+                    font-size: 14px;
+                    color: rgba(62, 187, 117, 0.6);
+                    background-color: #f0fbef;
+                    border-radius: 20px;
+                    cursor: pointer;
+                    -webkit-touch-callout: none;
+                    -webkit-user-select: none;
+                    -khtml-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                  }
+                  li:hover {
+                    background-color: rgba(105, 218, 97, 0.4);
+                  }
+                  li.active {
+                    background-color: #3ebb75;
+                    color: #fff;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+	"commonet": {
+		"label": "列名称",
+		"prop": "字段名称",
+		"width": "列宽度",
+		"type": "text/number/checkbox(0,1)/button",
+		"action": "抛出的方法名称",
+		"role": "type存在时使用操作加载对应的权限名",
+		"show": "显示/隐藏列",
+		"btns": {
+			"name": "按钮名称",
+			"type": "按钮样式",
+			"size": "按钮大小",
+			"round": "是否圆角",
+			"class": "自定义class",
+			"action": "抛出的方法名称"
+		}
+	},
+	"list": [
+		{
+			"label": "发票编码",
+			"prop": "fpdm",
+			"show": true
+		},
+		{
+			"label": "首张单号",
+			"prop": "first",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "末张单号",
+			"prop": "last",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "面值",
+			"prop": "face_value",
+			"show": true,
+			"color": "#ffcb3c"
+		},
+		{
+			"label": "本数",
+			"prop": "num",
+			"show": true
+		},
+		{
+			"label": "发放大区",
+			"prop": "areaName",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "录入人",
+			"prop": "rname",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "审核人",
+			"prop": "ename",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "审核状态",
+			"prop": "status_text",
+			"show": true,
+			"cstcolor": "statusColor"
+		},
+		{
+			"label": "审核备注",
+			"prop": "status_remarks",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "操作",
+			"prop": "",
+			"width": 200,
+			"type": "button",
+			"show": true,
+			"btns": [
+				{
+					"name": "通过",
+					"type": "primary empty",
+					"size": "small",
+					"round": true,
+					"action": "auditPass",
+					"role": "auditPass",
+					"hide": "passHide",
+					"token": "empty"
+				},
+				{
+					"name": "驳回",
+					"type": "danger empty",
+					"size": "small",
+					"round": true,
+					"action": "auditReject",
+					"role": "auditReject",
+					"hide": "rejectHide",
+					"token": "empty"
+				}
+			]
+		}
+	]
+}

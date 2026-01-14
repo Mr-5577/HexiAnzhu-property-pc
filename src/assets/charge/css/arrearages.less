@@ -1,0 +1,281 @@
+#arrearages {
+  font-family: 'Source Han Sans CN';
+  width: 100%;
+  height: 100%;
+  .top {
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 10px 10px 0 0;
+    padding: 15px 30px;
+
+    .main {
+      .common-left {
+        .el-select {
+          margin-left: 15px;
+          margin-right: 0;
+          width: 160px;
+        }
+      }
+    }
+  }
+  .main-wp {
+    border-radius: 0 0 10px 10px;
+    border-top: 1px solid #ebebeb;
+    overflow: hidden;
+    height: calc(100% - 71px);
+    background-color: #fff;
+    .select-wp {
+      padding: 15px 30px;
+      position: relative;
+      .el-select {
+        margin-right: 20px;
+      }
+      .el-date-editor {
+        width: 250px;
+        background-color: #f2f2f2;
+        border: none;
+        .el-range__icon,
+        .el-range-separator,
+        .el-input__icon {
+          line-height: 34px;
+        }
+      }
+      > .el-button {
+        position: absolute;
+        top: 15px;
+        right: 30px;
+      }
+    }
+    .table-wp {
+      height: calc(100% - 70px);
+      position: relative;
+      .el-table th {
+        background-color: #f7f7f7;
+      }
+      > #CusTable {
+        > .el-table {
+          > .el-table__body-wrapper {
+            height: calc(100% - 56px) !important;
+          }
+        }
+      }
+      .btn-wp {
+        position: absolute;
+        left: 30px;
+        bottom: 10px;
+        background-color: #fff;
+        .el-button {
+          width: 140px;
+        }
+        .el-button + .el-button {
+          margin-left: 20px !important;
+        }
+        .el-button--primary.empty.is-disabled:hover {
+          background-color: #fff;
+          color: #3ebb75;
+        }
+      }
+      .total {
+        position: absolute;
+        bottom: 20px;
+        left: 360px;
+        color: #333;
+        font-size: 14px;
+        > span {
+          font-size: 16px;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  .reasonDialog {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 50%;
+      .el-dialog__body {
+        height: calc(100% - 158px);
+        padding: 20px 30px;
+        box-sizing: border-box;
+        .title {
+          color: #333;
+          font-size: 15px;
+          line-height: 22px;
+          font-weight: 700;
+          margin-bottom: 15px;
+        }
+        .el-radio-group {
+          line-height: 40px;
+        }
+        .tip {
+          color: #ccc;
+          text-align: center;
+        }
+      }
+      .el-dialog__footer {
+        .el-button + .el-button {
+          margin-left: 50px !important;
+        }
+      }
+    }
+  }
+
+  .recordDialog {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 85%;
+      .el-dialog__body {
+        height: calc(100% - 68px);
+        padding: 20px 0;
+        box-sizing: border-box;
+        .select-wp {
+          margin-bottom: 20px;
+          padding: 0 30px;
+          position: relative;
+          .el-select {
+            width: 20%;
+            min-width: 180px;
+            margin-right: 20px;
+          }
+          .el-date-editor {
+            width: 25%;
+            min-width: 230px;
+            margin-right: 20px;
+            background-color: #f2f2f2;
+            border: none;
+            .el-range__close-icon {
+              line-height: 34px;
+            }
+          }
+          > .el-input {
+            display: inline-block;
+            width: 20%;
+            min-width: 180px;
+          }
+          .export {
+            position: absolute;
+            top: 0;
+            right: 30px;
+            cursor: pointer;
+          }
+        }
+        > .table-wp {
+          height: calc(100% - 51px);
+          > #CusTable {
+            .el-table {
+              th {
+                background-color: #f7f7f7;
+              }
+            }
+          }
+          .el-button.batch {
+            position: absolute;
+            bottom: 15px;
+            left: 30px;
+          }
+        }
+      }
+    }
+  }
+
+  .descDialog {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 50%;
+      .el-dialog__body {
+        height: calc(100% - 150px);
+        padding: 20px 30px;
+        box-sizing: border-box;
+        .title {
+          color: #333;
+          font-size: 14px;
+          line-height: 20px;
+          margin-bottom: 15px;
+        }
+        .el-textarea {
+          textarea {
+            border: none;
+            background-color: #f2f2f2;
+            border-radius: 10px;
+          }
+        }
+      }
+    }
+  }
+  .descRecordDialog {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 85%;
+      .el-dialog__body {
+        height: calc(100% - 68px);
+        padding: 0 0 20px;
+        box-sizing: border-box;
+        > .table-wp {
+          height: 100%;
+          #CusTable {
+            .el-table {
+              height: 100%;
+              .el-table__body-wrapper {
+                height: calc(100% - 50px);
+                overflow-y: auto;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .splitDialog {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 50%;
+      .el-dialog__body {
+        height: calc(100% - 150px);
+        padding: 0 10px;
+        box-sizing: border-box;
+        .el-form {
+          display: flex;
+          flex-wrap: wrap;
+          padding: 15px;
+          .el-form-item {
+            width: 50%;
+            padding: 0 2%;
+            box-sizing: border-box;
+            margin-bottom: 30px !important;
+            .el-form-item__label {
+              width: 100%;
+              text-align: left;
+              line-height: 20px;
+              margin-bottom: 15px;
+            }
+          }
+          .el-form-item.remark {
+            width: 100%;
+            .el-date-editor {
+              width: 48%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,131 @@
+{
+	"commonet": {
+		"label": "列名称",
+		"prop": "字段名称",
+		"width": "列宽度",
+		"type": "text/number/checkbox(0,1)/button",
+		"action": "抛出的方法名称",
+		"role": "type存在时使用操作加载对应的权限名",
+		"show": "显示/隐藏列",
+		"btns": {
+			"name": "按钮名称",
+			"type": "按钮样式",
+			"size": "按钮大小",
+			"round": "是否圆角",
+			"class": "自定义class",
+			"action": "抛出的方法名称"
+		}
+	},
+	"list": [
+		{
+			"label": "交款客户",
+			"prop": "realname",
+			"show": true
+		},
+		{
+			"label": "订单号",
+			"prop": "sn",
+			"show": true,
+			"color": "#999",
+			"width": 150
+		},
+		{
+			"label": "收费时间",
+			"prop": "pay_time",
+			"show": true,
+			"color": "#999",
+			"width": 150
+		},
+		{
+			"label": "总金额",
+			"prop": "allmoney",
+			"show": true,
+			"color": "#ffcb3c"
+		},
+		{
+			"label": "实缴金额",
+			"prop": "money",
+			"show": true,
+			"color": "#ffcb3c"
+		},
+		{
+			"label": "付款方式",
+			"type": "select",
+			"prop": "type",
+			"show": true,
+			"color": "#999",
+			"placeholder": "请选择付款方式",
+			"options": "options",
+			"width": 150,
+			"action": "selectChange"
+		},
+		{
+			"label": "票据号",
+			"prop": "fphm",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "收费员",
+			"prop": "cname",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "状态",
+			"prop": "status_text",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "缴费内容",
+			"prop": "remark",
+			"show": true,
+			"color": "#999",
+			"width": 200
+		},
+		{
+			"label": "操作时间",
+			"prop": "create_time",
+			"show": true,
+			"color": "#999",
+			"width": 160
+		},
+		{
+			"label": "详情",
+			"width": "100",
+			"type": "icon",
+			"icon": "detail",
+			"show": true,
+			"action": "detail",
+			"token": "Btn-qo8Iv6QW1E87pcb4LWAzgib1"
+		},
+		{
+			"label": "打印",
+			"width": "60",
+			"type": "icon",
+			"icon": "print",
+			"show": true,
+			"action": "print",
+			"token": "Btn-EQZwdMDo96McSceAy2nfIlUc"
+		},
+		{
+			"label": "操作",
+			"width": "150",
+			"type": "button",
+			"show": true,
+			"btns": [
+				{
+					"name": "返销",
+					"type": "warning",
+					"size": "small",
+					"round": true,
+					"action": "buyBack",
+					"role": "buyBack",
+					"disabled": "disabled",
+					"token": "Btn-Ca4BnJLT1Yl51cx9f0icJESk"
+				}
+			]
+		}
+	]
+}

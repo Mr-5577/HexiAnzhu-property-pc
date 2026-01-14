@@ -1,0 +1,356 @@
+.my-autocomplete {
+  li {
+    padding: 0;
+    line-height: 40px;
+    .tr-item {
+      display: flex;
+      justify-content: space-between;
+      .td-item {
+        flex: 1;
+        text-align: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+    .tr-item:hover {
+      background-color: #e1f8df;
+    }
+    .load-more {
+      text-align: center;
+      color: #ccc;
+      background: #fff;
+    }
+  }
+  li:first-child {
+    color: #999;
+    cursor: default;
+    pointer-events: none;
+  }
+  li:hover {
+    background-color: #fff;
+  }
+}
+#report-repair {
+  font-family: 'Source Han Sans CN';
+  width: 100%;
+  height: 100%;
+  .top {
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 10px 10px 0 0;
+    padding: 15px 30px;
+
+    .main {
+      .common-left {
+        .common-chose-info {
+          padding: 0 20px 0 10px;
+          position: relative;
+          > i.close {
+            display: none;
+            position: absolute;
+            top: 12px;
+            right: 7px;
+            font-size: 15px;
+            color: #c0c4cc;
+            cursor: pointer;
+            margin-right: 0;
+          }
+        }
+        .common-chose-info:hover {
+          > i.close {
+            display: block;
+          }
+        }
+        .common-input {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+  .main-wp {
+    border-radius: 0 0 10px 10px;
+    border-top: 1px solid #ebebeb;
+    overflow: hidden;
+    height: calc(100% - 71px);
+    background-color: #fff;
+    .select-wp {
+      padding: 15px 30px;
+      position: relative;
+      .el-select {
+        margin-right: 20px;
+      }
+      > .el-button {
+        position: absolute;
+        top: 15px;
+        right: 30px;
+      }
+    }
+    .el-date-editor {
+      border: none;
+      background-color: #f2f2f2;
+      width: 180px;
+      border-radius: 5px;
+      .el-range__icon,
+      .el-range-separator,
+      .el-input__icon {
+        line-height: 34px;
+      }
+    }
+    .table-wp {
+      height: calc(100% - 70px);
+      position: relative;
+      .el-table th {
+        background-color: #f7f7f7;
+      }
+    }
+  }
+
+  .addDialog {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 65%;
+      .el-dialog__body {
+        height: calc(100% - 158px);
+        padding: 0 15px;
+        box-sizing: border-box;
+        .search-wp {
+          padding: 0 15px;
+          margin-top: 30px;
+          .report-search {
+            width: 100%;
+            margin: 0;
+          }
+        }
+        .el-form {
+          display: flex;
+          flex-wrap: wrap;
+          .el-form-item {
+            width: 50%;
+            padding: 15px;
+            box-sizing: border-box;
+            margin-bottom: 0 !important;
+          }
+          .el-form-item.content {
+            width: 100%;
+            .el-form-item__label {
+              float: none;
+            }
+            .w-e-text-container {
+              height: 200px !important;
+            }
+          }
+          .el-form-item.remark {
+            width: 100%;
+            margin-bottom: 10px !important;
+            textarea {
+              background-color: #f2f2f2;
+              border: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .detailDialog {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 80%;
+      .el-dialog__body {
+        height: calc(100% - 68px);
+        padding: 20px 30px;
+        box-sizing: border-box;
+        .title {
+          font-size: 16px;
+          font-weight: 700;
+          line-height: 22px;
+          color: #333;
+          margin-bottom: 20px;
+        }
+        .order-content,
+        .so-content {
+          padding: 10px 15px;
+          background-color: #f7f7f7;
+          border-radius: 5px;
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 30px;
+          .order-item {
+            padding: 15px;
+            width: 235px;
+            box-sizing: border-box;
+            .info {
+              display: flex;
+              padding: 5px 0;
+              .name {
+                margin-right: 10px;
+                color: #999;
+                font-size: 14px;
+                line-height: 22px;
+              }
+              .value {
+                flex: 1;
+                color: #333;
+                font-size: 14px;
+                text-align: justify;
+                line-height: 22px;
+              }
+            }
+          }
+          .order-item.desc {
+            flex: 3;
+          }
+          .order-item.so {
+            flex: 4;
+          }
+        }
+        .record-wp {
+          .title.record {
+            display: inline-block;
+            cursor: pointer;
+            > i {
+              color: #999;
+              font-size: 20px;
+              vertical-align: middle;
+            }
+            > i.el-icon-caret-top {
+              color: #3ebb75;
+            }
+          }
+          .records {
+            .tip {
+              color: #ccc;
+              font-size: 14px;
+              line-height: 22px;
+              text-align: center;
+              height: 60px;
+              line-height: 60px;
+              border-radius: 5px;
+              background-color: #f7f7f7;
+              margin-bottom: 20px;
+            }
+            .record-content {
+              padding: 20px 30px;
+              margin-bottom: 20px;
+              background-color: #f7f7f7;
+              border-radius: 5px;
+              .title {
+                font-size: 15px;
+                color: #333;
+                font-weight: 700;
+                line-height: 22px;
+                margin-bottom: 0;
+              }
+              .content {
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 1px dashed #ccc;
+                margin-top: 15px;
+                padding-bottom: 10px;
+                .info-left,
+                .info-right {
+                  flex: 1;
+                  .info {
+                    display: flex;
+                    padding: 5px 0;
+                    .name {
+                      margin-right: 10px;
+                      color: #999;
+                      font-size: 14px;
+                      line-height: 22px;
+                    }
+                    .value {
+                      flex: 1;
+                      color: #333;
+                      font-size: 14px;
+                      text-align: justify;
+                      line-height: 22px;
+                      img {
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 2px;
+                        vertical-align: middle;
+                        margin: 0 10px 10px 0;
+                        cursor: pointer;
+                      }
+                    }
+                  }
+                }
+              }
+              .content:last-child {
+                border: none;
+              }
+            }
+          }
+        }
+        .title .el-rate {
+          display: inline-block;
+          margin-left: 20px;
+        }
+
+        .el-textarea {
+          textarea {
+            border: none;
+            background-color: #f7f7f7;
+          }
+        }
+
+        .handle-wp {
+          padding: 20px 0;
+          .head {
+            color: #333;
+            font-size: 15px;
+            margin-bottom: 10px;
+          }
+          .el-select {
+            margin-bottom: 20px;
+          }
+          .content {
+            margin-bottom: 20px;
+          }
+          .btn-wp {
+            text-align: center;
+          }
+          .file-upload {
+            margin-bottom: 20px;
+            .el-upload.el-upload--picture-card {
+              width: 60px;
+              height: 60px;
+              line-height: 60px;
+              i {
+                font-size: 20px;
+              }
+            }
+            .el-upload-list--picture-card .el-upload-list__item {
+              width: 60px;
+              height: 60px;
+            }
+            .el-upload-list--picture-card
+              .el-upload-list__item-actions
+              span
+              + span {
+              margin-left: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  > .el-image {
+    width: 0;
+    height: 0;
+    position: absolute;
+    .el-icon-circle-close {
+      color: #fff;
+    }
+  }
+}

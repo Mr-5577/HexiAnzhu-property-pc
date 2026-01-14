@@ -1,0 +1,145 @@
+#address-book {
+  font-family: 'Source Han Sans CN';
+  width: 100%;
+  height: 100%;
+  .top {
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 10px 10px 0 0;
+    padding: 15px 30px;
+
+    .main {
+      .common-left {
+        > .common-input {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+  .main-wp {
+    border-radius: 0 0 10px 10px;
+    border-top: 1px solid #ebebeb;
+    overflow: hidden;
+    height: calc(100% - 71px);
+    background-color: #fff;
+    .table-wp {
+      height: 100%;
+      position: relative;
+      .el-table th {
+        background-color: #f7f7f7;
+      }
+    }
+  }
+
+  > .editDialog {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 85%;
+      .el-dialog__body {
+        box-sizing: border-box;
+        height: calc(100% - 156px);
+        text-align: center;
+        padding: 0;
+        .empty {
+          margin-top: 50px;
+          color: #ccc;
+        }
+        .tab-wp {
+          border: 1px solid #e6e6e6;
+          margin: 20px 30px;
+          .tab-tr {
+            display: flex;
+            .th {
+              background-color: #f2f2f2;
+              line-height: 20px;
+              padding: 10px;
+              font-size: 15px;
+              color: #333;
+              border-bottom: 1px solid #e6e6e6;
+              border-right: 1px solid #e6e6e6;
+            }
+            .th:first-child {
+              flex: 1;
+              min-width: 200px;
+            }
+            .th:last-child {
+              flex: 5;
+              border-right: none;
+            }
+            .tab-td {
+              background-color: #fff;
+              min-height: 30px;
+              line-height: 30px;
+              padding: 5px 10px;
+              font-size: 15px;
+              color: #333;
+              border-bottom: 1px solid #e6e6e6;
+              border-right: 1px solid #e6e6e6;
+              text-align: left;
+              .el-checkbox-group {
+                .el-checkbox {
+                  vertical-align: middle;
+                }
+              }
+              .el-checkbox {
+                .el-checkbox__inner {
+                  width: 16px;
+                  height: 16px;
+                }
+                .el-checkbox__inner::after {
+                  top: 2px;
+                  left: 5px;
+                }
+                .el-checkbox__label {
+                  vertical-align: middle;
+                }
+              }
+            }
+            .tab-td:first-child {
+              flex: 1;
+              min-width: 200px;
+              position: relative;
+              .el-checkbox {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+              }
+            }
+            .tab-td:last-child {
+              flex: 5;
+              border-right: none;
+            }
+          }
+          .tab-tr:last-child {
+            .tab-td {
+              border-bottom: none;
+            }
+          }
+          .all-check {
+            border-bottom: 1px solid #e6e6e6;
+            padding: 10px;
+            line-height: 20px;
+            box-sizing: border-box;
+            text-align: left;
+            .el-checkbox {
+              .el-checkbox__inner {
+                width: 16px;
+                height: 16px;
+              }
+              .el-checkbox__inner::after {
+                top: 2px;
+                left: 5px;
+              }
+              .el-checkbox__label {
+                vertical-align: middle;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

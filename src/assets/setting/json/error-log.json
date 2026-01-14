@@ -1,0 +1,79 @@
+{
+  "commonet": {
+    "label": "列名称",
+    "prop": "字段名称",
+    "width": "列宽度",
+    "type": "text/number/checkbox(0,1)/button",
+    "action": "抛出的方法名称",
+    "role": "type存在时使用操作加载对应的权限名",
+    "show": "显示/隐藏列",
+    "btns": {
+      "name": "按钮名称",
+      "type": "按钮样式",
+      "size": "按钮大小",
+      "round": "是否圆角",
+      "class": "自定义class",
+      "action": "抛出的方法名称"
+    }
+  },
+  "list": [
+    {
+      "label": "项目名称",
+      "prop": "vname",
+      "show": true,
+      "color": "#999"
+    },
+    {
+      "label": "科目名称",
+      "prop": "sname",
+      "show": true
+    },
+    {
+      "label": "业主姓名",
+      "prop": "oname",
+      "show": true
+    },
+    {
+      "label": "状态",
+      "prop": "status_text",
+      "show": true
+    },
+    {
+      "label": "错误信息",
+      "prop": "error_msg",
+      "show": true,
+      "color": "#999",
+      "width": 180
+    },
+    {
+      "label": "操作人",
+      "prop": "cname",
+      "show": true
+    },
+    {
+      "label": "创建时间",
+      "prop": "create_time",
+      "show": true,
+      "color": "#999",
+      "width": 180
+    },
+    {
+      "label": "操作",
+      "width": "150",
+      "type": "button",
+      "show": true,
+      "btns": [
+        {
+          "name": "重新添加",
+          "type": "primary",
+          "size": "small",
+          "round": true,
+          "hide": "sphide",
+          "action": "addAgain",
+          "role": "addAgain",
+          "token": "empty"
+        }
+      ]
+    }
+  ]
+}

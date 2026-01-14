@@ -1,0 +1,104 @@
+{
+  "commonet": {
+    "label": "列名称",
+    "prop": "字段名称",
+    "width": "列宽度",
+    "type": "text/number/checkbox(0,1)/button",
+    "action": "抛出的方法名称",
+    "role": "type存在时使用操作加载对应的权限名",
+    "show": "显示/隐藏列",
+    "btns": {
+      "name": "按钮名称",
+      "type": "按钮样式",
+      "size": "按钮大小",
+      "round": "是否圆角",
+      "class": "自定义class",
+      "action": "抛出的方法名称"
+    }
+  },
+  "list": [
+    {
+      "label": "首张单号",
+      "prop": "first",
+      "show": true,
+      "color": "#999",
+      "width": 140
+    },
+    {
+      "label": "末张单号",
+      "prop": "last",
+      "show": true,
+      "color": "#999",
+      "width": 140
+    },
+    {
+      "label": "数量",
+      "prop": "num",
+      "show": true,
+      "color": "rgb(105, 218, 97)"
+    },
+    {
+      "label": "状态",
+      "prop": "status_text",
+      "show": true
+    },
+    {
+      "label": "领用大区",
+      "prop": "deptname",
+      "show": true,
+      "width": 150
+    },
+    {
+      "label": "领用时间",
+      "prop": "create_time",
+      "show": true,
+      "color": "#999",
+      "width": 150
+    },
+    {
+      "label": "录入人",
+      "prop": "uname",
+      "show": true
+    },
+    {
+      "label": "录入时间",
+      "prop": "recordtime",
+      "show": true,
+      "color": "#999",
+      "width": 150
+    },
+    {
+      "label": "剩余未发",
+      "prop": "surplus",
+      "show": true
+    },
+    {
+      "label": "操作",
+      "prop": "",
+      "width": 240,
+      "type": "button",
+      "show": true,
+      "btns": [
+        {
+          "name": "查看明细",
+          "type": "primary",
+          "size": "small",
+          "round": true,
+          "action": "detail",
+          "role": "detail",
+          "token": "empty"
+        },
+        {
+          "name": "发放",
+          "type": "primary empty",
+          "size": "small",
+          "hide": "ffhide",
+          "round": true,
+          "action": "grant",
+          "role": "grant",
+          "token": "empty"
+        }
+      ]
+    }
+  ]
+}

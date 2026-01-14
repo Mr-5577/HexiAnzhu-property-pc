@@ -1,0 +1,251 @@
+.el-month-table {
+  tr {
+    td.today {
+      .cell {
+        color: #606266;
+        font-weight: normal;
+      }
+    }
+  }
+}
+#arrearage {
+  font-family: 'Source Han Sans CN';
+  width: 100%;
+  height: 100%;
+  position: relative;
+  .main-wp {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .left-wp {
+    width: 30%;
+    background-color: #fff;
+    border-radius: 6px;
+    position: relative;
+    .header {
+      padding: 30px;
+      position: relative;
+      border-bottom: 1px solid #ebebeb;
+      .title {
+        font-size: 16px;
+        line-height: 22px;
+        color: #333;
+        font-weight: 700;
+      }
+      .el-button {
+        position: absolute;
+        top: 50%;
+        right: 30px;
+        transform: translateY(-50%);
+      }
+    }
+    .input-wp {
+      padding: 30px;
+      .village,
+      .batch,
+      .subject {
+        .name {
+          font-size: 15px;
+          line-height: 20px;
+          margin-bottom: 10px;
+          color: #666;
+        }
+      }
+      .village {
+        margin-bottom: 30px;
+        width: 100%;
+        .el-select {
+          width: 100%;
+        }
+      }
+      .batch {
+        width: 47%;
+        display: inline-block;
+        margin-right: 6%;
+        .el-select {
+          width: 100%;
+        }
+      }
+      .subject {
+        display: inline-block;
+        width: 47%;
+        .el-select {
+          width: 100%;
+        }
+      }
+    }
+    .date-wp {
+      padding: 0 30px 30px;
+      .name {
+        font-size: 15px;
+        line-height: 20px;
+        margin-bottom: 10px;
+        color: #666;
+      }
+      .el-date-editor {
+        width: 47%;
+      }
+      > span {
+        display: inline-block;
+        width: 6%;
+        text-align: center;
+        color: #707070;
+      }
+    }
+    > .el-button {
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  .right-wp {
+    width: 69%;
+    background-color: #fff;
+    border-radius: 6px;
+    position: relative;
+    .header {
+      padding: 30px;
+      position: relative;
+      .title {
+        display: inline-block;
+        font-size: 16px;
+        line-height: 22px;
+        color: #333;
+        font-weight: 700;
+        vertical-align: middle;
+        margin-right: 10px;
+      }
+      .btn-switch {
+        position: absolute;
+        top: 50%;
+        right: 30px;
+        transform: translateY(-50%);
+        .el-button + .el-button {
+          margin-left: 30px !important;
+        }
+      }
+    }
+    .table-wp {
+      height: calc(100% - 84px);
+      .tip {
+        color: #ccc;
+        text-align: center;
+        font-size: 14px;
+        padding: 30px;
+      }
+      .el-table {
+        th {
+          background-color: #f7f7f7;
+        }
+      }
+    }
+    > .btn-wp {
+      position: absolute;
+      left: 30px;
+      bottom: 10px;
+      background-color: #fff;
+      padding-right: 10px;
+      .el-button {
+        width: 130px;
+      }
+      .el-button + .el-button {
+        margin-left: 30px !important;
+      }
+    }
+    .btn-wp.hide {
+      top: 120px;
+      bottom: auto;
+    }
+  }
+  .el-dialog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 0 !important;
+    height: 75%;
+    .el-dialog__body {
+      height: calc(100% - 158px);
+      padding: 0;
+      box-sizing: border-box;
+      .table-wp {
+        height: 100%;
+        width: calc(100% - 1px);
+      }
+    }
+  }
+  .manageDialog,
+  .logDialog,
+  .failDialog {
+    .el-dialog {
+      .el-dialog__body {
+        height: calc(100% - 70px);
+      }
+    }
+  }
+  .addDialog {
+    .el-dialog {
+      min-width: 1000px !important;
+      height: 85%;
+      .el-dialog__body {
+        height: calc(100% - 148px);
+        .select-wp {
+          display: flex;
+          justify-content: space-between;
+          padding: 15px 25px;
+          .line {
+            width: 1px;
+            background-color: #ccc;
+            margin: 0 10px;
+          }
+          .select-item {
+            width: 20%;
+            .title {
+              font-size: 14px;
+              line-height: 20px;
+              color: #666;
+              margin-bottom: 10px;
+            }
+            .el-select,
+            .el-date-editor {
+              width: 100%;
+            }
+          }
+        }
+        .table-wp {
+          height: calc(100% - 90px);
+          .el-table th {
+            background-color: #f7f7f7;
+          }
+        }
+      }
+    }
+  }
+  .addDialog.house .el-dialog .el-dialog__body {
+    .select-wp {
+      display: block;
+      .select-item {
+        display: inline-block;
+        margin-right: 30px;
+      }
+    }
+  }
+  > #charge-add {
+    height: 100%;
+    > .left-wp {
+      width: 29% !important;
+    }
+    > .right-wp {
+      width: 69.5% !important;
+      .top-wp {
+        border-radius: 6px 6px 0 0;
+      }
+      .bottom-wp {
+        border-radius: 0 0 6px 6px;
+      }
+    }
+  }
+}

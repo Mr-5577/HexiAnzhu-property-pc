@@ -1,0 +1,138 @@
+{
+	"commonet": {
+		"label": "列名称",
+		"prop": "字段名称",
+		"width": "列宽度",
+		"type": "text/number/checkbox(0,1)/button",
+		"action": "抛出的方法名称",
+		"role": "type存在时使用操作加载对应的权限名",
+		"show": "显示/隐藏列",
+		"btns": {
+			"name": "按钮名称",
+			"type": "按钮样式",
+			"size": "按钮大小",
+			"round": "是否圆角",
+			"class": "自定义class",
+			"action": "抛出的方法名称"
+		}
+	},
+	"list": [
+		{
+			"label": "序号",
+			"width": "80",
+			"prop": "index",
+			"show": true
+		},
+		{
+			"label": "小区名称",
+			"prop": "villagename",
+			"width": "130",
+			"show": true
+		},
+		{
+			"label": "占地面积",
+			"prop": "allacreage",
+			"width": "100",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "建筑面积",
+			"prop": "buildacreage",
+			"width": "100",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "使用面积",
+			"prop": "useacreage",
+			"width": "100",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "未售",
+			"prop": "vacancy_num",
+			"show": true,
+			"color": "#ffcb3c"
+		},
+		{
+			"label": "已售",
+			"prop": "no_vacancy_num",
+			"show": true,
+			"color": "#69da61"
+		},
+		{
+			"label": "已交房",
+			"prop": "check_num",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "未交房",
+			"prop": "no_check_num",
+			"show": true
+		},
+		{
+			"label": "交房率",
+			"prop": "deliver_rate",
+			"show": true
+		},
+		{
+			"label": "已入住",
+			"prop": "has_intohouse_num",
+			"show": true
+		},
+		{
+			"label": "未入住",
+			"prop": "not_intohouse_num",
+			"show": true
+		},
+		{
+			"label": "入住率",
+			"prop": "intohouse_proportion",
+			"show": true
+		},
+		{
+			"label": "已装修",
+			"prop": "has_isdecorate_num",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "装修中",
+			"prop": "in_isdecorate_num",
+			"show": true
+		},
+		{
+			"label": "未装修",
+			"prop": "no_isdecorate_num",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "固定车位",
+			"prop": "car_num",
+			"show": true
+		},
+		{
+			"label": "启用",
+			"prop": "car_bind_num",
+			"show": true,
+			"color": "#69da61"
+		},
+		{
+			"label": "月租车位",
+			"prop": "carmonth_num",
+			"show": true,
+			"color": "#ffcb3c"
+		},
+		{
+			"label": "备注",
+			"prop": "remarks",
+			"show": true,
+			"color": "#999",
+			"width": 180
+		}
+	]
+}

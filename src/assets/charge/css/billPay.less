@@ -1,0 +1,193 @@
+#bill-pay {
+  font-family: 'Source Han Sans CN';
+  width: 100%;
+  height: 100%;
+  .top {
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 10px 10px 0 0;
+    padding: 15px 30px;
+    .main {
+      .common-right {
+        .el-button {
+          margin-right: 30px;
+          vertical-align: middle;
+        }
+        .common-right-icon {
+          margin-right: 0;
+          svg {
+            vertical-align: bottom;
+          }
+        }
+      }
+    }
+  }
+  .main-wp {
+    border-radius: 0 0 10px 10px;
+    border-top: 1px solid #ebebeb;
+    overflow: hidden;
+    height: calc(100% - 71px);
+    background-color: #fff;
+    .select-wp {
+      padding: 15px 30px;
+      .el-select {
+        margin-right: 20px;
+      }
+      .el-date-editor {
+        width: 230px;
+        background-color: #f2f2f2;
+        border: none;
+        .el-range__icon,
+        .el-range-separator,
+        .el-input__icon {
+          line-height: 34px;
+        }
+      }
+    }
+    .table-wp {
+      height: calc(100% - 70px);
+      position: relative;
+      #CusTable {
+        > .el-table {
+          th {
+            background-color: #f7f7f7;
+          }
+          .el-table__body-wrapper {
+            height: calc(100% - 56px) !important;
+            overflow-y: auto;
+          }
+          td {
+            .btn:nth-of-type(even) {
+              margin-right: 0;
+              .el-button {
+                margin-right: 10px;
+              }
+            }
+          }
+        }
+      }
+
+      > .btn-wp {
+        position: absolute;
+        left: 30px;
+        bottom: 10px;
+        .el-button {
+          width: 150px;
+        }
+        .el-button + .el-button {
+          margin-left: 30px !important;
+        }
+      }
+    }
+  }
+
+  .bfjxDialog {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 40%;
+      .el-dialog__body {
+        height: calc(100% - 158px);
+        padding: 30px;
+        box-sizing: border-box;
+        .title {
+          color: #666;
+          font-size: 15px;
+          line-height: 20px;
+          margin-bottom: 10px;
+        }
+      }
+      .el-dialog__footer {
+        .el-button {
+          width: 140px;
+        }
+        .el-button + .el-button {
+          margin-left: 50px !important;
+        }
+      }
+    }
+  }
+
+  .detailDialog {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 80%;
+      .el-dialog__body {
+        height: calc(100% - 68px);
+        padding: 0;
+        box-sizing: border-box;
+        .table-wp {
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  .recordDialog {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 80%;
+      .el-dialog__body {
+        height: calc(100% - 68px);
+        padding: 0;
+        box-sizing: border-box;
+        .date-filter {
+          padding: 20px 30px;
+          .el-date-editor {
+            background-color: #f2f2f2;
+            border: none;
+            width: 50%;
+          }
+          .el-button {
+            width: 100px;
+            margin-left: 20px;
+            vertical-align: middle;
+          }
+        }
+        .table-wp {
+          height: calc(100% - 80px);
+        }
+      }
+    }
+  }
+
+  .infoDialog {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 80%;
+      .el-dialog__body {
+        height: calc(100% - 68px);
+        padding: 0;
+        box-sizing: border-box;
+        .total {
+          margin-top: 30px;
+          padding: 0 30px;
+          font-size: 14px;
+          color: #333;
+          line-height: 22px;
+          .money,
+          .num {
+            font-size: 15px;
+            font-weight: 700;
+            color: #333;
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+  }
+}

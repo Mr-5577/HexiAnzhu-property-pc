@@ -1,0 +1,67 @@
+{
+	"commonet": {
+		"label": "列名称",
+		"prop": "字段名称",
+		"width": "列宽度",
+		"type": "text/number/checkbox(0,1)/button",
+		"action": "抛出的方法名称",
+		"role": "type存在时使用操作加载对应的权限名",
+		"show": "显示/隐藏列",
+		"btns": {
+			"name": "按钮名称",
+			"type": "按钮样式",
+			"size": "按钮大小",
+			"round": "是否圆角",
+			"class": "自定义class",
+			"action": "抛出的方法名称"
+		}
+	},
+	"list": [{
+		"label": "序号",
+		"width": "80",
+		"prop": "index",
+		"show": true
+	}, {
+		"label": "小区名称",
+		"prop": "villagename",
+		"show": true
+	}, {
+		"label": "资源类别",
+		"prop": "name",
+		"show": true
+	}, {
+		"label": "资源数量",
+		"prop": "resources_num",
+		"show": true,
+		"color": "#ffcb3c"
+	}, {
+		"label": "建筑面积 ",
+		"prop": "buildareas",
+		"show": true,
+		"color": "#999"
+	}, {
+		"label": "已交房",
+		"prop": "has_check",
+		"show": true,
+		"color": "#999"
+	}, {
+		"label": "未交房",
+		"prop": "no_check",
+		"show": true,
+		"color": "#69da61"
+	}, {
+		"label": "未装修",
+		"prop": "no_isdecorate",
+		"show": true,
+		"color": "#999"
+	}, {
+		"label": "装修中",
+		"prop": "in_isdecorate",
+		"show": true
+	}, {
+		"label": "已装修",
+		"prop": "has_isdecorate",
+		"show": true,
+		"color": "#999"
+	}]
+}

@@ -1,0 +1,347 @@
+#category {
+  font-family: 'Source Han Sans CN';
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  .left-wp {
+    width: 28%;
+    height: 100%;
+    vertical-align: middle;
+    background-color: #fff;
+    border-radius: 6px;
+    .title-wp {
+      height: 60px;
+      border-bottom: 1px solid #ebebeb;
+      h3 {
+        font-size: 16px;
+        line-height: 60px;
+        color: #333;
+        font-weight: 700;
+        padding-left: 30px;
+      }
+    }
+
+    .tree-wp {
+      height: calc(100% - 200px);
+      padding: 20px 0;
+      > .el-scrollbar {
+        .el-tree {
+          background-color: transparent;
+          .el-tree-node {
+            .el-tree-node__content {
+              position: relative;
+              height: 46px;
+              .el-tree-node__loading-icon.el-icon-loading {
+                display: none;
+              }
+              .el-checkbox {
+                position: absolute;
+                top: 12px;
+                right: 16px;
+                margin-right: 0;
+                .el-checkbox__input {
+                  .el-checkbox__inner {
+                    background-color: transparent;
+                    border: none;
+                  }
+                  .el-checkbox__inner::after {
+                    top: 0 !important;
+                    left: 4px !important;
+                  }
+                }
+              }
+              .el-checkbox.is-disabled {
+                display: none;
+              }
+              .el-checkbox.is-checked {
+                .el-checkbox__input {
+                  .el-checkbox__inner {
+                    background-color: transparent;
+                    border: none;
+                  }
+                  .el-checkbox__inner:after {
+                    border-color: #3ebb75;
+                    height: 9px;
+                    width: 4px;
+                    left: 8px;
+                    top: 4px;
+                    transition: none;
+                  }
+                }
+              }
+              .el-checkbox.is-disabled.is-checked {
+                display: inline-block;
+              }
+              .el-tree-node__expand-icon {
+                position: absolute;
+                top: 11px;
+                right: 12px;
+                font-size: 14px;
+                z-index: 1000;
+              }
+              .el-tree-node__expand-icon.is-leaf {
+                display: none;
+              }
+              .custom-tree-node {
+                img {
+                  width: 15px;
+                  height: 15px;
+                  vertical-align: middle;
+                  margin-right: 5px;
+                }
+                .iconfont {
+                  font-size: 15px;
+                  color: #3ebb75;
+                  vertical-align: middle;
+                  margin-right: 5px;
+                }
+                .label {
+                  margin-right: 10px;
+                  font-size: 14px;
+                  vertical-align: middle;
+                }
+              }
+            }
+            .el-tree-node__content::before {
+              content: '';
+              margin: 0 5px 0 20px;
+            }
+            .el-tree-node__content:hover {
+              color: #3ebb75;
+              background-color: #e1f8df;
+            }
+          }
+          .el-tree-node.is-checked {
+            > .el-tree-node__content {
+              background-color: #e1f8df !important;
+              color: #3ebb75;
+              .el-tree-node__expand-icon {
+                display: none;
+              }
+            }
+          }
+          .el-tree-node:focus > .el-tree-node__content {
+            background-color: #fff;
+          }
+        }
+      }
+    }
+    .btn-wp {
+      box-sizing: border-box;
+      padding: 30px 20px;
+      text-align: center;
+      border-top: 1px solid #ebebeb;
+    }
+  }
+  .right-wp {
+    display: inline-block;
+    width: 70%;
+    height: 100%;
+    vertical-align: middle;
+    background-color: #fff;
+    border-radius: 6px;
+    .empty {
+      color: #ccc;
+      font-size: 14px;
+      line-height: 24px;
+      margin-top: 50px;
+      text-align: center;
+    }
+    .el-scrollbar__view {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .carport-wp {
+      padding: 30px;
+      .carport-content {
+        .title {
+          margin-bottom: 30px;
+          i {
+            font-size: 20px;
+            color: #3ebb75;
+            vertical-align: middle;
+          }
+          > span {
+            display: inline-block;
+            font-size: 16px;
+            line-height: 30px;
+            color: #333;
+            font-weight: 700;
+            vertical-align: middle;
+            margin-left: 5px;
+          }
+        }
+        > .el-button {
+          position: absolute;
+          top: 26px;
+          right: 30px;
+          width: 140px;
+        }
+      }
+      .labels {
+        display: flex;
+        justify-content: space-between;
+        margin: 30px 0;
+        .label {
+          width: 48%;
+          height: 120px;
+          background: #e1f8df url('../image/source.png') no-repeat top right;
+          background-size: auto 100%;
+          color: #3ebb75;
+          border-radius: 6px;
+          position: relative;
+          .text-wp {
+            position: absolute;
+            top: 50%;
+            left: 40px;
+            transform: translateY(-50%);
+            .number {
+              font-size: 18px;
+              line-height: 40px;
+            }
+            .name {
+              font-size: 13px;
+              line-height: 23px;
+            }
+          }
+        }
+        .label:nth-child(2) {
+          background: #fff5dc url('../image/type.png') no-repeat top right;
+          background-size: auto 100%;
+          color: #ffcb3c;
+          margin-left: 20px;
+        }
+      }
+      .mark-wp {
+        .title {
+          font-size: 16px;
+          line-height: 30px;
+          font-weight: 700;
+          margin-bottom: 15px;
+        }
+        .el-textarea {
+          textarea {
+            border: none;
+            background-color: #f7f7f7;
+            border-radius: 6px;
+          }
+        }
+      }
+    }
+    .btn-wp {
+      flex: 1;
+      position: relative;
+      min-height: 100px;
+      .btn-group {
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+      }
+    }
+  }
+  .addDialog {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 55%;
+      .el-dialog__body {
+        height: calc(100% - 158px);
+        padding: 0 20px;
+        box-sizing: border-box;
+        .input-wp {
+          margin-top: 30px;
+          display: flex;
+          .input-item {
+            flex: 1;
+            .name {
+              font-size: 15px;
+              color: #666;
+              line-height: 24px;
+              margin-bottom: 10px;
+            }
+            .el-select {
+              width: 100%;
+            }
+          }
+          .input-item:last-child {
+            margin-left: 20px;
+          }
+        }
+        .mark-wp {
+          margin-top: 30px;
+          .title {
+            font-size: 15px;
+            color: #666;
+            line-height: 24px;
+            margin-bottom: 10px;
+          }
+          .el-textarea {
+            textarea {
+              border: none;
+              background-color: #f2f2f2;
+              border-radius: 6px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .editDialog {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 40%;
+      .el-dialog__body {
+        height: calc(100% - 158px);
+        padding: 30px;
+        box-sizing: border-box;
+        .input-wp {
+          width: 100%;
+          margin-top: 0;
+          .input-item {
+            margin: 0;
+            width: 50%;
+            .name {
+              margin-bottom: 15px;
+            }
+          }
+        }
+      }
+      .el-dialog__footer {
+        .el-button + .el-button {
+          margin-left: 50px !important;
+        }
+      }
+    }
+  }
+
+  .logDialog {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 70%;
+      .el-dialog__body {
+        height: calc(100% - 68px);
+        box-sizing: border-box;
+        padding: 0;
+        .log-wp {
+          height: 100%;
+        }
+      }
+    }
+  }
+}

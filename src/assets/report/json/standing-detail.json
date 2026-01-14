@@ -1,0 +1,83 @@
+{
+  "commonet": {
+    "label": "列名称",
+    "prop": "字段名称",
+    "width": "列宽度",
+    "type": "text/number/checkbox(0,1)/button",
+    "action": "抛出的方法名称",
+    "role": "type存在时使用操作加载对应的权限名",
+    "show": "显示/隐藏列",
+    "btns": {
+      "name": "按钮名称",
+      "type": "按钮样式",
+      "size": "按钮大小",
+      "round": "是否圆角",
+      "class": "自定义class",
+      "action": "抛出的方法名称"
+    }
+  },
+  "list": [
+    {
+      "label": "资源类型",
+      "prop": "resources_type_name",
+      "show": true,
+      "color": "#999"
+    },
+    {
+      "label": "资源",
+      "prop": "resources_name",
+      "show": true,
+      "color": "#999"
+    },
+    {
+      "label": "客户",
+      "prop": "oname",
+      "show": true
+    },
+    {
+      "label": "票据号",
+      "prop": "snnum",
+      "show": true
+    },
+    {
+      "label": "票据类型",
+      "prop": "pjlx",
+      "show": true
+    },
+    {
+      "label": "收费日期",
+      "prop": "paytime",
+      "show": true
+    },
+    {
+      "label": "收款人",
+      "prop": "pname",
+      "show": true
+    },
+    {
+      "label": "收款方式",
+      "prop": "payname",
+      "show": true
+    },
+    {
+      "label": "税额",
+      "prop": "tax_rate",
+      "show": true
+    },
+    {
+      "label": "收费备注",
+      "prop": "describe",
+      "show": true
+    },
+    {
+      "label": "总金额",
+      "prop": "money",
+      "show": true
+    },
+    {
+      "label": "优惠金额",
+      "prop": "discount_money",
+      "show": true
+    }
+  ]
+}

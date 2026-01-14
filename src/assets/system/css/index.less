@@ -1,0 +1,241 @@
+#system {
+  height: 100%;
+
+  .top {
+    background-color: #ffffff;
+    height: 130px !important;
+    border-radius: 10px;
+
+    .title {
+      padding: 20px 20px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .main {
+      padding-left: 20px;
+      .common-left {
+        .common-chose-info {
+          padding: 0 20px 0 10px;
+          position: relative;
+          > i.close {
+            display: none;
+            position: absolute;
+            top: 12px;
+            right: 7px;
+            font-size: 15px;
+            color: #c0c4cc;
+            cursor: pointer;
+            margin-right: 0;
+          }
+        }
+        .common-chose-info:hover {
+          > i.close {
+            display: block;
+          }
+        }
+      }
+      .common-right {
+        #workIcon {
+          margin-right: 15px;
+        }
+        .print {
+          #workIcon {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .qrcodeDialog {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 50%;
+      .el-dialog__body {
+        padding: 40px 30px;
+        box-sizing: border-box;
+        height: calc(100% - 160px);
+        text-align: center;
+        #qrcode {
+          display: inline-block;
+          text-align: center;
+          img {
+            width: 200px;
+            height: 200px;
+            background-color: #fff;
+            padding: 6px;
+            box-sizing: border-box;
+          }
+        }
+      }
+      .el-dialog__footer {
+        .el-button + .el-button {
+          margin-left: 60px !important;
+        }
+      }
+    }
+  }
+
+  .body {
+    margin: 0;
+    margin-top: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+
+    .content {
+      height: 100%;
+      > #CusTable {
+        .el-table {
+          th {
+            padding: 10px;
+          }
+        }
+      }
+    }
+  }
+  #addVillage,
+  #editVillage {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 60%;
+      .el-dialog__body {
+        height: calc(100% - 158px);
+        padding: 20px 30px;
+        box-sizing: border-box;
+      }
+      .el-dialog__footer {
+        .el-button + .el-button {
+          margin-left: 50px !important;
+        }
+      }
+    }
+  }
+  #addVillage {
+    .el-dialog {
+      height: 80%;
+      .el-dialog__body {
+        padding: 20px 10px 0 10px;
+        .el-form-item {
+          margin-bottom: 25px !important;
+        }
+      }
+      .el-dialog__footer {
+        .el-button + .el-button {
+          margin-left: 100px !important;
+        }
+      }
+    }
+  }
+  .common-right {
+    .el-button {
+      width: 130px;
+      margin-right: 30px;
+    }
+  }
+  .print .common-right-icon {
+    margin-right: 20px;
+  }
+  #editVillage {
+    .el-dialog {
+      height: 56%;
+    }
+    .el-form-item {
+      margin-bottom: 25px !important;
+    }
+    .file-upload {
+      > .el-form-item {
+        margin-bottom: 0 !important;
+      }
+      .title {
+        font-size: 14px;
+        color: #666;
+        line-height: 20px;
+        margin-bottom: 15px;
+      }
+      .el-upload.el-upload--picture-card {
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        i {
+          font-size: 20px;
+        }
+      }
+      .el-upload-list--picture-card .el-upload-list__item {
+        width: 60px;
+        height: 60px;
+        margin: 0 15px 15px 0;
+      }
+      .el-upload-list--picture-card .el-upload-list__item-actions span + span {
+        margin-left: 15px;
+      }
+    }
+    > .el-image {
+      position: absolute;
+      width: 0;
+      height: 0;
+      .el-icon-circle-close {
+        color: #fff;
+      }
+    }
+  }
+  .importDialog {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 60%;
+      .el-dialog__body {
+        height: calc(100% - 158px);
+        padding: 0;
+        box-sizing: border-box;
+        .el-form {
+          padding: 10px 15px;
+          display: flex;
+          flex-wrap: wrap;
+          .el-form-item {
+            box-sizing: border-box;
+            width: 50%;
+            padding: 10px 15px;
+            margin-bottom: 0 !important;
+            .el-button {
+              width: 100px;
+              margin-left: 20px;
+              height: 32px;
+              padding: 0 0;
+            }
+          }
+          .el-form-item.file {
+            width: 100%;
+            margin-top: 10px;
+            .el-upload-list__item-name {
+              height: 40px;
+              line-height: 40px;
+              padding: 0 15px;
+            }
+            .el-upload-list__item .el-icon-close {
+              font-size: 18px;
+              top: 11px;
+              right: 12px;
+            }
+          }
+        }
+      }
+      .el-dialog__footer {
+        .el-button + .el-button {
+          margin-left: 100px !important;
+        }
+      }
+    }
+  }
+}

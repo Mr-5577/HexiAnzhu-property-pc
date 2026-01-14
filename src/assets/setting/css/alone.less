@@ -1,0 +1,113 @@
+#alone {
+  font-family: 'Source Han Sans CN';
+  width: 100%;
+  height: 100%;
+  .top {
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 10px 10px 0 0;
+    padding: 15px 30px;
+  }
+  .main-wp {
+    overflow: hidden;
+    height: calc(100% - 71px);
+    background-color: #fff;
+    border-radius: 0 0 10px 10px;
+    border-top: 1px solid #EBEBEB;
+    .select-wp {
+      padding: 15px 30px;
+      .el-select {
+        margin-right: 20px;
+      }
+      .el-select.sub {
+        width: 260px;
+      }
+    }
+    .table-wp {
+      height: calc(100% - 70px);
+      position: relative;
+      .el-table th {
+        background-color: #f7f7f7;
+      }
+      > .el-button {
+        position: absolute;
+        left: 30px;
+        bottom: 10px;
+      }
+    }
+  }
+
+  .chargeDialog,
+  .logDialog {
+    > .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 60%;
+      .el-dialog__body {
+        height: calc(100% - 158px);
+        padding: 0 20px;
+        box-sizing: border-box;
+      }
+    }
+  }
+
+  .chargeDialog {
+    .el-dialog {
+      height: 40%;
+      .el-dialog__body {
+        .el-form {
+          .el-form-item {
+            display: inline-block;
+            width: 50%;
+            padding: 15px;
+            box-sizing: border-box;
+            margin-bottom: 5px !important;
+            .el-cascader {
+              width: 100%;
+            }
+          }
+          .el-form-item.priority {
+            display: block;
+            width: 100%;
+            padding: 15px 0;
+            .el-form-item__label {
+              float: none;
+              margin-left: 15px;
+            }
+            .el-form-item__content {
+              .line {
+                position: absolute;
+                margin-left: -5px;
+              }
+              .el-form-item {
+                width: 33.3%;
+                padding: 0 15px;
+                margin-bottom: 20px !important;
+              }
+            }
+          }
+        }
+      }
+      .el-dialog__footer {
+        .el-button + .el-button {
+          margin-left: 70px !important;
+        }
+      }
+    }
+  }
+
+  .logDialog {
+    .el-dialog {
+      height: 68%;
+      .el-dialog__body {
+        height: calc(100% - 68px);
+        padding: 0;
+        .table-wp {
+          height: 100%;
+        }
+      }
+    }
+  }
+}

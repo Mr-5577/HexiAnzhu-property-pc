@@ -1,0 +1,83 @@
+{
+	"commonet": {
+		"label": "列名称",
+		"prop": "字段名称",
+		"width": "列宽度",
+		"type": "text/number/checkbox(0,1)/button",
+		"action": "抛出的方法名称",
+		"role": "type存在时使用操作加载对应的权限名",
+		"show": "显示/隐藏列",
+		"btns": {
+			"name": "按钮名称",
+			"type": "按钮样式",
+			"size": "按钮大小",
+			"round": "是否圆角",
+			"class": "自定义class",
+			"action": "抛出的方法名称"
+		}
+	},
+	"list": [
+		{
+			"label": "客户名称",
+			"prop": "realname",
+			"show": true
+		},
+		{
+			"label": "使用关系",
+			"prop": "type",
+			"show": true,
+			"color": "#69da61"
+		},
+		{
+			"label": "计费",
+			"prop": "charge_type",
+			"type": "checkbox",
+			"action": "chargeChange",
+			"show": true,
+			"token": "empty"
+		},
+		{
+			"label": "迁入日期",
+			"prop": "move_time",
+			"width": 150,
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "联系电话",
+			"prop": "tel",
+			"width": 120,
+			"action": "setVal",
+			"role": "edit",
+			"show": true
+		},
+		{
+			"label": "身份证号码",
+			"prop": "idcard",
+			"width": 180,
+			"action": "setVal",
+			"role": "edit",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "操作",
+			"prop": "",
+			"width": 120,
+			"type": "button",
+			"show": true,
+			"btns": [
+				{
+					"name": "迁出",
+					"token": "Btn-i52KlHM60uKUQ4jwn5ljaNiD",
+					"type": "primary",
+					"size": "small",
+					"round": true,
+					"class": "sys-btn",
+					"action": "emigration",
+					"role": "emigration"
+				}
+			]
+		}
+	]
+}

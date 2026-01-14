@@ -1,0 +1,108 @@
+#paper-receipt {
+  font-family: 'Source Han Sans CN';
+  width: 100%;
+  height: 100%;
+  .top {
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 10px 10px 0 0;
+    padding: 15px 30px;
+
+    .common-input {
+      margin-left: 0;
+    }
+  }
+  .main-wp {
+    border-radius: 0 0 10px 10px;
+    border-top: 1px solid #ebebeb;
+    overflow: hidden;
+    height: calc(100% - 71px);
+    background-color: #fff;
+    .select-wp {
+      padding: 15px 30px;
+      .el-select {
+        width: 15%;
+        min-width: 200px;
+        margin-right: 20px;
+      }
+    }
+    .table-wp {
+      height: calc(100% - 70px);
+      position: relative;
+      .el-table th {
+        background-color: #f7f7f7;
+      }
+      > .el-button {
+        position: absolute;
+        left: 30px;
+        bottom: 15px;
+        width: 150px;
+        box-shadow: 0 5px 5px rgba(62, 187, 117, 0.3);
+      }
+    }
+  }
+
+  .entryDialog,
+  .moveDialog,
+  .grantDialog {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 40%;
+      .el-dialog__body {
+        height: calc(100% - 158px);
+        padding: 0 15px;
+        box-sizing: border-box;
+        .el-form {
+          .el-form-item {
+            display: inline-block;
+            width: 50%;
+            padding: 15px 15px 5px;
+            box-sizing: border-box;
+            margin-bottom: 0 !important;
+            .el-select {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .moveDialog,
+  .grantDialog {
+    .el-dialog {
+      height: 42%;
+    }
+  }
+
+  .recordDialog {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 90%;
+      .el-dialog__body {
+        height: calc(100% - 68px);
+        padding: 0;
+        box-sizing: border-box;
+        .table-wp {
+          height: 100%;
+          > #CusTable {
+            > .el-table {
+              height: 100%;
+              > .el-table__body-wrapper {
+                height: calc(100% - 80px);
+                overflow-y: auto;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

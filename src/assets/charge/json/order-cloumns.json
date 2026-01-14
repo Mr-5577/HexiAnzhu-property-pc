@@ -1,0 +1,193 @@
+{
+	"commonet": {
+		"label": "列名称",
+		"prop": "字段名称",
+		"width": "列宽度",
+		"type": "text/number/checkbox(0,1)/button",
+		"action": "抛出的方法名称",
+		"role": "type存在时使用操作加载对应的权限名",
+		"show": "显示/隐藏列",
+		"btns": {
+			"name": "按钮名称",
+			"type": "按钮样式",
+			"size": "按钮大小",
+			"round": "是否圆角",
+			"class": "自定义class",
+			"action": "抛出的方法名称"
+		}
+	},
+	"list": [
+		{
+			"label": "姓名",
+			"prop": "realname",
+			"show": true,
+			"width": 150
+		},
+		{
+			"label": "房号",
+			"prop": "roomnum",
+			"show": true
+		},
+		{
+			"label": "资源名称",
+			"prop": "resourceName",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "装修状态",
+			"prop": "isdecorate",
+			"show": true,
+			"color": "#999",
+			"width": 100
+		},
+		{
+			"label": "实收金额",
+			"prop": "money",
+			"show": true,
+			"color": "#ffcb3c",
+			"width": 100
+		},
+		{
+			"label": "优惠金额",
+			"prop": "yhmoney",
+			"show": true,
+			"color": "#999",
+			"width": 100
+		},
+		{
+			"label": "应收金额",
+			"prop": "allmoney",
+			"show": true,
+			"color": "#ffcb3c",
+			"width": 100
+		},
+		{
+			"label": "订单状态",
+			"prop": "pstatus_text",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "缴费状态",
+			"prop": "status_text",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "收款方式",
+			"type": "select",
+			"prop": "type",
+			"show": true,
+			"color": "#999",
+			"placeholder": "请选择付款方式",
+			"options": "paymentOptions",
+			"width": 150,
+			"action": "selectChange"
+		},
+		{
+			"label": "收费员",
+			"prop": "sfname",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "缴费内容",
+			"prop": "remark",
+			"show": true,
+			"color": "#999",
+			"width": 200
+		},
+		{
+			"label": "发票收据",
+			"prop": "freceipt",
+			"show": true,
+			"color": "#999",
+			"width": 130
+		},
+		{
+			"label": "订单号",
+			"prop": "sn",
+			"show": true,
+			"width": 210
+		},
+		{
+			"label": "操作",
+			"width": 120,
+			"show": true,
+			"type": "dropdown",
+			"items": [
+				{
+					"id": 1,
+					"name": "查看详情",
+					"hide": "xqhide",
+					"action": "detail",
+					"token": "Btn-qo8Iv6QW1E87pcb4LWAzgib1"
+				},
+				{
+					"id": 2,
+					"name": "返销订单",
+					"hide": "fxhide",
+					"action": "buyBack",
+					"token": "Btn-Ca4BnJLT1Yl51cx9f0icJESk"
+				},
+				{
+					"id": 3,
+					"name": "返销订单",
+					"hide": "fxhide1",
+					"action": "buyBack",
+					"token": "Btn-T5EkZJ9w1SSdGxxZy7ghN8Cb"
+				},
+				{
+					"id": 4,
+					"name": "打印收据",
+					"hide": "dyhide",
+					"action": "print",
+					"token": "Btn-EQZwdMDo96McSceAy2nfIlUc"
+				},
+				{
+					"id": 5,
+					"name": "下载发票",
+					"hide": "xzhide",
+					"action": "download",
+					"token": "Btn-BN3Vc7hMnHMQDNuVe8cXIfEd"
+				},
+				{
+					"id": 6,
+					"name": "补开发票",
+					"hide": "bkhide",
+					"action": "invoiceAgain",
+					"token": "Btn-EsTEALx9O5hObI9sqapyHnfZ"
+				},
+				{
+					"id": 7,
+					"name": "植入发票",
+					"hide": "zrhide",
+					"action": "implantation",
+					"token": "Btn-ETyvJyv8eFcpcVpYlejYQlWg"
+				},
+				{
+					"id": 8,
+					"name": "补开收据",
+					"hide": "rbkhide",
+					"action": "receiptAgain",
+					"token": "Btn-7PnzvkTcDfAFOGNA9AlY0Q6i"
+				},
+				{
+					"id": 9,
+					"name": "换票",
+					"hide": "hphide",
+					"action": "changeTicket",
+					"token": "Btn-gsa1YiWG8gLVgjf5N7FMIhCP"
+				},
+				{
+					"id": 10,
+					"name": "收据二维码",
+					"hide": "qrhide",
+					"action": "showQrcode",
+					"token": "empty"
+				}
+			]
+		}
+	]
+}

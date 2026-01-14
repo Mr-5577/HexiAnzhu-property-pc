@@ -1,0 +1,102 @@
+#statement {
+  font-family: 'Source Han Sans CN';
+  width: 100%;
+  height: 100%;
+  .pre-selection {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 6px;
+  }
+  .main-wp {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 6px;
+    position: relative;
+    .op-wp {
+      position: absolute;
+      right: 0;
+      top: -55px;
+      height: 36px;
+      .export {
+        display: inline-block;
+        height: 36px;
+        vertical-align: middle;
+        margin-right: 15px;
+        cursor: pointer;
+        svg {
+          width: 36px;
+          height: 36px;
+        }
+      }
+      .export.disable {
+        pointer-events: none;
+      }
+      .el-button {
+        vertical-align: middle;
+        width: 130px;
+        height: 36px;
+        padding: 10px 20px;
+      }
+    }
+    .el-tabs {
+      height: 100%;
+      .el-tabs__nav-next,
+      .el-tabs__nav-prev {
+        line-height: 60px;
+      }
+      .el-tabs__item {
+        height: 60px;
+        padding: 10px 20px;
+        font-size: 15px;
+        color: #ccc;
+      }
+      .el-tabs__item.is-active {
+        color: #3ebb75;
+      }
+      .el-tabs__content {
+        height: calc(100% - 75px);
+        .el-tab-pane {
+          height: 100%;
+          .filter-wp {
+            padding: 0 25px;
+            .el-select {
+              width: 12%;
+              margin-right: 20px;
+            }
+            > .el-input {
+              width: 15%;
+            }
+            .el-date-editor {
+              width: 17%;
+              margin-right: 20px;
+              background-color: #f2f2f2;
+              border: none;
+              .el-range__close-icon {
+                line-height: 34px;
+              }
+            }
+          }
+          #CusTable.nopaging {
+            > .el-table {
+              height: calc(100% - 20px) !important;
+              .el-table__body-wrapper {
+                height: calc(100% - 56px) !important;
+                overflow-y: auto;
+              }
+            }
+          }
+          #CusTable.search {
+            > .el-table {
+              height: calc(100% - 95px) !important;
+            }
+          }
+        }
+      }
+      .el-tabs__nav-wrap::after {
+        background-color: #ebebeb;
+      }
+    }
+  }
+}

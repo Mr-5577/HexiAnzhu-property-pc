@@ -1,0 +1,161 @@
+{
+	"commonet": {
+		"label": "列名称",
+		"prop": "字段名称",
+		"width": "列宽度",
+		"type": "text/number/checkbox(0,1)/button",
+		"action": "抛出的方法名称",
+		"role": "type存在时使用操作加载对应的权限名",
+		"show": "显示/隐藏列",
+		"btns": {
+			"name": "按钮名称",
+			"type": "按钮样式",
+			"size": "按钮大小",
+			"round": "是否圆角",
+			"class": "自定义class",
+			"action": "抛出的方法名称"
+		}
+	},
+	"list": [
+		{
+			"label": "小区ID",
+			"prop": "vid",
+			"width": 100,
+			"show": true
+		},
+		{
+			"label": "大区",
+			"prop": "bigareaname",
+			"width": 150,
+			"show": true
+		},
+		{
+			"label": "城市",
+			"prop": "cname",
+			"width": 120,
+			"show": true
+		},
+		{
+			"label": "项目",
+			"prop": "villagename",
+			"width": 150,
+			"show": true
+		},
+		{
+			"label": "税率",
+			"prop": "sl",
+			"width": 100,
+			"type": "number",
+			"action": "setVal",
+			"role": "edit",
+			"show": true
+		},
+		{
+			"label": "开票类型",
+			"prop": "receipt_type_text",
+			"width": 150,
+			"show": true
+		},
+		{
+			"label": "微信缴费",
+			"prop": "is_wechat_pay",
+			"width": 120,
+			"type": "checkbox",
+			"action": "setVal",
+			"role": "edit",
+			"show": true,
+			"token": "empty"
+		},
+		{
+			"label": "支付宝缴费",
+			"prop": "is_alipay",
+			"width": 120,
+			"type": "checkbox",
+			"action": "setVal",
+			"role": "edit",
+			"show": true,
+			"token": "empty"
+		},
+		{
+			"label": "开具发票",
+			"prop": "billstatus",
+			"width": 120,
+			"type": "checkbox",
+			"action": "setVal",
+			"role": "edit",
+			"show": true,
+			"token": "empty"
+		},
+		{
+			"label": "催费单",
+			"prop": "is_print_reminder",
+			"width": 120,
+			"type": "checkbox",
+			"action": "setVal",
+			"role": "edit",
+			"show": true,
+			"token": "empty"
+		},
+		{
+			"label": "催收短信",
+			"prop": "is_send_msg",
+			"width": 120,
+			"type": "checkbox",
+			"action": "setVal",
+			"role": "edit",
+			"show": true,
+			"token": "empty"
+		},
+		{
+			"label": "月租车位按自然月",
+			"prop": "pay_car_by_day",
+			"width": 160,
+			"type": "checkbox",
+			"action": "setVal",
+			"role": "edit",
+			"show": true,
+			"token": "empty"
+		},
+		{
+			"label": "项目经理",
+			"prop": "project_manager_name",
+			"width": 100,
+			"show": true
+		},
+		{
+			"label": "客服经理",
+			"prop": "customer_manager_name",
+			"width": 100,
+			"show": true
+		},
+		{
+			"label": "操作",
+			"prop": "",
+			"width": 200,
+			"type": "button",
+			"show": true,
+			"btns": [
+				{
+					"name": "编辑",
+					"type": "primary",
+					"size": "small",
+					"round": true,
+					"class": "sys-btn",
+					"action": "edit",
+					"role": "edit",
+					"token": "Btn-odDQ2FrfP5ah81LRPVN64jVi"
+				},
+				{
+					"name": "续费二维码",
+					"type": "success",
+					"size": "small",
+					"round": true,
+					"class": "sys-btn",
+					"action": "showQrcode",
+					"role": "showQrcode",
+					"token": "empty"
+				}
+			]
+		}
+	]
+}

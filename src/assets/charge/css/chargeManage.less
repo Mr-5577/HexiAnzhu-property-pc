@@ -1,0 +1,41 @@
+#charge-manage {
+  font-family: 'Source Han Sans CN';
+  width: 100%;
+  height: 100%;
+	.top {
+		background-color: hsl(0, 0%, 100%);
+    border-radius: 10px 10px 0 0;
+    padding: 15px 30px;
+  }
+  .main-wp {
+    border-radius: 0 0 10px 10px;
+    border-top: 1px solid #EBEBEB;
+    overflow: hidden;
+    height: calc(100% - 71px);
+    background-color: #fff;
+    .select-wp {
+      padding: 15px 30px;
+      .el-select {
+        width: 15%;
+        margin-right: 20px;
+      }
+      .el-date-editor {
+        width: 15%;
+        background-color: #f2f2f2;
+        border: none;
+        .el-range__icon,
+        .el-range-separator,
+        .el-input__icon {
+          line-height: 34px;
+        }
+      }
+    }
+    .table-wp {
+      height: calc(100% - 70px);
+      position: relative;
+      .el-table th{
+        background-color: #f7f7f7;
+      }
+    }
+  }
+}

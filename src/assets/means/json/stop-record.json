@@ -1,0 +1,35 @@
+{
+  "list": [
+    {
+      "label": "操作类型",
+      "prop": "type",
+      "show": true,
+      "width": 120
+    },
+    {
+      "label": "剩余天数",
+      "prop": "day_num",
+      "show": true,
+      "color": "#999",
+      "width": 120
+    },
+    {
+      "label": "停用/启用日期",
+      "prop": "time",
+      "show": true
+    },
+    {
+      "label": "操作人",
+      "prop": "creater",
+      "show": true,
+      "color": "#999",
+      "width": 130
+    },
+    {
+      "label": "操作时间",
+      "prop": "create_time",
+      "show": true,
+      "color": "#999"
+    }
+  ]
+}

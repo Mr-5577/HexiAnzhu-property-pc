@@ -1,0 +1,245 @@
+#sms-push {
+  font-family: 'Source Han Sans CN';
+  width: 100%;
+  height: 100%;
+  position: relative;
+  .top {
+    position: absolute;
+    top: -60px;
+    right: 0;
+  }
+  .main-wp {
+    border-radius: 10px;
+    overflow: hidden;
+    height: 100%;
+    background-color: #fff;
+    position: relative;
+    .select-wp {
+      padding: 15px 30px;
+      position: relative;
+      .el-select {
+        margin-right: 20px;
+      }
+      > .el-button {
+        position: absolute;
+        top: 15px;
+        right: 30px;
+      }
+    }
+    .title {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      padding: 25px 30px;
+    }
+    > .addbtn {
+      position: absolute;
+      top: 15px;
+      right: 30px;
+    }
+    .table-wp {
+      height: calc(100% - 60px);
+      position: relative;
+      .el-table th {
+        background-color: #f7f7f7;
+      }
+      > .btn-wp {
+        position: absolute;
+        left: 30px;
+        bottom: 15px;
+        .el-button + .el-button {
+          margin-left: 30px !important;
+        }
+      }
+      > #CusTable {
+        > .pagination {
+          padding: 10px 30px;
+        }
+      }
+    }
+  }
+
+  .addDialog {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 90%;
+      .el-dialog__body {
+        height: calc(100% - 165px);
+        padding: 0 15px;
+        box-sizing: border-box;
+        .dialog-wp {
+          height: 100%;
+          display: flex;
+          flex-wrap: nowrap;
+          border-bottom: 1px solid #ebebeb;
+          .left-wp {
+            width: 40%;
+            box-sizing: border-box;
+            border-right: 1px solid #ebebeb;
+            .left-main {
+              padding: 20px 20px 0 15px;
+
+              .el-select {
+                width: 100%;
+              }
+              p.content {
+                min-height: 200px;
+                padding: 15px;
+                border-radius: 10px;
+                background-color: #f7f7f7;
+                margin-top: 20px;
+                color: #333;
+                line-height: 20px;
+                font-size: 14px;
+                text-align: justify;
+              }
+              .el-textarea {
+                margin-top: 20px;
+                .el-textarea__inner {
+                  border: none;
+                  background-color: #f7f7f7;
+                  border-radius: 10px;
+                }
+              }
+              .selects {
+                margin-top: 15px;
+                li {
+                  display: inline-block;
+                  box-sizing: border-box;
+                  width: 48%;
+                  padding: 10px;
+                  border-radius: 6px;
+                  font-size: 13px;
+                  line-height: 20px;
+                  border: 1px solid #ebebeb;
+                  color: #333;
+                  margin-bottom: 15px;
+                  cursor: pointer;
+                  .select-num {
+                    float: right;
+                  }
+                }
+                li:nth-child(even) {
+                  margin-left: 4%;
+                }
+                li.active {
+                  background-color: #d1f4cf;
+                  color: #3ebb75;
+                  border: none;
+                }
+              }
+              .tip {
+                color: #999;
+                font-size: 13px;
+                padding: 20px 0;
+                .num {
+                  font-size: 15px;
+                  color: #3ebb75;
+                }
+              }
+            }
+          }
+          .right-wp {
+            width: 60%;
+            padding: 20px 15px 20px 20px;
+            box-sizing: border-box;
+            .select-wp {
+              .el-select {
+                width: 22%;
+                min-width: 120px;
+                margin-right: 15px;
+              }
+            }
+            > .table-wp {
+              margin-top: 20px;
+              height: calc(100% - 60px);
+              > #CusTable {
+                .el-table__header {
+                  th {
+                    background-color: #f7f7f7 !important;
+                  }
+                }
+                .el-table {
+                  height: 100%;
+                  .el-table__body-wrapper {
+                    height: calc(100% - 50px);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .el-dialog__footer {
+        padding: 30px;
+      }
+    }
+  }
+
+  .recordDialog {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 85%;
+      .el-dialog__body {
+        height: calc(100% - 68px);
+        padding: 20px 0;
+        box-sizing: border-box;
+        .select-wp {
+          margin-bottom: 20px;
+          padding: 0 30px;
+          position: relative;
+          .el-select {
+            width: 20%;
+            min-width: 180px;
+            margin-right: 20px;
+          }
+          .el-date-editor {
+            width: 25%;
+            min-width: 230px;
+            margin-right: 20px;
+            background-color: #f2f2f2;
+            border: none;
+            .el-range__close-icon {
+              line-height: 34px;
+            }
+          }
+          > .el-input {
+            display: inline-block;
+            width: 20%;
+            min-width: 180px;
+          }
+          .export {
+            position: absolute;
+            top: 0;
+            right: 30px;
+            cursor: pointer;
+          }
+        }
+        > .table-wp {
+          height: calc(100% - 51px);
+          > #CusTable {
+            .el-table {
+              th {
+                background-color: #f7f7f7;
+              }
+            }
+          }
+          .el-button.batch {
+            position: absolute;
+            bottom: 15px;
+            left: 30px;
+          }
+        }
+      }
+    }
+  }
+}

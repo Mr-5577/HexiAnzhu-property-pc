@@ -1,0 +1,177 @@
+{
+	"commonet": {
+		"label": "列名称",
+		"prop": "字段名称",
+		"width": "列宽度",
+		"type": "text/number/checkbox(0,1)/button",
+		"action": "抛出的方法名称",
+		"role": "type存在时使用操作加载对应的权限名",
+		"show": "显示/隐藏列",
+		"btns": {
+			"name": "按钮名称",
+			"type": "按钮样式",
+			"size": "按钮大小",
+			"round": "是否圆角",
+			"class": "自定义class",
+			"action": "抛出的方法名称"
+		}
+	},
+	"list": [
+		{
+			"label": "收款科目",
+			"prop": "subName",
+			"show": true
+		},
+		{
+			"label": "收款金额",
+			"prop": "plan_money",
+			"show": true,
+			"color": "#ffcb3c"
+		},
+		{
+			"label": "收款日期",
+			"prop": "plan_date",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "创建人",
+			"prop": "cname",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "创建时间",
+			"prop": "createtime",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "当前状态",
+			"prop": "status_text",
+			"show": true,
+			"color": "#ffcb3c"
+		},
+		{
+			"label": "项目",
+			"prop": "vname",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "备注说明",
+			"prop": "bz",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "占比",
+			"prop": "proportion",
+			"show": true,
+			"color": "#ffcb3c"
+		},
+		{
+			"label": "审核状态",
+			"prop": "check_text",
+			"show": true,
+			"color": "#69da61"
+		},
+		{
+			"label": "操作",
+			"prop": "",
+			"width": 200,
+			"type": "button",
+			"show": true,
+			"btns": [
+				{
+					"name": "通过",
+					"type": "primary empty",
+					"size": "small",
+					"hide": "passHide",
+					"round": true,
+					"action": "pass",
+					"role": "pass",
+					"token": "Btn-d45vDpV2JZDuFzrCi5DHBgaL"
+				},
+				{
+					"name": "驳回",
+					"type": "danger empty",
+					"size": "small",
+					"hide": "returnHide",
+					"round": true,
+					"action": "reject",
+					"role": "reject",
+					"token": "Btn-d45vDpV2JZDuFzrCi5DHBgaL"
+				},
+				{
+					"name": "收款",
+					"type": "success",
+					"size": "small",
+					"hide": "skhide",
+					"round": true,
+					"action": "gathering",
+					"role": "gathering",
+					"token": "Btn-bupsUoLwvLtR7l3aH1ts75jf"
+				},
+				{
+					"name": "退款",
+					"type": "success",
+					"size": "small",
+					"hide": "tkhide",
+					"round": true,
+					"action": "refund",
+					"role": "refund",
+					"token": "Btn-pZKCTGXGAL6XuqndkLdxCZHb"
+				},
+				{
+					"name": "详情",
+					"type": "primary",
+					"size": "small",
+					"round": true,
+					"action": "detail",
+					"role": "detail",
+					"token": "empty"
+				},
+				{
+					"name": "删除",
+					"type": "danger",
+					"size": "small",
+					"hide": "delHide",
+					"round": true,
+					"action": "delPlan",
+					"role": "delPlan",
+					"token": "Btn-USqKPQOpLKR6fLw0zKjMUmha"
+				},
+				{
+					"name": "终止",
+					"type": "danger",
+					"size": "small",
+					"hide": "zzHide",
+					"round": true,
+					"action": "cancelPlan",
+					"role": "cancelPlan",
+					"token": "Btn-UOjGrOY2G5N0kcaG32P62L5c"
+				},
+				{
+					"name": "分摊详情",
+					"type": "primary",
+					"size": "small",
+					"hide": "ftHide",
+					"round": true,
+					"action": "shareDetails",
+					"role": "shareDetails",
+					"token": "empty"
+				},
+				{
+					"name": "标记收款",
+					"type": "warning",
+					"size": "small",
+					"round": true,
+					"action": "signGather",
+					"role": "signGather",
+					"token": "Btn-mvVbPeuVL96GCDqpFNqMyiMv"
+				}
+			]
+		}
+	]
+}

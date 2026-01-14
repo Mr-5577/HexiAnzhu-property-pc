@@ -1,0 +1,73 @@
+{
+	"commonet": {
+		"label": "列名称",
+		"prop": "字段名称",
+		"width": "列宽度",
+		"type": "text/number/checkbox(0,1)/button",
+		"action": "抛出的方法名称",
+		"role": "type存在时使用操作加载对应的权限名",
+		"show": "显示/隐藏列",
+		"btns": {
+			"name": "按钮名称",
+			"type": "按钮样式",
+			"size": "按钮大小",
+			"round": "是否圆角",
+			"class": "自定义class",
+			"action": "抛出的方法名称"
+		}
+	},
+	"list": [
+		{
+			"label": "资源名称",
+			"prop": "resources_name",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "业主姓名",
+			"prop": "oname",
+			"show": true
+		},
+		{
+			"label": "欠费科目",
+			"prop": "subject_name",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "欠费周期",
+			"prop": "time",
+			"show": true
+		},
+		{
+			"label": "详情",
+			"prop": "use_info",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "欠费金额",
+			"prop": "all_money",
+			"show": true,
+			"color": "#ffcb3c"
+		},
+		{
+			"label": "操作",
+			"prop": "",
+			"width": 120,
+			"type": "button",
+			"show": true,
+			"btns": [
+				{
+					"name": "打印票据",
+					"type": "primary",
+					"size": "small",
+					"round": true,
+					"action": "print",
+					"role": "print",
+					"token": "Btn-8T8pvt8682KusCWzwDjwGKke"
+				}
+			]
+		}
+	]
+}

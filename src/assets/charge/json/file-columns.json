@@ -1,0 +1,100 @@
+{
+  "commonet": {
+    "label": "列名称",
+    "prop": "字段名称",
+    "width": "列宽度",
+    "type": "text/number/checkbox(0,1)/button",
+    "action": "抛出的方法名称",
+    "role": "type存在时使用操作加载对应的权限名",
+    "show": "显示/隐藏列",
+    "btns": {
+      "name": "按钮名称",
+      "type": "按钮样式",
+      "size": "按钮大小",
+      "round": "是否圆角",
+      "class": "自定义class",
+      "action": "抛出的方法名称"
+    }
+  },
+  "list": [
+    {
+      "label": "序号",
+      "prop": "index",
+      "show": true,
+      "width": 80
+    },
+    {
+      "label": "资源名称",
+      "prop": "resources_name",
+      "show": true
+    },
+    {
+      "label": "资源类型",
+      "prop": "resources_type_name",
+      "show": true,
+      "color": "#999"
+    },
+    {
+      "label": "客户名称",
+      "prop": "realname",
+      "show": true
+    },
+    {
+      "label": "客户电话",
+      "prop": "tel",
+      "show": true
+    },
+    {
+      "label": "操作类型",
+      "prop": "type_text",
+      "show": true,
+      "color": "#999"
+    },
+    {
+      "label": "操作人",
+      "prop": "creater_name",
+      "show": true
+    },
+    {
+      "label": "操作时间",
+      "prop": "create_time",
+      "show": true,
+      "color": "#999",
+      "width": 150
+    },
+    {
+      "label": "备注",
+      "prop": "remarks",
+      "show": true,
+      "color": "#999",
+      "width": 200
+    },
+    {
+      "label": "操作",
+      "prop": "",
+      "type": "button",
+      "show": true,
+      "width": 200,
+      "btns": [
+        {
+          "name": "附件预览",
+          "type": "primary",
+          "size": "small",
+          "round": true,
+          "action": "preview",
+          "role": "preview",
+          "token": "empty"
+        },
+        {
+          "name": "详情",
+          "type": "warning",
+          "size": "small",
+          "round": true,
+          "action": "detail",
+          "role": "detail",
+          "token": "empty"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,580 @@
+#client-manage {
+  font-family: 'Source Han Sans CN';
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  .left-wp {
+    width: 28%;
+    height: 100%;
+    vertical-align: middle;
+    background-color: #fff;
+    border-radius: 6px;
+    .title-wp {
+      height: 60px;
+      border-bottom: 1px solid #ebebeb;
+      h3 {
+        font-size: 16px;
+        line-height: 60px;
+        color: #333;
+        font-weight: 700;
+        padding-left: 30px;
+      }
+    }
+    .tree-wp {
+      height: calc(100% - 101px);
+      box-sizing: border-box;
+      .search-wrap {
+        padding: 20px;
+        box-sizing: border-box;
+        border-bottom: 1px solid #ebebeb;
+        .search {
+          width: 100%;
+        }
+      }
+      .tree-wrap {
+        height: calc(100% - 125px);
+        padding: 20px 0;
+        box-sizing: border-box;
+        .el-tree {
+          background-color: transparent;
+          .el-tree-node {
+            .el-tree-node__content {
+              position: relative;
+              height: 46px;
+              .el-tree-node__loading-icon.el-icon-loading {
+                display: none;
+              }
+              .el-checkbox {
+                position: absolute;
+                top: 12px;
+                right: 16px;
+                margin-right: 0;
+                .el-checkbox__input {
+                  .el-checkbox__inner {
+                    background-color: transparent;
+                    border: none;
+                  }
+                  .el-checkbox__inner::after {
+                    top: 0 !important;
+                    left: 4px !important;
+                  }
+                }
+              }
+              .el-checkbox.is-disabled {
+                display: none;
+              }
+              .el-checkbox.is-checked {
+                .el-checkbox__input {
+                  .el-checkbox__inner {
+                    background-color: transparent;
+                    border: none;
+                  }
+                  .el-checkbox__inner:after {
+                    border-color: #3ebb75;
+                    height: 9px;
+                    width: 4px;
+                    left: 8px;
+                    top: 4px;
+                    transition: none;
+                  }
+                }
+              }
+              .el-checkbox.is-disabled.is-checked {
+                display: inline-block;
+              }
+              .el-tree-node__expand-icon {
+                position: absolute;
+                top: 11px;
+                right: 12px;
+                font-size: 14px;
+                z-index: 1000;
+              }
+              .el-tree-node__expand-icon.is-leaf {
+                display: none;
+              }
+              .custom-tree-node {
+                img {
+                  width: 15px;
+                  height: 15px;
+                  vertical-align: middle;
+                  margin-right: 5px;
+                }
+                .iconfont {
+                  font-size: 15px;
+                  color: #3ebb75;
+                  vertical-align: middle;
+                  margin-right: 5px;
+                }
+                .label {
+                  margin-right: 10px;
+                  font-size: 14px;
+                  vertical-align: middle;
+                }
+              }
+            }
+            .el-tree-node__content::before {
+              content: '';
+              margin: 0 5px 0 20px;
+            }
+            .el-tree-node__content:hover {
+              color: #3ebb75;
+              background-color: #e1f8df;
+            }
+          }
+          .el-tree-node.is-checked {
+            > .el-tree-node__content {
+              background-color: #e1f8df !important;
+              color: #3ebb75;
+              .el-tree-node__expand-icon {
+                display: none;
+              }
+            }
+          }
+          .el-tree-node:focus > .el-tree-node__content {
+            background-color: #fff;
+          }
+        }
+      }
+    }
+    .btn-wp {
+      box-sizing: border-box;
+      padding: 30px 20px;
+      text-align: center;
+      border-top: 1px solid #ebebeb;
+    }
+  }
+  .right-wp {
+    display: inline-block;
+    width: 70%;
+    height: 100%;
+    vertical-align: middle;
+    background-color: #f2f2f2;
+    border-radius: 6px;
+    > .empty {
+      color: #ccc;
+      font-size: 14px;
+      line-height: 24px;
+      margin-top: 50px;
+      text-align: center;
+    }
+    .el-scrollbar {
+      .el-scrollbar__view {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        .user-info {
+          min-width: 850px;
+          box-sizing: border-box;
+          background-color: #fff;
+          border-radius: 6px;
+          margin-bottom: 20px;
+          padding: 20px 30px 30px;
+          .title {
+            margin-bottom: 20px;
+            line-height: 30px;
+            img {
+              width: 20px;
+              height: 20px;
+              margin-right: 10px;
+              vertical-align: middle;
+            }
+            span {
+              color: #333;
+              font-weight: 700;
+              font-size: 16px;
+              vertical-align: middle;
+            }
+          }
+          > .el-button {
+            position: absolute;
+            top: 16px;
+            right: 30px;
+            width: 140px;
+          }
+          .info-wp {
+            display: flex;
+            .info-left {
+              flex: 1;
+              background-color: #f7f7f7;
+              border-radius: 6px;
+              margin-right: 20px;
+              padding: 15px;
+              white-space: nowrap;
+              overflow: hidden;
+              position: relative;
+              .el-avatar {
+                margin-right: 10px;
+                vertical-align: middle;
+              }
+              .infos {
+                display: inline-block;
+                vertical-align: middle;
+                .info-item {
+                  margin-bottom: 5px;
+                  .u_name {
+                    font-size: 15px;
+                    font-weight: 700;
+                    line-height: 20px;
+                    color: #333;
+                    margin-right: 22px;
+                  }
+                  .sex {
+                    font-size: 14px;
+                    line-height: 20px;
+                    color: #333;
+                  }
+                  .name {
+                    font-size: 14px;
+                    line-height: 20px;
+                    color: #999;
+                    margin-right: 10px;
+                  }
+                  .value {
+                    font-size: 14px;
+                    line-height: 20px;
+                    color: #333;
+                  }
+                }
+                .info-item:last-child {
+                  margin-bottom: 0;
+                }
+              }
+              > .el-button {
+                width: 80px;
+                padding: 7px;
+                position: absolute;
+                right: 20px;
+                top: 12px;
+              }
+            }
+            .info-right {
+              padding: 15px 20px;
+              flex: 1;
+              background-color: #e1f8df;
+              border-radius: 6px;
+              display: flex;
+              .total-wp {
+                flex: 2;
+                margin-right: 20px;
+                position: relative;
+                .total {
+                  position: absolute;
+                  top: 50%;
+                  left: 10px;
+                  transform: translateY(-50%);
+                  .num {
+                    font-size: 24px;
+                    font-weight: 700;
+                    line-height: 40px;
+                    color: #3ebb75;
+                  }
+                  .info {
+                    font-size: 14px;
+                    color: #3ebb75;
+                    line-height: 20px;
+                  }
+                }
+              }
+              .rooms-wp {
+                flex: 3;
+                height: 80px;
+                .el-scrollbar {
+                  .el-scrollbar__wrap {
+                    .el-scrollbar__view {
+                      ul {
+                        li {
+                          color: #3ebb75;
+                          font-size: 14px;
+                          line-height: 20px;
+                          margin-bottom: 5px;
+                        }
+                        li:last-child {
+                          margin-bottom: 0;
+                        }
+                        li:before {
+                          content: '';
+                          display: inline-block;
+                          width: 5px;
+                          height: 5px;
+                          border-radius: 50%;
+                          background-color: #3ebb75;
+                          vertical-align: middle;
+                          margin-right: 5px;
+                        }
+                      }
+                      ul.noscroll {
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        transform: translateY(-50%);
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .info-content {
+            margin-top: 20px;
+            background-color: #f7f7f7;
+            border-radius: 6px;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            .info-itm {
+              margin: 0 20px;
+              padding: 10px;
+              cursor: pointer;
+              white-space: nowrap;
+              position: relative;
+              .icon-wp {
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 10px;
+                i {
+                  font-size: 24px;
+                  color: #ccc;
+                }
+              }
+              .msg-wp {
+                display: inline-block;
+                vertical-align: middle;
+                .num {
+                  font-size: 18px;
+                  font-weight: 700;
+                  color: #333;
+                  line-height: 26px;
+                }
+                .msg {
+                  color: #999;
+                  font-size: 14px;
+                  line-height: 20px;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                }
+              }
+              ul {
+                position: absolute;
+                top: 66px;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 100;
+                padding: 10px;
+                list-style: none;
+                background-color: #e1f8df;
+                border-radius: 6px;
+                min-width: 100%;
+                li {
+                  margin-bottom: 6px;
+                  color: #3ebb75;
+                  font-size: 14px;
+                }
+                li:last-child {
+                  margin-bottom: 0;
+                }
+                li:before {
+                  content: '';
+                  display: inline-block;
+                  width: 6px;
+                  height: 6px;
+                  background-color: #3ebb75;
+                  border-radius: 50%;
+                  vertical-align: middle;
+                  margin-right: 2px;
+                }
+              }
+            }
+            .info-itm.active {
+              .icon-wp {
+                i {
+                  color: #3ebb75;
+                }
+              }
+              .msg-wp {
+                .num {
+                  color: #3ebb75;
+                }
+                .msg {
+                  color: #3ebb75;
+                }
+              }
+            }
+          }
+        }
+        .table-wp {
+          min-width: 850px;
+          box-sizing: border-box;
+          flex: 1;
+          width: 100%;
+          background-color: #fff;
+          border-radius: 6px;
+          overflow: hidden;
+          .title {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 20px;
+            padding: 20px 30px;
+          }
+          .el-table th {
+            background-color: #f7f7f7;
+            padding: 15px 0;
+          }
+        }
+      }
+    }
+  }
+  .right-wp.emp {
+    background-color: #fff;
+  }
+
+  .el-dialog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 0 !important;
+    height: 70%;
+    .el-dialog__body {
+      height: calc(100% - 158px);
+      padding: 0 20px;
+      box-sizing: border-box;
+      .el-scrollbar {
+        .el-form {
+          display: flex;
+          flex-wrap: wrap;
+          padding: 15px 0;
+          .el-form-item {
+            width: 33.3%;
+            padding: 0 15px;
+            box-sizing: border-box;
+            margin-bottom: 30px !important;
+          }
+          .el-form-item.remark {
+            width: 100%;
+            margin-bottom: 10px !important;
+            textarea {
+              background-color: #f2f2f2;
+              border: none;
+            }
+          }
+          .line {
+            height: 1px;
+            width: 100%;
+            background-color: #f7f7f7;
+            margin: 10px 15px 15px;
+          }
+        }
+
+        .user-search {
+          padding: 0 15px 15px;
+          .el-input {
+            width: 300px;
+          }
+          > ul {
+            list-style: none;
+            overflow: hidden;
+            li {
+              border-radius: 6px;
+              background-color: #f7f7f7;
+              display: flex;
+              justify-content: space-between;
+              flex-wrap: nowrap;
+              margin-top: 20px;
+              padding: 10px;
+              cursor: pointer;
+              > span {
+                padding: 10px;
+                color: #333;
+                font-size: 14px;
+              }
+            }
+            li.active {
+              background-color: #e1f8df;
+              > span {
+                color: #3ebb75;
+              }
+            }
+            .loadmore {
+              font-size: 14px;
+              line-height: 20px;
+              padding: 20px;
+              text-align: center;
+              color: #3ebb75;
+              > span {
+                cursor: pointer;
+              }
+            }
+            .nomore {
+              font-size: 14px;
+              line-height: 20px;
+              padding: 20px;
+              text-align: center;
+              color: #ccc;
+            }
+            .status {
+              font-size: 14px;
+              line-height: 20px;
+              padding: 20px;
+              text-align: center;
+              color: #ccc;
+            }
+            .empty {
+              margin-top: 30px;
+              font-size: 14px;
+              line-height: 20px;
+              padding: 20px;
+              text-align: center;
+              color: #ccc;
+            }
+          }
+        }
+      }
+    }
+  }
+  .editDialog {
+    .el-dialog {
+      height: 50%;
+      .el-dialog__body {
+        .el-form {
+          display: flex;
+          flex-wrap: wrap;
+          padding: 15px;
+          .el-form-item {
+            width: 50%;
+            padding: 0 2%;
+            box-sizing: border-box;
+            margin-bottom: 30px !important;
+          }
+          .el-form-item.remark {
+            width: 100%;
+            margin-bottom: 10px !important;
+            textarea {
+              background-color: #f2f2f2;
+              border: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  .logDialog {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 70%;
+      .el-dialog__body {
+        height: calc(100% - 68px);
+        box-sizing: border-box;
+        padding: 0;
+        .log-wp {
+          height: 100%;
+        }
+      }
+    }
+  }
+}

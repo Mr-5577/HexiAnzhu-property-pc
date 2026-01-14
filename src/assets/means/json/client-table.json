@@ -1,0 +1,90 @@
+{
+	"commonet": {
+		"label": "列名称",
+		"prop": "字段名称",
+		"width": "列宽度",
+		"type": "text/number/checkbox(0,1)/button",
+		"action": "抛出的方法名称",
+		"role": "type存在时使用操作加载对应的权限名",
+		"show": "显示/隐藏列",
+		"btns": {
+			"name": "按钮名称",
+			"type": "按钮样式",
+			"size": "按钮大小",
+			"round": "是否圆角",
+			"class": "自定义class",
+			"action": "抛出的方法名称"
+		}
+	},
+	"list": [
+		{
+			"label": "序号",
+			"width": "80",
+			"prop": "index",
+			"show": true
+		},
+		{
+			"label": "小区名称",
+			"prop": "villageName",
+			"show": true
+		},
+		{
+			"label": "客户姓名",
+			"prop": "owner",
+			"show": true
+		},
+		{
+			"label": "身份证号码",
+			"prop": "idcard",
+			"width": "170",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "联系电话 ",
+			"prop": "tel",
+			"width": "120",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "拥有房屋",
+			"prop": "rooms",
+			"show": true,
+			"width": 120
+		},
+		{
+			"label": "使用关系",
+			"prop": "type",
+			"show": true,
+			"color": "#69da61",
+			"width": 120
+		},
+		{
+			"label": "拥有车位",
+			"prop": "carports",
+			"show": true,
+			"width": 150
+		},
+		{
+			"label": "月租车位",
+			"prop": "monthCar",
+			"show": true,
+			"width": 120
+		},
+		{
+			"label": "月租车位数",
+			"prop": "monthNum",
+			"show": true,
+			"color": "#69da61",
+			"width": 120
+		},
+		{
+			"label": "备注",
+			"prop": "remark",
+			"show": true,
+			"color": "#999",
+			"width": 180
+		}
+	]
+}

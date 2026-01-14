@@ -1,0 +1,117 @@
+{
+	"commonet": {
+		"label": "列名称",
+		"prop": "字段名称",
+		"width": "列宽度",
+		"type": "text/number/checkbox(0,1)/button",
+		"action": "抛出的方法名称",
+		"role": "type存在时使用操作加载对应的权限名",
+		"show": "显示/隐藏列",
+		"btns": {
+			"name": "按钮名称",
+			"type": "按钮样式",
+			"size": "按钮大小",
+			"round": "是否圆角",
+			"class": "自定义class",
+			"action": "抛出的方法名称"
+		}
+	},
+	"list": [
+		{
+			"label": "序号",
+			"width": "80",
+			"prop": "index",
+			"show": true
+		},
+		{
+			"label": "小区名称",
+			"prop": "villageName",
+			"width": "130",
+			"show": true
+		},
+		{
+			"label": "资源类别",
+			"prop": "resourceType",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "房号",
+			"prop": "roomNum",
+			"show": true,
+			"color": "#69da61"
+		},
+		{
+			"label": "装修开始时间",
+			"prop": "fitment",
+			"show": true,
+			"width": 160
+		},
+		{
+			"label": "装修结束时间",
+			"prop": "endtime",
+			"show": true,
+			"width": 160
+		},
+		{
+			"label": "建筑面积",
+			"prop": "buildArea",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "使用面积",
+			"prop": "useArea",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "楼栋名称",
+			"prop": "buildName",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "业主姓名",
+			"prop": "owner",
+			"show": true,
+			"width": 120
+		},
+		{
+			"label": "联系电话",
+			"prop": "ownerTel",
+			"show": true,
+			"width": 120
+		},
+		{
+			"label": "入场时间",
+			"prop": "approach_time",
+			"show": true,
+			"width": 160,
+			"color": "#999"
+		},
+		{
+			"label": "装修状态",
+			"prop": "fitmentStatus",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "交房状态",
+			"prop": "deliveryStatus",
+			"show": true
+		},
+		{
+			"label": "入住状态",
+			"prop": "houseStatus",
+			"show": true
+		},
+		{
+			"label": "备注",
+			"prop": "remark",
+			"show": true,
+			"color": "#999",
+			"width": 180
+		}
+	]
+}

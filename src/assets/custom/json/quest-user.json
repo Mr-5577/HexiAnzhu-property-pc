@@ -1,0 +1,68 @@
+{
+  "commonet": {
+    "label": "列名称",
+    "prop": "字段名称",
+    "width": "列宽度",
+    "type": "text/number/checkbox(0,1)/button",
+    "action": "抛出的方法名称",
+    "role": "type存在时使用操作加载对应的权限名",
+    "show": "显示/隐藏列",
+    "btns": {
+      "name": "按钮名称",
+      "type": "按钮样式",
+      "size": "按钮大小",
+      "round": "是否圆角",
+      "class": "自定义class",
+      "action": "抛出的方法名称"
+    }
+  },
+  "list": [
+    {
+      "label": "序号",
+      "prop": "index",
+      "show": true
+    },
+    {
+      "label": "项目",
+      "prop": "vname",
+      "show": true,
+      "color": "#999"
+    },
+    {
+      "label": "姓名",
+      "prop": "userName",
+      "show": true,
+      "color": "#999"
+    },
+    {
+      "label": "房号",
+      "prop": "roomNum",
+      "show": true,
+      "color": "#999"
+    },
+    {
+      "label": "电话",
+      "prop": "userTel",
+      "show": true,
+      "color": "#999"
+    },
+    {
+      "label": "操作",
+      "prop": "",
+      "width": 100,
+      "type": "button",
+      "show": true,
+      "btns": [
+        {
+          "name": "详情",
+          "type": "primary",
+          "size": "small",
+          "round": true,
+          "action": "examine",
+          "role": "examine",
+          "token": "empty"
+        }
+      ]
+    }
+  ]
+}

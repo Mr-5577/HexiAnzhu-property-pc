@@ -1,0 +1,66 @@
+{
+	"commonet": {
+		"label": "列名称",
+		"prop": "字段名称",
+		"width": "列宽度",
+		"type": "text/number/checkbox(0,1)/button",
+		"action": "抛出的方法名称",
+		"role": "type存在时使用操作加载对应的权限名",
+		"show": "显示/隐藏列",
+		"btns": {
+			"name": "按钮名称",
+			"type": "按钮样式",
+			"size": "按钮大小",
+			"round": "是否圆角",
+			"class": "自定义class",
+			"action": "抛出的方法名称"
+		}
+	},
+	"list": [
+		{
+			"label": "楼栋",
+			"prop": "block",
+			"show": true
+		},
+		{
+			"label": "单元",
+			"prop": "unit",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "房号",
+			"prop": "roomnum",
+			"show": true
+		},
+		{
+			"label": "建筑面积",
+			"prop": "buildareas",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "客户姓名",
+			"prop": "realname",
+			"show": true
+		},
+		{
+			"label": "首次交房",
+			"prop": "turned",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "物业费率",
+			"prop": "price",
+			"show": true,
+			"color": "#69da61"
+		},
+		{
+			"label": "更新截止",
+			"prop": "update_at",
+			"show": true,
+			"color": "#999"
+		}
+	]
+}

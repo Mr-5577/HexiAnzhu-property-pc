@@ -1,0 +1,105 @@
+{
+  "commonet": {
+    "label": "列名称",
+    "prop": "字段名称",
+    "width": "列宽度",
+    "type": "text/number/checkbox(0,1)/button",
+    "action": "抛出的方法名称",
+    "role": "type存在时使用操作加载对应的权限名",
+    "show": "显示/隐藏列",
+    "btns": {
+      "name": "按钮名称",
+      "type": "按钮样式",
+      "size": "按钮大小",
+      "round": "是否圆角",
+      "class": "自定义class",
+      "action": "抛出的方法名称"
+    }
+  },
+  "list": [
+    {
+      "label": "领用项目",
+      "prop": "vname",
+      "show": true,
+      "color": "#999"
+    },
+    {
+      "label": "首张单号",
+      "prop": "first",
+      "show": true,
+      "width": 140
+    },
+    {
+      "label": "末张单号",
+      "prop": "last",
+      "show": true,
+      "width": 140
+    },
+    {
+      "label": "实时单号",
+      "prop": "now_one",
+      "show": true,
+      "width": 140
+    },
+    {
+      "label": "数量",
+      "prop": "num",
+      "show": true,
+      "color": "#999"
+    },
+    {
+      "label": "剩余",
+      "prop": "surplus",
+      "show": true,
+      "color": "#999"
+    },
+    {
+      "label": "状态",
+      "prop": "status_text",
+      "show": true,
+      "color": "#999"
+    },
+    {
+      "label": "领用人",
+      "prop": "uname",
+      "show": true,
+      "color": "#999"
+    },
+    {
+      "label": "领用时间",
+      "prop": "create_time",
+      "show": true,
+      "color": "#999",
+      "width": 150
+    },
+    {
+      "label": "操作",
+      "prop": "",
+      "width": 180,
+      "type": "button",
+      "show": true,
+      "btns": [
+        {
+          "name": "移交",
+          "type": "primary",
+          "size": "small",
+          "round": true,
+          "action": "move",
+          "role": "move",
+          "token": "Btn-mfbA52BkHDn8sMzyIKuFdLlU",
+          "hide": "yjhide"
+        },
+        {
+          "name": "拆分",
+          "type": "primary empty",
+          "size": "small",
+          "round": true,
+          "action": "resolution",
+          "role": "resolution",
+          "token": "Btn-Q2HFfIUGqcNbjoRVTWkyiAta",
+          "hide": "cfhide"
+        }
+      ]
+    }
+  ]
+}

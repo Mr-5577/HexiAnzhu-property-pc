@@ -1,0 +1,81 @@
+{
+  "commonet": {
+    "label": "列名称",
+    "prop": "字段名称",
+    "width": "列宽度",
+    "type": "text/number/checkbox(0,1)/button",
+    "action": "抛出的方法名称",
+    "role": "type存在时使用操作加载对应的权限名",
+    "show": "显示/隐藏列",
+    "btns": {
+      "name": "按钮名称",
+      "type": "按钮样式",
+      "size": "按钮大小",
+      "round": "是否圆角",
+      "class": "自定义class",
+      "action": "抛出的方法名称"
+    }
+  },
+  "list": [
+    {
+      "label": "项目名称",
+      "prop": "vname",
+      "show": true,
+      "color": "#999"
+    },
+    {
+      "label": "车场名称",
+      "prop": "cname",
+      "show": true,
+      "color": "#999"
+    },
+    {
+      "label": "交费入口",
+      "prop": "gname",
+      "show": true
+    },
+    {
+      "label": "交费金额",
+      "prop": "money",
+      "show": true,
+      "color": "#69da61"
+    },
+    {
+      "label": "订单号",
+      "prop": "order_no",
+      "show": true
+    },
+    {
+      "label": "微信订单号",
+      "prop": "wechat_order_no",
+      "show": true,
+      "color": "#999"
+    },
+    {
+      "label": "客户openid",
+      "prop": "openid",
+      "width": 180,
+      "show": true,
+      "color": "#999"
+    },
+    {
+      "label": "交费时间",
+      "prop": "pay_time",
+      "show": true,
+      "color": "#999"
+    },
+    {
+      "label": "订单状态",
+      "prop": "status_text",
+      "show": true,
+      "cstcolor": "statusColor"
+    },
+    {
+      "type": "img",
+      "width": 140,
+      "label": "入场抓拍照片",
+      "prop": "photograph",
+      "show": true
+    }
+  ]
+}

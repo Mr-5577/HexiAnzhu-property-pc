@@ -1,0 +1,393 @@
+#contract-detail {
+  .detailDialog {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 90%;
+      .el-dialog__body {
+        height: calc(100% - 68px);
+        padding: 0;
+        box-sizing: border-box;
+        .el-scrollbar__view {
+          padding: 30px;
+        }
+        .basic-info {
+          margin-bottom: 50px;
+          > h3 {
+            font-size: 18px;
+            line-height: 30px;
+            color: #333;
+            margin-bottom: 20px;
+            > span {
+              display: inline-block;
+              font-size: 14px;
+              line-height: 16px;
+              padding: 5px 10px;
+              border-radius: 3px;
+              background-color: #fff6dc;
+              color: #ffcb3c;
+              margin-left: 25px;
+              font-weight: 400;
+            }
+          }
+          .content {
+            background-color: #f7f7f7;
+            padding: 15px;
+            border-radius: 5px;
+            .flex-cnt {
+              display: flex;
+              justify-content: space-between;
+              .flex-item {
+                padding: 15px;
+                max-width: 300px;
+                .item {
+                  margin-bottom: 20px;
+                  display: flex;
+                  .name {
+                    font-size: 14px;
+                    line-height: 20px;
+                    color: #999;
+                    margin-right: 15px;
+                  }
+                  .value {
+                    flex: 1;
+                    font-size: 14px;
+                    line-height: 20px;
+                    color: #333;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                  }
+                }
+                .item:last-child {
+                  margin-bottom: 0;
+                }
+              }
+            }
+            .explain {
+              padding: 5px 15px 15px;
+              display: flex;
+              .name {
+                font-size: 14px;
+                line-height: 20px;
+                color: #999;
+                margin-right: 15px;
+              }
+              .value {
+                flex: 1;
+                font-size: 14px;
+                line-height: 24px;
+                color: #333;
+                text-align: justify;
+              }
+            }
+          }
+        }
+        .supplier-info,
+        .signed-files {
+          margin-bottom: 50px;
+          > h3 {
+            font-size: 18px;
+            line-height: 30px;
+            color: #333;
+            margin-bottom: 20px;
+          }
+          .content {
+            background-color: #f7f7f7;
+            padding: 15px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            .tip {
+              font-size: 14px;
+              color: #ccc;
+              text-align: center;
+              padding: 15px;
+              width: 100%;
+            }
+            .info-item {
+              padding: 15px;
+              .name {
+                font-size: 15px;
+                line-height: 22px;
+                color: #333;
+                text-align: center;
+                margin-bottom: 20px;
+              }
+              .value {
+                font-size: 14px;
+                height: 40px;
+                line-height: 40px;
+                color: #333;
+                text-align: center;
+              }
+              .value.gray {
+                color: #999;
+              }
+              a {
+                display: block;
+                height: 40px;
+                line-height: 40px;
+              }
+            }
+          }
+        }
+        .check-files {
+          margin-bottom: 50px;
+          > h3 {
+            font-size: 18px;
+            line-height: 30px;
+            color: #333;
+            margin-bottom: 20px;
+          }
+          .content {
+            background-color: #f7f7f7;
+            padding: 15px;
+            border-radius: 5px;
+            .tip {
+              padding: 15px;
+              text-align: center;
+              color: #ccc;
+              font-size: 14px;
+            }
+            .file-item {
+              display: inline-block;
+              margin: 0 15px;
+              width: 70px;
+              vertical-align: middle;
+              cursor: pointer;
+              .img {
+                width: 70px;
+                height: 70px;
+                border-radius: 4px;
+                background-color: #24b5ff;
+                font-size: 24px;
+                line-height: 70px;
+                text-align: center;
+                color: #fff;
+              }
+              .name {
+                font-size: 12px;
+                line-height: 20px;
+                color: #999;
+                margin-top: 10px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+              }
+            }
+          }
+        }
+        .signed-files {
+          > h3 {
+            > span {
+              font-size: 12px;
+              line-height: 20px;
+              color: #3ebb75;
+              margin-left: 15px;
+              font-weight: 400;
+            }
+          }
+        }
+        .payment-plan {
+          position: relative;
+          .refresh {
+            position: absolute;
+            top: -4px;
+            right: 0;
+          }
+          > h3 {
+            font-size: 18px;
+            line-height: 30px;
+            color: #333;
+            margin-bottom: 20px;
+          }
+          > .table-wp {
+            background-color: #f7f7f7;
+            border-radius: 5px;
+            overflow: hidden;
+            > #CusTable {
+              height: auto !important;
+              .el-table {
+                height: auto !important;
+                th,
+                td {
+                  background-color: #f7f7f7;
+                  border-color: #f7f7f7;
+                }
+                th {
+                  padding: 20px 0;
+                }
+              }
+              .el-table::before {
+                background-color: #f7f7f7;
+              }
+              .el-table__body-wrapper {
+                height: auto !important;
+              }
+              .el-table__empty-block {
+                background-color: #f7f7f7;
+              }
+            }
+            .add-wp {
+              margin: 20px 30px;
+              padding: 15px;
+              border: 1px dashed #3ebb75;
+              border-radius: 6px;
+              text-align: center;
+              cursor: pointer;
+              color: #3ebb75;
+              > i {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .addDialog,
+  .planDialog {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 70%;
+      .el-dialog__body {
+        height: calc(100% - 150px);
+        padding: 0;
+        box-sizing: border-box;
+        .el-form {
+          display: flex;
+          flex-wrap: wrap;
+          padding: 15px;
+          .el-form-item {
+            width: 33.3%;
+            padding: 0 2%;
+            box-sizing: border-box;
+            margin-bottom: 30px !important;
+          }
+          .el-form-item.remark {
+            width: 100%;
+            margin-bottom: 10px !important;
+            textarea {
+              background-color: #f2f2f2;
+              border: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  .infoDialog {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 70%;
+      min-width: 950px;
+      .el-dialog__body {
+        height: calc(100% - 68px);
+        box-sizing: border-box;
+        padding: 0;
+        .el-scrollbar__wrap {
+          padding: 20px 30px 30px;
+          box-sizing: border-box;
+        }
+        .plan-info,
+        .charge-info {
+          margin-bottom: 40px;
+          > h3 {
+            font-size: 18px;
+            line-height: 30px;
+            color: #333;
+            margin-bottom: 20px;
+          }
+          .content {
+            background-color: #f7f7f7;
+            padding: 15px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            .tip {
+              width: 100%;
+              font-size: 14px;
+              text-align: center;
+              padding: 15px;
+              color: #ccc;
+            }
+            .info-item {
+              padding: 15px;
+              .name {
+                font-size: 15px;
+                line-height: 22px;
+                color: #333;
+                text-align: center;
+                margin-bottom: 20px;
+              }
+              .value {
+                font-size: 14px;
+                line-height: 20px;
+                color: #333;
+                text-align: center;
+                margin-bottom: 15px;
+              }
+              .value.gray {
+                color: #999;
+              }
+              .value.yellow {
+                color: #ffcb3c;
+              }
+              .value.green {
+                color: #69da61;
+              }
+              .value:last-child {
+                margin-bottom: 0;
+              }
+            }
+          }
+        }
+        .charge-info {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  .shareDialog {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 70%;
+      .el-dialog__body {
+        height: calc(100% - 80px);
+        padding: 0;
+        box-sizing: border-box;
+        .table-wp {
+          height: 100%;
+          > #CusTable {
+            width: 100%;
+            height: 100% !important;
+            > .el-table {
+              width: 100%;
+              height: 100%;
+              .el-table__body-wrapper {
+                overflow-y: auto;
+                height: calc(100% - 50px);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,117 @@
+{
+	"commonet": {
+		"label": "列名称",
+		"prop": "字段名称",
+		"width": "列宽度",
+		"type": "text/number/checkbox(0,1)/button",
+		"action": "抛出的方法名称",
+		"role": "type存在时使用操作加载对应的权限名",
+		"show": "显示/隐藏列",
+		"btns": {
+			"name": "按钮名称",
+			"type": "按钮样式",
+			"size": "按钮大小",
+			"round": "是否圆角",
+			"class": "自定义class",
+			"action": "抛出的方法名称"
+		}
+	},
+	"list": [
+		{
+			"label": "资源名称",
+			"prop": "resources_name",
+			"show": true,
+			"color": "#69da61"
+		},
+		{
+			"label": "科目名称",
+			"prop": "subject_name",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "客户姓名",
+			"prop": "owner_name",
+			"show": true
+		},
+		{
+			"label": "联系电话",
+			"prop": "owner_tel",
+			"show": true,
+			"color": "#999",
+			"width": 115
+		},
+		{
+			"label": "欠费周期",
+			"prop": "cycle",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "欠费金额",
+			"prop": "money",
+			"show": true,
+			"color": "#ffcb3c"
+		},
+		{
+			"label": "欠费原因",
+			"prop": "arrearsreson",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "欠费说明",
+			"prop": "reason",
+			"show": true,
+			"color": "#999",
+			"width": 180
+		},
+		{
+			"label": "说明记录",
+			"width": "100",
+			"type": "icon",
+			"icon": "detail",
+			"show": true,
+			"action": "detail",
+			"token": "empty"
+		},
+		{
+			"label": "操作",
+			"prop": "",
+			"type": "button",
+			"show": true,
+			"width": 280,
+			"btns": [
+				{
+					"name": "打印单据",
+					"type": "warning",
+					"size": "small",
+					"round": true,
+					"class": "sys-btn",
+					"action": "print",
+					"role": "print",
+					"token": "Btn-5w00kBx59ms59aTa53411xCY"
+				},
+				{
+					"name": "新增说明",
+					"type": "primary",
+					"size": "small",
+					"round": true,
+					"class": "sys-btn",
+					"action": "addMsg",
+					"role": "addMsg",
+					"token": "Btn-Vt5ye5cOy2uvCi8rUjwU66to"
+				},
+				{
+					"name": "拆分",
+					"type": "success",
+					"size": "small",
+					"round": true,
+					"action": "split",
+					"role": "split",
+					"token": "Btn-T2cCiCWBPhbYuY44p2VjKL7m"
+				}
+			]
+		}
+	]
+}

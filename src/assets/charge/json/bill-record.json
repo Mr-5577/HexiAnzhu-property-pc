@@ -1,0 +1,88 @@
+{
+  "commonet": {
+    "label": "列名称",
+    "prop": "字段名称",
+    "width": "列宽度",
+    "type": "text/number/checkbox(0,1)/button",
+    "action": "抛出的方法名称",
+    "role": "type存在时使用操作加载对应的权限名",
+    "show": "显示/隐藏列",
+    "btns": {
+      "name": "按钮名称",
+      "type": "按钮样式",
+      "size": "按钮大小",
+      "round": "是否圆角",
+      "class": "自定义class",
+      "action": "抛出的方法名称"
+    }
+  },
+  "list": [
+    {
+      "label": "缴销人",
+      "prop": "cname",
+      "show": true
+    },
+    {
+      "label": "缴销开始时间",
+      "prop": "stime",
+      "show": true,
+      "color": "#999",
+      "width": 160
+    },
+    {
+      "label": "缴销结束时间",
+      "prop": "etime",
+      "show": true,
+      "color": "#999",
+      "width": 160
+    },
+    {
+      "label": "金额",
+      "prop": "total_money",
+      "show": true,
+      "color": "#ffcb3c"
+    },
+    {
+      "label": "状态",
+      "prop": "status_text",
+      "show": true,
+      "color": "#ffcb3c"
+    },
+    {
+      "label": "打印",
+      "width": "60",
+      "type": "icon",
+      "icon": "print",
+      "show": true,
+      "action": "print",
+      "token": "Btn-cQugT8AQaREoGSM1Oxm2XeF9"
+    },
+    {
+      "label": "操作",
+      "prop": "",
+      "type": "button",
+      "width": 200,
+      "show": true,
+      "btns": [
+        {
+          "name": "明细",
+          "type": "primary",
+          "size": "small",
+          "round": true,
+          "action": "detail",
+          "role": "detail",
+          "token": "Btn-cQugT8AQaREoGSM1Oxm2XeF9"
+        },
+        {
+          "name": "撤回",
+          "type": "danger",
+          "size": "small",
+          "round": true,
+          "action": "revocation",
+          "role": "revocation",
+          "token": "Btn-1wbUQ2QYJQWnMaBiniM1OSou"
+        }
+      ]
+    }
+  ]
+}

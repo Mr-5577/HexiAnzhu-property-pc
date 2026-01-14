@@ -1,0 +1,103 @@
+{
+	"commonet": {
+		"label": "列名称",
+		"prop": "字段名称",
+		"width": "列宽度",
+		"type": "text/number/checkbox(0,1)/button/input/icon",
+		"action": "抛出的方法名称",
+		"role": "type存在时使用操作加载对应的权限名",
+		"show": "显示/隐藏列",
+		"btns": {
+			"name": "按钮名称",
+			"type": "按钮样式",
+			"size": "按钮大小",
+			"round": "是否圆角",
+			"class": "自定义class",
+			"action": "抛出的方法名称"
+		}
+	},
+	"list": [
+		{
+			"label": "资源名称",
+			"prop": "name",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "绑定资源",
+			"prop": "resources_name",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"label": "倍率",
+			"prop": "magnification",
+			"show": true
+		},
+		{
+			"label": "客户姓名",
+			"prop": "oname",
+			"show": true
+		},
+		{
+			"label": "上次度数",
+			"prop": "number",
+			"show": true,
+			"color": "#999"
+		},
+		{
+			"type": "input",
+			"inputType": "number",
+			"label": "本次度数",
+			"prop": "cnumber",
+			"show": true,
+			"width": 120,
+			"token": "Btn-pmahQjbXdzzYUJ6n03csp02Q"
+		},
+		{
+			"label": "本次金额",
+			"prop": "money",
+			"show": true,
+			"color": "#ffcb3c"
+		},
+		{
+			"label": "操作",
+			"prop": "",
+			"width": 260,
+			"type": "button",
+			"show": true,
+			"token": "Btn-1cKZSiNgbDYCcLDFxjHCkSN8",
+			"btns": [
+				{
+					"name": "提交",
+					"type": "primary",
+					"size": "small",
+					"round": true,
+					"action": "commit",
+					"role": "commit",
+					"token": "Btn-pmahQjbXdzzYUJ6n03csp02Q"
+				},
+				{
+					"name": "编辑",
+					"type": "primary",
+					"size": "small",
+					"round": true,
+					"class": "empty",
+					"action": "edit",
+					"role": "edit",
+					"token": "empty"
+				},
+				{
+					"name": "查看记录",
+					"type": "primary",
+					"size": "small",
+					"round": true,
+					"class": "sys-btn",
+					"action": "checkRecord",
+					"role": "checkRecord",
+					"token": "Btn-VWbcqF9jhzB2DbgMsO7gZjry"
+				}
+			]
+		}
+	]
+}

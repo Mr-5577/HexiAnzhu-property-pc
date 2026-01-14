@@ -1,0 +1,194 @@
+#novehicle {
+  font-family: 'Source Han Sans CN';
+  width: 100%;
+  height: 100%;
+  .pre-selection {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 6px;
+    position: relative;
+    .select-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: inline-block;
+      padding: 50px;
+      border: 1px solid #f2f2f2;
+      border-radius: 6px;
+      .title {
+        font-size: 18px;
+        line-height: 30px;
+        font-weight: 700;
+        margin-bottom: 50px;
+      }
+      .select-item {
+        margin-bottom: 50px;
+        padding: 0 50px;
+        .name {
+          font-size: 15px;
+          line-height: 24px;
+          margin-bottom: 10px;
+          color: #666;
+        }
+        .el-select {
+          width: 320px;
+        }
+      }
+      .btn-wp {
+        text-align: center;
+      }
+    }
+  }
+  .loading {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 6px;
+  }
+  .main-wp {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #f2f2f2;
+    border-radius: 6px;
+    position: relative;
+    .query {
+      position: absolute;
+      right: 0;
+      top: -55px;
+      height: 36px;
+      padding: 10px 30px;
+      background-color: #d7eed5;
+      border-radius: 18px;
+      border: none;
+      color: #3ebb75;
+    }
+    .left-wp {
+      display: inline-block;
+      width: 28%;
+      height: 100%;
+      vertical-align: middle;
+      background-color: #fff;
+      border-radius: 6px;
+      box-sizing: border-box;
+      .title {
+        font-size: 16px;
+        line-height: 30px;
+        color: #333;
+        font-weight: 700;
+        padding: 20px;
+      }
+      .type-list {
+        list-style: none;
+        padding: 0 20px;
+        li {
+          border-radius: 6px;
+          padding: 30px 20px;
+          position: relative;
+          margin-bottom: 20px;
+          cursor: pointer;
+          background: #e1f8df url('../image/novehicle-bg.png') no-repeat top
+            right;
+          background-size: auto 100%;
+          box-sizing: border-box;
+          .number-wp {
+            padding: 0 20px;
+            .num-item {
+              display: inline-block;
+              .num {
+                font-size: 24px;
+                line-height: 30px;
+                color: #3ebb75;
+              }
+              .explain {
+                font-size: 13px;
+                line-height: 20px;
+                color: #3ebb75;
+                opacity: 0.5;
+                margin-top: 5px;
+              }
+            }
+            .num-item:first-child {
+              margin-right: 40px;
+            }
+          }
+        }
+      }
+    }
+    .right-wp {
+      width: 70%;
+      height: 100%;
+      vertical-align: middle;
+      background-color: #fff;
+      border-radius: 6px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      .el-form {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 15px;
+        .el-form-item {
+          width: 25%;
+          padding: 15px;
+          box-sizing: border-box;
+          margin-bottom: 0 !important;
+          .el-date-editor,
+          .el-select {
+            width: 100%;
+          }
+        }
+        .ic-wp {
+          width: 100%;
+          .el-form-item {
+            display: inline-block;
+          }
+        }
+        .line {
+          height: 1px;
+          background-color: #ebebeb;
+          margin: 15px;
+        }
+        .title {
+          color: #333;
+          font-weight: 700;
+          font-size: 15px;
+          margin: 15px 15px 0;
+          width: 100%;
+        }
+        .tip {
+          font-size: 12px;
+          color: #3ebb75;
+          width: 100%;
+          margin: 5px 15px;
+        }
+      }
+      .stall-title {
+        font-size: 15px;
+        font-weight: 700;
+        color: #333;
+        padding: 10px 30px;
+      }
+      .el-radio-group {
+        width: 100%;
+      }
+      .el-table {
+        .el-radio__inner {
+          width: 18px;
+          height: 18px;
+        }
+        .el-radio__inner::after {
+          width: 6px;
+          height: 6px;
+        }
+      }
+      .btn-wp {
+        padding: 35px 30px 40px;
+        text-align: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,224 @@
+.el-table {
+  td .cell,
+  th .cell {
+    text-align: center;
+  }
+}
+#accounts {
+  font-family: 'Source Han Sans CN';
+  width: 100%;
+  height: 100%;
+  .top {
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 10px 10px 0 0;
+    padding: 15px 30px;
+
+    .common-left {
+      .el-date-editor {
+        border: none;
+        background-color: #f2f2f2;
+        width: 260px;
+        vertical-align: middle;
+        margin-left: 20px;
+        .el-range__icon,
+        .el-range-separator,
+        .el-input__icon {
+          line-height: 34px;
+        }
+      }
+    }
+    .common-right {
+      .last-ico {
+        i {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  .main-wp {
+    border-radius: 0 0 10px 10px;
+    border-top: 1px solid #ebebeb;
+    overflow: hidden;
+    height: calc(100% - 71px);
+    background-color: #fff;
+    .table-wp {
+      height: 100%;
+      position: relative;
+      .el-table th {
+        background-color: #fff;
+      }
+      > .el-button {
+        position: absolute;
+        left: 30px;
+        bottom: 10px;
+      }
+    }
+  }
+
+  .orderDialog,
+  .billDialog {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 90%;
+      .el-dialog__body {
+        height: calc(100% - 70px);
+        padding: 0;
+        box-sizing: border-box;
+        .table-wp {
+          height: 100%;
+          .total {
+            padding: 30px;
+            font-size: 15px;
+            line-height: 30px;
+            color: #333;
+            font-weight: 700;
+            .money,
+            .num {
+              margin: 0 15px;
+              font-size: 17px;
+              line-height: 30px;
+              color: #333;
+              font-weight: 700;
+            }
+            .num {
+              > span {
+                color: #3ebb75;
+              }
+            }
+          }
+          > #CusTable {
+            width: 100%;
+            height: calc(100% - 100px) !important;
+            > .el-table {
+              width: 100%;
+              height: 100%;
+              .el-table__body-wrapper {
+                overflow-y: auto;
+                height: calc(100% - 56px);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .billDialog {
+    .el-dialog {
+      .el-dialog__body {
+        .table-wp {
+          height: calc(100% - 20px);
+        }
+      }
+    }
+  }
+
+  .orderDialog {
+    .table-wp {
+      .el-button {
+        position: absolute;
+        bottom: 37px;
+        right: 30px;
+      }
+    }
+  }
+
+  .auditDialog {
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0 !important;
+      height: 60%;
+      .el-dialog__body {
+        height: calc(100% - 70px);
+        padding: 0;
+        box-sizing: border-box;
+        padding: 25px;
+        .audit-wp {
+          height: 100%;
+          position: relative;
+          .line-wp {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            z-index: 100;
+            .triangle {
+              width: 0;
+              height: 0;
+              border-top: 10px solid transparent;
+              border-right: 3px solid #3ebb75;
+              border-bottom: 10px solid #3ebb75;
+              border-left: 3px solid transparent;
+              margin-left: -4px;
+              margin-top: -1px;
+              // transform: rotate(200deg);
+            }
+            .line {
+              flex: 1;
+              width: 2px;
+              background-color: #3ebb75;
+            }
+          }
+          ul {
+            list-style: none;
+            padding-left: 10px;
+            li {
+              padding: 15px;
+              border-radius: 6px;
+              line-height: 20px;
+              background-color: #f7f7f7;
+              margin-bottom: 15px;
+              position: relative;
+              .status {
+                font-size: 14px;
+                color: #333;
+                margin-right: 30px;
+              }
+              .status.sta1 {
+                color: #999;
+              }
+              .status.sta2 {
+                color: #f56c6c;
+              }
+              .status.sta3 {
+                color: #3ebb75;
+              }
+              .name {
+                color: #333;
+                font-size: 15px;
+                > span {
+                  font-size: 12px;
+                  color: #ccc;
+                }
+              }
+              .time {
+                font-size: 12px;
+                color: #ccc;
+                position: absolute;
+                top: 15px;
+                right: 15px;
+              }
+              .remark {
+                font-size: 14px;
+                color: #999;
+                margin-top: 8px;
+              }
+            }
+            li:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
