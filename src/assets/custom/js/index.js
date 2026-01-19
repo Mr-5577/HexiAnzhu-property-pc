@@ -51,6 +51,12 @@ export default {
           title: 'IntegratedService',
           name: '综合服务',
           token: 'List-b0Y7qfmMeNtkswE6WjSxolGd'
+        },
+        {
+          id: 8,
+          title: 'VisitQuery',
+          name: '来访查询',
+          token: 'List-b0Y7qfmMeNtkswE6WjSxolGd'
         }
       ],
       // 当前有权限的标签列表

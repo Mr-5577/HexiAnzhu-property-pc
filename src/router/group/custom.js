@@ -55,5 +55,10 @@ export default {
       name: 'IntegratedService',
       component: () => import('@/components/custom/IntegratedService.vue')
     },
+    {
+      path: 'VisitQuery',
+      name: 'VisitQuery',
+      component: () => import('@/components/custom/VisitQuery.vue')
+    },
   ]
 }
