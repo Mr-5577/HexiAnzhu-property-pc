@@ -1,6 +1,8 @@
 // 引入富文本编辑器
 import Editor from 'wangeditor'
 import invoiceCloumns from '../json/invoice-cloumns.json'
+// 引入七牛云上传文件
+import qiniuUpload from '@/assets/common/js/qiniuUpload.js'
 
 export default {
   name: 'announcement',
@@ -13,7 +15,8 @@ export default {
         editcircular: this.$api.state.Custom.editcircular.url,
         circulardetail: this.$api.state.Custom.circulardetail.url,
         circularfield: this.$api.state.Custom.circularfield.url,
-        delcircular: this.$api.state.Custom.delcircular.url
+        delcircular: this.$api.state.Custom.delcircular.url,
+        uploadToken: this.$api.state.Public.uploadToken.url
       },
       // 搜索框绑定值
       searchVal: '',
@@ -66,7 +69,9 @@ export default {
         ]
       },
       // 是否正在提交数据
-      isCommit: false
+      isCommit: false,
+      // 七牛云图片/文件上传凭证
+      qiniuDatas: null,
     }
   },
 
@@ -93,12 +98,21 @@ export default {
    */
   mounted() {
     this.tableLoad()
+    this.getUploadToken()
   },
 
   /**
    * 方法
    */
   methods: {
+    // 获取文件上传 token
+    getUploadToken () {
+      this.$axios.post(this.urlObj.uploadToken).then(res => {
+        if (res.Code === 200) {
+          this.qiniuDatas = res.Data
+        }
+      })
+    },
     // 富文本初始化
     editorInit() {
       this.editor = new Editor(this.$refs.editorElem)
@@ -107,7 +121,7 @@ export default {
         this.ruleForm.content = newHtml
         this.$refs.ruleForm.validateField('content')
       }
-      // // 自定义菜单配置
+      // 自定义菜单配置
       this.editor.config.menus = [
         'head',
         'bold',
@@ -123,12 +137,102 @@ export default {
         'quote',
         'splitLine',
         'undo',
-        'redo'
+        'redo',
+        'image'
       ]
-      this.editor.create() // 创建富文本实例
-      if (this.ruleForm.content) {
-        this.editor.txt.html(res.Data.content)
+      // ===================================== 七牛云图片上传配置 ==================================
+      // 设置上传图片的服务器端地址
+      this.editor.config.uploadImgServer = "" // 置空，需要自定义上传
+      
+      // 设置是否显示 base64 格式上传（默认 true）
+      // 设置为 false 则强制使用服务器上传
+      this.editor.config.showLinkImg = false
+
+      // 自定义图片上传
+      this.editor.config.customUploadImg = async (files, insertImgFn) => {
+        // console.log('收到文件:', files)
+        // console.log('七牛云凭证:', this.qiniuDatas)
+        try {
+          // 确保有上传凭证
+          if (!this.qiniuDatas || !this.qiniuDatas.uptoken) {
+            this.$message.error('上传凭证缺失，请刷新页面重试')
+            return
+          }
+          // 使用 Promise.all 处理多个文件上传
+          const uploadPromises = files.map(file => {
+            return new Promise((resolve, reject) => {
+              // 显示上传中状态
+              // this.$message.info(`正在上传: ${file.name}`)
+              
+              // 调用七牛云上传
+              let uploadInfo = qiniuUpload({ file }, this.qiniuDatas)
+              
+              uploadInfo.observable.subscribe({
+                // 上传进度
+                next: (res) => {
+                  // console.log('上传进度:', res.total.percent)
+                },
+                // 上传错误
+                error: (err) => {
+                  // console.error('上传失败:', err)
+                  reject(err)
+                },
+                // 上传完成
+                complete: (res) => {
+                  // console.log('上传完成响应:', res)
+                  // 检查返回的数据
+                  if (!res || !res.key) {
+                    // console.error('返回数据异常:', res)
+                    this.$message.error(`上传返回数据异常: ${file.name}`)
+                    reject(new Error('返回数据异常'))
+                    return
+                  }
+                  // 构建完整的图片URL
+                  const imageUrl = `${this.qiniuDatas.domain}${res.key}`
+                  // console.log('生成的图片URL:', imageUrl)
+                  // 插入图片到编辑器
+                  insertImgFn(imageUrl)
+                  this.$message.success(`图片上传成功: ${file.name}`)
+                  resolve({
+                    url: imageUrl,
+                    key: res.key
+                  })
+                }
+              })
+            })
+          })
+          
+          // 等待所有文件上传完成
+          await Promise.all(uploadPromises)
+          this.$message.success('所有图片上传完成')
+        } catch (error) {
+          // console.error('上传失败:', error)
+          this.$message.error('上传失败: ' + (error.message || '未知错误'))
+        }
       }
+              
+      // 设置上传图片的最大大小
+      this.editor.config.uploadImgMaxSize = 5 * 1024 * 1024 // 5M
+      
+      // 设置一次最多上传几张图片
+      this.editor.config.uploadImgMaxLength = 1
+      
+      // 设置支持上传的图片类型
+      this.editor.config.uploadImgAccept = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp']
+      
+      // ===================================== 七牛云图片上传配置结束 ===================================
+
+      // 创建富文本实例
+      this.editor.create()
+      // 设置初始值
+      if (this.ruleForm.content) {
+        this.editor.txt.html(this.ruleForm.content)
+      }
+      // 组件销毁时清理
+      this.$once('hook:beforeDestroy', () => {
+        this.editor.destroy()
+        this.editor = null
+      })
     },
 
     // 获取表格数据
