@@ -45,6 +45,12 @@ export default {
           title: 'Questionnaire',
           name: '问卷调查',
           token: 'List-b0Y7qfmMeNtkswE6WjSxolGd'
+        },
+        {
+          id: 7,
+          title: 'IntegratedService',
+          name: '综合服务',
+          token: 'List-b0Y7qfmMeNtkswE6WjSxolGd'
         }
       ],
       // 当前有权限的标签列表

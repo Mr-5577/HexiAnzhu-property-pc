@@ -50,5 +50,10 @@ export default {
       name: 'Questionnaire',
       component: () => import('@/components/custom/Questionnaire.vue')
     },
+    {
+      path: 'IntegratedService',
+      name: 'IntegratedService',
+      component: () => import('@/components/custom/IntegratedService.vue')
+    },
   ]
 }
