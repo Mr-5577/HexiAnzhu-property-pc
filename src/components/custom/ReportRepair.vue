@@ -519,6 +519,12 @@
                         {{ item.content }}
                       </span>
                     </div>
+                    <div class="info">
+                      <span class="name">被回访人电话</span>
+                      <span class="value">
+                        {{ item.follow_tel }}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -630,6 +636,46 @@
             class="handle-wp"
             v-if="detailObj.returnvisit_auth == 1 && detailObj.status == 1"
           >
+            <div class="visit-title">
+              回访信息
+            </div>
+            <div class="visit-content">
+              <!-- <div class="visit-item">
+                <div class="visit-info">
+                  <span class="visit-name">回访人</span>
+                  <el-input
+                    class="visit-form"
+                    v-model="follow_user"
+                    resize="none"
+                    placeholder="请输入回访人"
+                    disabled
+                  ></el-input>
+                </div>
+                <div class="visit-info">
+                  <span class="visit-name">回访时间</span>
+                  <el-date-picker
+                    class="visit-form"
+                    v-model="follow_time"
+                    type="datetime"
+                    placeholder="请选择回访时间"
+                    format="yyyy-MM-DD HH:mm:ss"
+                    value-format="yyyy-MM-DD HH:mm:ss"
+                    disabled
+                  ></el-date-picker>
+                </div>
+              </div> -->
+              <div class="visit-item">
+                <div class="visit-info">
+                  <span class="visit-name">被回访人电话</span>
+                  <el-input
+                    class="visit-form"
+                    v-model="follow_tel"
+                    resize="none"
+                    placeholder="请输入被回访人电话"
+                  ></el-input>
+                </div>
+              </div>
+            </div>
             <div class="head">回访结果</div>
             <el-input
               class="content"

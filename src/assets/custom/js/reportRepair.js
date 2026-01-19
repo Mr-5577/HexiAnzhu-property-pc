@@ -142,7 +142,13 @@ export default {
       dialogVisible: false,
       // 预览图片的url
       imgSrc: '',
-      imgList: []
+      imgList: [],
+      // 回访人
+      follow_user: '',
+      // 回访时间
+      follow_time: '',
+      // 被回访人电话
+      follow_tel: '',
     }
   },
 
@@ -451,6 +457,9 @@ export default {
       this.detailObj = []
       this.userVal = ''
       this.content = ''
+      this.follow_time = '';
+      this.follow_user = '';
+      this.follow_tel = '';
       this.reassign = ''
       this.reassignOptions = []
       this.showDetailDialog = true
@@ -472,6 +481,7 @@ export default {
               (res.Data.list.genjin && res.Data.list.genjin.length > 0) ||
               (res.Data.list.huifang && res.Data.list.huifang.length > 0)
             this.detailObj = res.Data
+            this.initVisitInfo()
           } else {
             let msg = res.Message ? res.Message : '获取报修详情数据失败！'
             this.$message({
@@ -484,6 +494,23 @@ export default {
         .catch(() => {
           this.isLoading = false
         })
+    },
+
+    // 初始化回访数据
+    initVisitInfo() {
+      this.follow_user = this.detailObj.name || ''
+      this.follow_tel = this.detailObj.tel || ''
+
+      const now = new Date();
+      // 补零函数
+      const pad = (num) => num.toString().padStart(2, '0');
+      const year = now.getFullYear();
+      const month = pad(now.getMonth() + 1);
+      const day = pad(now.getDate());
+      const hours = pad(now.getHours());
+      const minutes = pad(now.getMinutes());
+      const seconds = pad(now.getSeconds());
+      this.follow_time = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`
     },
 
     // 点击闭单按钮处理
@@ -648,37 +675,71 @@ export default {
 
     // 确认回访处理
     returnVisit () {
+      // if (!this.follow_user) {
+      //   this.$message({
+      //     type: 'warning',
+      //     message: '请填写回访人！'
+      //   })
+      //   return
+      // } 
+      // if (!this.follow_time) {
+      //   this.$message({
+      //     type: 'warning',
+      //     message: '请填写回访时间！'
+      //   })
+      //   return
+      // } 
+      if (!this.follow_tel) {
+        this.$message({
+          type: 'warning',
+          message: '请填写被回访人电话！'
+        })
+        return
+      }
+      // 验证手机号码格式
+      const phoneRegex = /^1[3-9]\d{9}$/;
+      if (!phoneRegex.test(this.follow_tel)) {
+        this.$message({
+          type: 'warning',
+          message: '请填写正确的手机号码！'
+        })
+        return;
+      }
       if (!this.content) {
         this.$message({
           type: 'warning',
           message: '请输入回访结果！'
         })
-      } else {
-        let data = {
-          id: this.detailObj.id,
-          content: this.content
-        }
-        this.$axios
-          .post(this.urlObj.returnvisit, data)
-          .then(res => {
-            if (res.Code === 200) {
-              this.$message({
-                type: 'success',
-                message: '回访成功！'
-              })
-              // 关闭弹框重新获取表格数据
-              this.showDetailDialog = false
-              this.tableLoad()
-            } else {
-              let msg = res.Message ? res.Message : '回访失败！'
-              this.$message({
-                type: 'error',
-                message: msg
-              })
-            }
-          })
-          .catch(() => { })
+        return
       }
+      
+      let data = {
+        id: this.detailObj.id,
+        content: this.content,
+        follow_user: this.follow_user,
+        follow_time: this.follow_time,
+        follow_tel: this.follow_tel,
+      }
+      this.$axios
+        .post(this.urlObj.returnvisit, data)
+        .then(res => {
+          if (res.Code === 200) {
+            this.$message({
+              type: 'success',
+              message: '回访成功！'
+            })
+            // 关闭弹框重新获取表格数据
+            this.showDetailDialog = false
+            this.tableLoad()
+          } else {
+            let msg = res.Message ? res.Message : '回访失败！'
+            this.$message({
+              type: 'error',
+              message: msg
+            })
+          }
+        })
+        .catch(() => { })
     },
 
     // 获取文件上传 token

@@ -305,6 +305,10 @@
 
         .handle-wp {
           padding: 20px 0;
+          .visit-result {
+            display: flex;
+            flex-wrap: nowrap;
+          }
           .head {
             color: #333;
             font-size: 15px;
@@ -338,6 +342,41 @@
               span
               + span {
               margin-left: 8px;
+            }
+          }
+          .visit-title {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 22px;
+            color: #333;
+            margin-bottom: 10px;
+          }
+          .visit-content {
+            padding: 10px 10px 20px 0;
+            box-sizing: border-box;
+            .visit-item {
+              width: 100%;
+              padding: 6px;
+              box-sizing: border-box;
+              display: flex;
+              .visit-info {
+                width: 50%;
+                display: flex;
+                flex-wrap: nowrap;
+                align-items: center;
+                .visit-name {
+                  width: 120px;
+                  margin-right: 10px;
+                  color: #999;
+                  font-size: 14px;
+                  line-height: 22px;
+                  text-align: right;
+                }
+                .visit-form {
+                  // width: 260px;
+                  width: 100%;
+                }
+              }
             }
           }
         }
