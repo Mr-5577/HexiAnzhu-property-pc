@@ -193,7 +193,7 @@
 
           <!-- 表格图片 -->
           <div class="img" v-else-if="v.type === 'img'">
-            <img
+            <!-- <img
               v-if="scope['row'][v.prop]"
               :src="scope['row'][v.prop]"
               @click="imgPreview(scope['row'])"
@@ -202,7 +202,33 @@
               v-else
               class="el-icon-picture-outline"
               style="font-size: 1.1rem;color: #ccc!important;vertical-align: middle!important;"
-            ></i>
+            ></i> -->
+            <!-- 单张图片的情况（向后兼容） -->
+            <template v-if="!Array.isArray(scope['row'][v.prop])">
+              <img
+                v-if="scope['row'][v.prop]"
+                :src="scope['row'][v.prop]"
+                @click="imgPreview(scope['row'])"
+              />
+              <i
+                v-else
+                class="el-icon-picture-outline"
+                style="font-size: 1.1rem;color: #ccc!important;vertical-align: middle!important;"
+              ></i>
+            </template>
+            
+            <!-- 多张图片的情况（新增） -->
+            <template v-else>
+              <div class="multi-img-wrapper">
+                <img
+                  v-for="(imgUrl, imgIndex) in scope['row'][v.prop]"
+                  :key="imgIndex"
+                  :src="imgUrl"
+                  @click="imgPreview(scope['row'], imgIndex)"
+                  style="width: 30px;height: 30px;margin-right: 5px;cursor: pointer;"
+                />
+              </div>
+            </template>
           </div>
 
           <div class="num-select" v-else-if="v.type === 'numSelect'">
@@ -505,7 +531,7 @@
 
           <!-- 表格图片 -->
           <div class="img" v-else-if="v.type === 'img'">
-            <img
+            <!-- <img
               v-if="scope['row'][v.prop]"
               :src="scope['row'][v.prop]"
               @click="imgPreview(scope['row'])"
@@ -514,7 +540,33 @@
               v-else
               class="el-icon-picture-outline"
               style="font-size: 1.1rem;color: #ccc!important;vertical-align: middle!important;"
-            ></i>
+            ></i> -->
+            <!-- 单张图片的情况（向后兼容） -->
+            <template v-if="!Array.isArray(scope['row'][v.prop])">
+              <img
+                v-if="scope['row'][v.prop]"
+                :src="scope['row'][v.prop]"
+                @click="imgPreview(scope['row'])"
+              />
+              <i
+                v-else
+                class="el-icon-picture-outline"
+                style="font-size: 1.1rem;color: #ccc!important;vertical-align: middle!important;"
+              ></i>
+            </template>
+            
+            <!-- 多张图片的情况（新增） -->
+            <template v-else>
+              <div class="multi-img-wrapper">
+                <img
+                  v-for="(imgUrl, imgIndex) in scope['row'][v.prop]"
+                  :key="imgIndex"
+                  :src="imgUrl"
+                  @click="imgPreview(scope['row'], imgIndex)"
+                  style="width: 30px;height: 30px;margin-right: 5px;cursor: pointer;"
+                />
+              </div>
+            </template>
           </div>
 
           <div class="num-select" v-else-if="v.type === 'numSelect'">
@@ -779,8 +831,8 @@ export default {
     },
 
     /** 点击图片预览处理 */
-    imgPreview(obj) {
-      this.$emit('imgPreview', obj)
+    imgPreview(obj, index = 0) {
+      this.$emit('imgPreview', obj, index)
     },
 
     /** 点击文本跳转处理 */
