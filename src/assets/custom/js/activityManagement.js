@@ -13,6 +13,7 @@ export default {
         addActivity: this.$api.state.Custom.addActivity.url,
         editActivity: this.$api.state.Custom.editActivity.url,
         delActivity: this.$api.state.Custom.delActivity.url,
+        pubActivity: this.$api.state.Custom.pubActivity.url,
         uploadToken: this.$api.state.Public.uploadToken.url,
       },
       activityTypeList: [
