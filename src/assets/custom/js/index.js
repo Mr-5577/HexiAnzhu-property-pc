@@ -57,6 +57,12 @@ export default {
           title: 'VisitQuery',
           name: '来访查询',
           token: 'List-b0Y7qfmMeNtkswE6WjSxolGd'
+        },
+        {
+          id: 9,
+          title: 'ActivityManagement',
+          name: '活动管理',
+          token: 'List-b0Y7qfmMeNtkswE6WjSxolGd'
         }
       ],
       // 当前有权限的标签列表

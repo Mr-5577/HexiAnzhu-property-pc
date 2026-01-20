@@ -60,5 +60,10 @@ export default {
       name: 'VisitQuery',
       component: () => import('@/components/custom/VisitQuery.vue')
     },
+    {
+      path: 'ActivityManagement',
+      name: 'ActivityManagement',
+      component: () => import('@/components/custom/ActivityManagement.vue')
+    },
   ]
 }
