@@ -141,7 +141,7 @@ export default {
         link_url: '',
         begin_time: '',
         end_time: '',
-        is_enable: 1,
+        is_enable: 0,
         is_popup: 0,
         content: '',
       },
@@ -635,16 +635,16 @@ export default {
       console.log('this.ruleForm', this.ruleForm)
       console.log('this.coverInfo', this.coverFileInfo, this.coverFileList)
       console.log('this.adInfo', this.adFileInfo, this.adFileList)
-      if (this.coverFileInfo.length === 0) {
-        this.$message.error('请上传封面图片')
-        return false
-      }
-      if (this.adFileInfo.length === 0) {
-        this.$message.error('请上传弹窗图片')
-        return false
-      }
       this.$refs.ruleForm.validate((valid) => {
         if (valid) {
+          if (this.coverFileInfo.length === 0) {
+            this.$message.error('请上传封面图片')
+            return false
+          }
+          if (this.adFileInfo.length === 0) {
+            this.$message.error('请上传弹窗图片')
+            return false
+          }
           this.isCommit = true
           const postData = {
             ...this.ruleForm,
@@ -655,9 +655,6 @@ export default {
           const isEdit = this.type === 'edit'
           if (isEdit) {
             postData.id = this.tableData[this.currentIndex].id
-          } else {
-            postData.is_popup = 1
-            postData.is_enable = 1
           }
           const url = isEdit
             ? this.urlObj.editActivity
@@ -682,6 +679,8 @@ export default {
             .finally(() => {
               this.isCommit = false
             })
+        } else {
+            this.$message.error('请检查表单！')
         }
       })
     },
