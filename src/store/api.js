@@ -2152,7 +2152,34 @@ export default new Vuex.Store({
       questexport: {
         url: '/question/export'
       },
-
+      // 综合服务列表
+      getComprehensiveList: {
+        url: '/customer/getComprehensiveList'
+      },
+      // 来访查询
+      visitHistory: {
+        url: '/customer/visitHistory'
+      },
+      // 获取活动列表
+      getActivityList: {
+        url: '/customer/getActivityList'
+      },
+      // 添加活动
+      addActivity: {
+        url: '/customer/addActivity'
+      },
+      // 修改活动
+      editActivity: {
+        url: '/customer/editActivity'
+      },
+      // 删除活动
+      delActivity: {
+        url: '/customer/delActivity'
+      },
+      // 发布活动
+      pubActivity: {
+        url: '/customer/pubActivity'
+      },
     },
     Application: {
       // 获取应用列表
