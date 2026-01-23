@@ -176,6 +176,7 @@ export default {
       imgSrc: '',
       // 预览图片列表
       imgList: [],
+      showEnableSwitch: false, // 是否显示 启用的编辑
     }
   },
 
@@ -520,6 +521,12 @@ export default {
             },
           ]
         }
+        // 只有开启了启用才能显示并编辑
+        if (currentData.is_enable === 1) {
+          this.showEnableSwitch = true
+        } else {
+          this.showEnableSwitch = false
+        }
       }
     },
     // 重置表单
@@ -539,6 +546,7 @@ export default {
       if (this.$refs.adImageUpload) {
         this.$refs.adImageUpload.clearFiles()
       }
+      this.showEnableSwitch = false
     },
     // 点击新增通告处理
     addInvoice() {
@@ -655,6 +663,8 @@ export default {
           const isEdit = this.type === 'edit'
           if (isEdit) {
             postData.id = this.tableData[this.currentIndex].id
+          } else {
+            postData.is_enable = 0
           }
           const url = isEdit
             ? this.urlObj.editActivity

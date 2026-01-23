@@ -105,14 +105,14 @@
               value-format="yyyy-MM-dd HH:mm:ss"
             ></el-date-picker>
           </el-form-item>
-          <!-- <el-form-item label="是否启用" prop="is_enable">
+          <el-form-item label="是否启用" prop="is_enable" v-if="showEnableSwitch">
             <el-switch
               v-model="ruleForm.is_enable"
               :active-value="1"
               :inactive-value="0"
             ></el-switch>
-          </el-form-item> -->
-          <el-form-item class="popup-from" label="是否弹窗" prop="is_popup">
+          </el-form-item>
+          <el-form-item :class="{'popup-from': !showEnableSwitch}" label="是否弹窗" prop="is_popup">
             <el-switch
               v-model="ruleForm.is_popup"
               :active-value="1"
