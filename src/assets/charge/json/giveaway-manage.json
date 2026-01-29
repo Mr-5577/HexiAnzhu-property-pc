@@ -1,0 +1,117 @@
+{
+  "commonet": {
+    "label": "列名称",
+    "prop": "字段名称",
+    "width": "列宽度",
+    "type": "text/number/checkbox(0,1)/button",
+    "action": "抛出的方法名称",
+    "role": "type存在时使用操作加载对应的权限名",
+    "show": "显示/隐藏列",
+    "btns": {
+      "name": "按钮名称",
+      "type": "按钮样式",
+      "size": "按钮大小",
+      "round": "是否圆角",
+      "class": "自定义class",
+      "action": "抛出的方法名称"
+    }
+  },
+  "list": [
+    {
+      "label": "业主姓名",
+      "prop": "realname",
+      "color": "#333",
+      "show": true
+    },
+    {
+      "label": "房号",
+      "prop": "roomnum",
+      "color": "#69da61",
+      "show": true
+    },
+    {
+      "label": "产品类型",
+      "prop": "product_type",
+      "color": "#999",
+      "show": true,
+      "width": 100
+    },
+    {
+      "label": "面积",
+      "prop": "buildareas",
+      "color": "#999",
+      "show": true,
+      "width": 90
+    },
+    {
+      "label": "手机号",
+      "prop": "tel",
+      "color": "#999",
+      "show": true,
+      "width": 100
+    },
+    {
+      "label": "礼品名称及规格",
+      "prop": "gift_name_unit",
+      "color": "#999",
+      "show": true,
+      "width": 200
+    },
+    {
+      "label": "总赠品数量",
+      "prop": "gift_num",
+      "color": "#999",
+      "show": true,
+      "width": 100
+    },
+    {
+      "label": "已领取数量",
+      "prop": "gift_num_receive",
+      "color": "#999",
+      "show": true,
+      "width": 100
+    },
+    {
+      "label": "待领取数量",
+      "prop": "gift_num_notReceive",
+      "color": "#999",
+      "show": true,
+      "width": 100
+    },
+    {
+      "label": "领取状态",
+      "prop": "status_name",
+      "color": "#999",
+      "show": true,
+      "width": 100
+    },
+    {
+      "label": "操作",
+      "prop": "",
+      "type": "button",
+      "show": true,
+      "width": 200,
+      "btns": [
+        {
+          "name": "领取登记",
+          "type": "primary",
+          "size": "small",
+          "round": true,
+          "action": "signFor",
+          "role": "signFor",
+          "token": "empty",
+          "disabled": "canSignFor"
+        },
+        {
+          "name": "缴费详情",
+          "type": "primary",
+          "size": "small",
+          "round": true,
+          "action": "detail",
+          "role": "detail",
+          "token": "empty"
+        }
+      ]
+    }
+  ]
+}

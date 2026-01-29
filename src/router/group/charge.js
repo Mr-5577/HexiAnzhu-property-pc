@@ -70,5 +70,10 @@ export default {
       name: 'FileManage',
       component: () => import('@/components/charge/FileManage.vue')
     },
+    {
+      path: 'GiveawayManage',
+      name: 'GiveawayManage',
+      component: () => import('@/components/charge/GiveawayManage.vue')
+    },
   ]
 }

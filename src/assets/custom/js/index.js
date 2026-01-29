@@ -50,19 +50,19 @@ export default {
           id: 7,
           title: 'IntegratedService',
           name: '综合服务',
-          token: 'List-b0Y7qfmMeNtkswE6WjSxolGd'
+          token: 'List-MQ5qfQV93oJFNPDJQ0PrwPiV'
         },
         {
           id: 8,
           title: 'VisitQuery',
           name: '来访查询',
-          token: 'List-b0Y7qfmMeNtkswE6WjSxolGd'
+          token: 'List-MQ5qfQV93oJFNPDJQ0PrwPiV'
         },
         {
           id: 9,
           title: 'ActivityManagement',
           name: '活动管理',
-          token: 'List-b0Y7qfmMeNtkswE6WjSxolGd'
+          token: 'List-MQ5qfQV93oJFNPDJQ0PrwPiV'
         }
       ],
       // 当前有权限的标签列表

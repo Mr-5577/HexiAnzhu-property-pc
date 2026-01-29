@@ -75,6 +75,12 @@ export default {
           title: "FileManage",
           name: '附件管理',
           token: 'List-GDATZvzbQZ5UXjjlOyy37V5O'
+        },
+        {
+          id: 12,
+          title: "GiveawayManage",
+          name: '赠品管理',
+          token: 'List-GDATZvzbQZ5UXjjlOyy37V5O'
         }
       ],
       // 当前有权限的标签列表

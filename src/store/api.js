@@ -1513,6 +1513,22 @@ export default new Vuex.Store({
       filedetail: {
         url: '/file/filecreatedatadetail'
       },
+      // 获取赠品列表
+      getGiftList: {
+        url: '/customer/getGiftList'
+      },
+      // 领取赠品登记
+      receiveGift: {
+        url: '/customer/receiveGift'
+      },
+      // 获取已选择的优惠方案信息
+      getDiscountsSolution: {
+        url: '/customer/getDiscountsSolution'
+      },
+      // 获取已选择的优惠方案明细信息
+      getDiscountsSolutionDetail: {
+        url: '/customer/getDiscountsSolutionDetail'
+      },
     },
     Assist: {
       /** 批量打票 */
