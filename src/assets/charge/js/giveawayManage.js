@@ -24,8 +24,6 @@ export default {
         name: '全部项目',
         vid: 0,
       },
-      // 搜索框绑定值
-      searchVal: '',
       // 表格数据
       tableData: [],
       // 表格列数据配置
@@ -58,6 +56,14 @@ export default {
 
       // 是否显示缴费详情弹框
       showPaymentDetailDialog: false,
+      paymentDetailData: {
+        name: '',
+        roomnum: '',
+        realname: '',
+        tel: '',
+        product_type: '',
+        buildareas: '',
+      },
       // 缴费详情内表格配置
       paymentConf: {
         loadStatus: false,
@@ -326,6 +332,14 @@ export default {
     async viewDetail(index) {
       const currentData = this.tableData[index]
       if (currentData) {
+        this.paymentDetailData = {
+          name: this.choseVillageInfo.name,
+          roomnum: currentData.roomnum,
+          realname: currentData.realname,
+          tel: currentData.tel,
+          product_type: currentData.product_type,
+          buildareas: currentData.buildareas,
+        }
         const params = {
           order_id: currentData.id,
         }

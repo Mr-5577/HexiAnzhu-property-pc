@@ -108,29 +108,29 @@
             <div class="flexItem">
               <div class="item">
                 <span class="name">项目</span>
-                <span class="value">小区A</span>
+                <span class="value">{{ paymentDetailData.name }}</span>
               </div>
               <div class="item">
                 <span class="name">房号</span>
-                <span class="value">12-12-4</span>
+                <span class="value">{{ paymentDetailData.roomnum }}</span>
               </div>
               <div class="item">
                 <span class="name">业主姓名</span>
-                <span class="value">张三</span>
+                <span class="value">{{ paymentDetailData.realname }}</span>
               </div>
             </div>
             <div class="flexItem">
               <div class="item">
                 <span class="name">手机号</span>
-                <span class="value">1515555555</span>
+                <span class="value">{{ paymentDetailData.tel }}</span>
               </div>
               <div class="item">
                 <span class="name">产品类型</span>
-                <span class="value">别墅</span>
+                <span class="value">{{ paymentDetailData.product_type }}</span>
               </div>
               <div class="item">
                 <span class="name">面积</span>
-                <span class="value">209.78</span>
+                <span class="value">{{ paymentDetailData.buildareas }}</span>
               </div>
             </div>
           </div>
@@ -141,7 +141,8 @@
             <div class="flexItem">
               <div class="item">
                 <span class="name">优惠方案</span>
-                <span class="value">2026年住宅预存方案</span>
+                <!-- <span class="value">2026年住宅预存方案</span> -->
+                <span class="value">暂无方案</span>
               </div>
               <div class="item">
                 <span class="name">来源类型</span>

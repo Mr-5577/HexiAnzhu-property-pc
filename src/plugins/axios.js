@@ -7,6 +7,7 @@ import store from '@/store/common.js'
 // axios.defaults.baseURL = process.env.baseURL || process.env.apiUrl || '';
 // axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
 // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+console.log('process.env.NODE_ENV:', process.env.NODE_ENV)
 
 const config = {
   // baseURL: process.env.baseURL || process.env.apiUrl || "",
@@ -25,6 +26,23 @@ _axios.interceptors.request.use(
       config.headers['Content-Type'] = 'multipart/form-data'
     } else {
       config.headers['Content-Type'] = 'application/json'
+    }
+
+    // 只在开发环境添加 XDEBUG 参数
+    if (process.env.NODE_ENV === 'development') {
+      // 对于 GET 请求，添加到 params
+      if (config.method === 'get' || config.method === 'GET') {
+        config.params = {
+          ...config.params,
+          XDEBUG_SESSION: 'PHPSTORM'
+        }
+      }
+      // 对于 POST/PUT 请求，添加到 URL 或 params
+      else if (config.method === 'post' || config.method === 'put') {
+        // 添加到 URL
+        const separator = config.url.includes('?') ? '&' : '?'
+        config.url = `${config.url}${separator}XDEBUG_SESSION=PHPSTORM`
+      }
     }
     return config
   },
