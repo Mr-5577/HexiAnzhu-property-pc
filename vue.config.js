@@ -30,9 +30,9 @@ module.exports = {
       // 测试服务器
       "/api": {
         // target: "http://vpn.ygddzy.cn:16010",
-        target: "http://192.168.20.200:8088", // 本地-地址
+        // target: "http://192.168.20.200:8088", // 本地-地址
         // target: "http://wyapinp.hexianzhu.cn:8803", // 测试-地址
-        // target: "https://wynp.hexianzhu.cn", // 正式-地址
+        target: "https://wynp.hexianzhu.cn", // 正式-地址
         ws: true,
         changeOrigin: true,
         // pathRewrite: {
