@@ -72,6 +72,8 @@ export default {
         limit: 20,
         dataTotal: 0,
       },
+      promotionTableData: [],
+      promotionColumns: paymentCloumns.promotionList,
       paymentTableData: [],
       paymentColumns: paymentCloumns.list,
       // 领取登记详情弹窗
@@ -331,6 +333,8 @@ export default {
     // 查看详情
     async viewDetail(index) {
       const currentData = this.tableData[index]
+      this.promotionTableData = []
+      this.paymentTableData = []
       if (currentData) {
         this.paymentDetailData = {
           name: this.choseVillageInfo.name,
@@ -340,26 +344,53 @@ export default {
           product_type: currentData.product_type,
           buildareas: currentData.buildareas,
         }
-        const params = {
-          order_id: currentData.id,
-        }
-        await this.$axios.post(this.urlObj.getDiscountsSolution, params)
-        await this.$axios.post(this.urlObj.getDiscountsSolutionDetail, params)
+        // 显示弹窗
         this.showPaymentDetailDialog = true
+        // 表格加载 loading
+        this.paymentConf.loadStatus = true
+        const params = {
+          order_id: currentData.order_id,
+        }
+        try {
+          const promotionRes = await this.$axios.post(this.urlObj.getDiscountsSolution, params)
+          if (promotionRes.Code === 200) {
+            const list = promotionRes.Data || []
+            // 处理数据，新增 discount_description 字段
+            const processedList = list.map(item => {
+              let description = '暂无优惠'
+              try {
+                if (item.discount_desc) {
+                  const descArray = JSON.parse(item.discount_desc)
+                  if (Array.isArray(descArray) && descArray.length > 0) {
+                    // 遍历数组，生成描述文本
+                    const descTexts = descArray.map(desc => {
+                      const month = desc.month || ''
+                      const discFee = desc.disc_fee || '0'
+                      return `${month}优惠${discFee}元`
+                    })
+                    description = descTexts.join('; ')
+                  }
+                }
+              } catch (error) {
+                description = '暂无优惠'
+              }
+              return {
+                ...item,
+                discount_description: description
+              }
+            })
+            this.promotionTableData = processedList
+          }
+          const detailRes = await this.$axios.post(this.urlObj.getDiscountsSolutionDetail, params)
+          if (detailRes.Code === 200) {
+            this.paymentTableData = detailRes.Data || []
+          }
+        } catch (error) {
+          
+        } finally {
+          this.paymentConf.loadStatus = false
+        }
       }
-    },
-
-    // 获取缴费情况列表
-    getPaymentTable() {},
-    // 表格每页条数改变
-    paymentSizeChange(num) {
-      this.paymentConf.limit = num
-      this.getPaymentTable()
-    },
-    // 当前页码改变
-    paymentCurrentChange(num) {
-      this.paymentConf.curPage = num
-      this.getPaymentTable()
     },
 
     // 领取登记详情

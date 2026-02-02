@@ -19,43 +19,85 @@
   "list": [
     {
       "label": "缴费科目",
-      "prop": "create_time",
+      "prop": "subject_name",
       "color": "#333",
       "show": true
     },
     {
       "label": "缴费内容",
-      "prop": "create_time",
+      "prop": "content",
       "color": "#69da61",
       "show": true
     },
     {
       "label": "应收",
-      "prop": "create_time",
+      "prop": "money",
       "color": "#999",
-      "show": true
+      "show": true,
+      "width": 100
     },
     {
       "label": "优惠",
-      "prop": "create_time",
+      "prop": "discount_money",
       "color": "#999",
-      "show": true
+      "show": true,
+      "width": 100
     },
     {
       "label": "实收",
-      "prop": "create_time",
+      "prop": "real_money",
       "color": "#999",
-      "show": true
+      "show": true,
+      "width": 100
     },
     {
       "label": "收费员",
-      "prop": "create_time",
+      "prop": "create_name",
+      "color": "#999",
+      "show": true,
+      "width": 120
+    },
+    {
+      "label": "缴费时间",
+      "prop": "pay_time",
+      "color": "#999",
+      "show": true
+    }
+  ],
+  "promotionList": [
+    {
+      "label": "优惠方案",
+      "prop": "main_name",
       "color": "#999",
       "show": true
     },
     {
-      "label": "缴费时间",
-      "prop": "create_time",
+      "label": "子方案名称",
+      "prop": "sub_name",
+      "color": "#999",
+      "show": true
+    },
+    {
+      "label": "优惠组",
+      "prop": "line_group",
+      "color": "#999",
+      "show": true
+    },
+    {
+      "label": "优惠类型",
+      "prop": "disc_type",
+      "color": "#999",
+      "show": true
+    },
+    {
+      "label": "优惠金额",
+      "prop": "discount_money",
+      "color": "#999",
+      "show": true
+    },
+    {
+      "label": "优惠详情",
+      "prop": "discount_description",
       "color": "#999",
       "show": true
     }

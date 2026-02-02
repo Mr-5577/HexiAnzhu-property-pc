@@ -122,6 +122,12 @@ export default {
    * 生命周期
    */
   mounted() {
+    let vid = sessionStorage.getItem('vid')
+    let vname = sessionStorage.getItem('vname')
+    if (vid) {
+      this.choseVillageInfo.vid = vid
+      this.choseVillageInfo.name = vname
+    }
     this.tableLoad()
   },
 

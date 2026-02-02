@@ -140,15 +140,18 @@
           <div class="infoContent">
             <div class="flexItem">
               <div class="item">
-                <span class="name">优惠方案</span>
-                <!-- <span class="value">2026年住宅预存方案</span> -->
-                <span class="value">暂无方案</span>
-              </div>
-              <div class="item">
                 <span class="name">来源类型</span>
                 <span class="value">手工登记</span>
               </div>
             </div>
+          </div>
+          <div class="infoTable">
+            <cus-table
+              :datas="promotionTableData"
+              :cusColums="promotionColumns"
+              :ispaging="false"
+              :cusConf="paymentConf"
+            ></cus-table>
           </div>
         </div>
       </div>
@@ -158,10 +161,8 @@
           <cus-table
             :datas="paymentTableData"
             :cusColums="paymentColumns"
-            :ispaging="true"
+            :ispaging="false"
             :cusConf="paymentConf"
-            @sizeChange="paymentSizeChange"
-            @currentChange="paymentCurrentChange"
           ></cus-table>
         </div>
       </div>
