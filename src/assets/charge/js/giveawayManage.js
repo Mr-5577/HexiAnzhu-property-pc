@@ -379,7 +379,7 @@ export default {
                 discount_description: description
               }
             })
-            this.promotionTableData = processedList
+            this.promotionTableData = processedList || []
           }
           const detailRes = await this.$axios.post(this.urlObj.getDiscountsSolutionDetail, params)
           if (detailRes.Code === 200) {

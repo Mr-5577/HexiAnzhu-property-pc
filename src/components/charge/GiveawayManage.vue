@@ -145,26 +145,26 @@
               </div>
             </div>
           </div>
-          <div class="infoTable">
+          <el-scrollbar style="height: 150px;">
             <cus-table
               :datas="promotionTableData"
               :cusColums="promotionColumns"
               :ispaging="false"
               :cusConf="paymentConf"
             ></cus-table>
-          </div>
+          </el-scrollbar>
         </div>
       </div>
       <div class="paymentInfo">
         <div class="paymentTitle">缴费情况</div>
-        <div class="table-wp">
+        <el-scrollbar style="height: 200px;">
           <cus-table
             :datas="paymentTableData"
             :cusColums="paymentColumns"
             :ispaging="false"
             :cusConf="paymentConf"
           ></cus-table>
-        </div>
+        </el-scrollbar>
       </div>
     </el-dialog>
 

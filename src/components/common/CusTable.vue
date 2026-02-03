@@ -6,7 +6,6 @@
       v-if="!ispaging"
       :data="datas"
       stripe
-      height="100%"
       :show-summary="issummary"
       v-loading="cusConf.loadStatus"
       element-loading-text="数据获取中..."
