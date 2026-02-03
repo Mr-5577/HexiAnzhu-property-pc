@@ -1649,31 +1649,33 @@ export default {
       this.$axios
         .post(this.urlObj.orderDetail, data)
         .then(res => {
-          if (res.Code === 200) {
-            if (res.Data && res.Data.length > 0) {
-              let total = 0
-              res.Data.forEach(item => {
-                item.cname = item.snOrder.realname
-                item.code =
-                  item.snOrder.fphm && item.snOrder.receipt
-                    ? item.snOrder.fphm + '/' + item.snOrder.receipt
-                    : item.snOrder.fphm
-                      ? item.snOrder.fphm
-                      : item.snOrder.receipt
-                        ? item.snOrder.receipt
-                        : ''
-                item.roomnum = item.snOrder.roomnum
-                item.ssmoney = item.snOrder.money
-                item.type_text = item.snOrder.payment ? item.snOrder.payment.name : ''
-                item.vname = item.village.villagename
-                item.description = item.snOrder.remark
-                item.pay_time = item.snOrder.pay_time
-                total = _.add(Number(total), Number(item.ssmoney))
-              })
-              this.totalMoney = _.round(total, 2)
-            }
+          if (res.Code == 200) {
+            const dataList = res.Data || []
+            // 过滤掉没有 snOrder 的数据
+            const validData = dataList.filter(item => item && item.snOrder)
+            let total = 0
+            validData.forEach(item => {
+              const snOrder = item.snOrder
+              item.cname = snOrder.realname || ''
+              item.code =
+                snOrder.fphm && snOrder.receipt
+                  ? snOrder.fphm + '/' + snOrder.receipt
+                  : snOrder.fphm
+                    ? snOrder.fphm
+                    : snOrder.receipt
+                      ? snOrder.receipt
+                      : ''
+              item.roomnum = snOrder.roomnum || ''
+              item.ssmoney = snOrder.money || '0'
+              item.type_text = snOrder.payment ? snOrder.payment.name : ''
+              item.vname = item.village.villagename || ''
+              item.description = snOrder.remark || ''
+              item.pay_time = snOrder.pay_time || ''
+              total = _.add(Number(total), Number(item.ssmoney))
+            })
+            this.totalMoney = _.round(total, 2)
             // 存放查询数据
-            this.rcdInfoData = res.Data
+            this.rcdInfoData = validData
             // 关闭加载状态
             this.rcdInfoConf.loadStatus = false
             // 清空空数据提示
