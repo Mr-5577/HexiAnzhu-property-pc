@@ -117,6 +117,14 @@ function CreateDataBill (data) {
     LODOP.SET_PRINT_STYLE('FontColor', '#0000FF')
     LODOP.ADD_PRINT_TEXT(130, 540, 150, 20, data.date)
 
+    if(data.bz) {
+      const sliceStr = data.bz.slice(0, 75)
+      LODOP.SET_PRINT_STYLE('FontColor', '#000000')
+      LODOP.ADD_PRINT_TEXT(280, 130, 150, 20, '备注：')
+      LODOP.SET_PRINT_STYLE('FontColor', '#0000FF')
+      LODOP.ADD_PRINT_TEXT(280, 170, 450, 20, sliceStr)
+    }
+
     LODOP.SET_PRINT_STYLE('FontColor', '#000000')
     LODOP.ADD_PRINT_TEXT(300, 130, 300, 20, '合计：')
     LODOP.SET_PRINT_STYLE('FontColor', '#0000FF')
@@ -272,6 +280,14 @@ function CreateDataBill (data) {
     LODOP.ADD_PRINT_TEXT(70, 500, 150, 20, '日期：')
     LODOP.SET_PRINT_STYLE('FontColor', '#0000FF')
     LODOP.ADD_PRINT_TEXT(70, 540, 150, 20, data.date)
+
+    if(data.bz) {
+      const sliceStr = data.bz.slice(0, 75)
+      LODOP.SET_PRINT_STYLE('FontColor', '#000000')
+      LODOP.ADD_PRINT_TEXT(200, 130, 150, 20, '备注：')
+      LODOP.SET_PRINT_STYLE('FontColor', '#0000FF')
+      LODOP.ADD_PRINT_TEXT(200, 170, 450, 20, sliceStr)
+    }
 
     LODOP.SET_PRINT_STYLE('FontColor', '#000000')
     LODOP.ADD_PRINT_TEXT(220, 130, 300, 20, '合计：')
