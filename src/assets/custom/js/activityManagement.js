@@ -2,9 +2,12 @@
 import Editor from 'wangeditor'
 // 引入七牛云上传文件
 import qiniuUpload from '@/assets/common/js/qiniuUpload.js'
-
+import workIcon from '@/components/common/workIcon.vue'
 export default {
   name: 'activityManagement',
+  components: {
+    workIcon,
+  },
   data() {
     return {
       urlObj: {
@@ -15,6 +18,11 @@ export default {
         delActivity: this.$api.state.Custom.delActivity.url,
         pubActivity: this.$api.state.Custom.pubActivity.url,
         uploadToken: this.$api.state.Public.uploadToken.url,
+      },
+      // 当前选择的项目信息
+      choseVillageInfo: {
+        name: '全部项目',
+        vid: 0,
       },
       title:'',
       activityTypeList: [
@@ -199,7 +207,7 @@ export default {
    */
   watch: {
     vid() {
-      this.tableLoad()
+      // this.tableLoad()
     },
   },
 
@@ -207,14 +215,30 @@ export default {
    * 生命周期
    */
   mounted() {
-    this.tableLoad()
-    this.getUploadToken()
+    let vid = sessionStorage.getItem('vid')
+    let vname = sessionStorage.getItem('vname')
+    if (vid) {
+      this.choseVillageInfo.vid = vid
+      this.choseVillageInfo.name = vname
+    }
+    setTimeout(() => {
+      this.tableLoad()
+      this.getUploadToken()
+    }, 200)
   },
 
   /**
    * 方法
    */
   methods: {
+    // 筛选选择项目
+    filterVillage(choseInfo) {
+      // 参数赋值
+      this.choseVillageInfo.name = choseInfo.name
+      this.choseVillageInfo.vid = choseInfo.vid
+      this.title = ''
+      this.keySearch()
+    },
     keySearch() {
       this.conf = {
         loadStatus: false,
@@ -436,7 +460,7 @@ export default {
       const params = {
         page: this.conf.curPage,
         limit: this.conf.limit,
-        vid: this.vid,
+        vid: this.choseVillageInfo.vid,
         title: this.title,
       }
       this.$axios

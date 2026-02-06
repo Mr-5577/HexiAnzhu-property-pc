@@ -10,6 +10,28 @@
     position: relative;
     .common-left {
       padding: 15px 30px;
+      .common-chose-info {
+        padding: 0 20px 0 10px;
+        position: relative;
+        > i.close {
+          display: none;
+          position: absolute;
+          top: 12px;
+          right: 7px;
+          font-size: 15px;
+          color: #c0c4cc;
+          cursor: pointer;
+          margin-right: 0;
+        }
+      }
+      .common-chose-info:hover {
+        > i.close {
+          display: block;
+        }
+      }
+      .common-input {
+        margin-left: 15px;
+      }
     }
     .addbtn {
       position: absolute;

@@ -2,12 +2,29 @@
   <div id="activityManagement">
     <div class="main-wp">
       <div class="common-left">
+        <span
+          class="common-chose-info"
+          @click="$refs.showFilterVillage.showDialog()"
+        >
+          <workIcon name="build"></workIcon>
+          {{ choseVillageInfo.name }}
+          <i
+            v-if="choseVillageInfo.vid"
+            class="close el-icon-circle-close"
+            @click.stop="
+              choseVillageInfo = {
+                name: '全部项目',
+                vid: '',
+              }
+              keySearch()
+            "
+          ></i>
+        </span>
         <input
           type="text"
           class="common-input"
           placeholder="请输入活动名称"
           v-model="title"
-          style="margin-left: 0"
         />
         <el-button
           type="primary"
@@ -202,6 +219,13 @@
       </span>
     </el-dialog>
 
+    <!-- 选择项目 -->
+    <filter-village
+      ref="showFilterVillage"
+      :vid="choseVillageInfo.vid"
+      @choseInfo="filterVillage"
+    ></filter-village>
+    
     <!-- 图片预览部分 -->
     <el-image
       ref="preview"
