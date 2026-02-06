@@ -42,6 +42,7 @@ export default {
           prop: 'class_name',
           show: true,
           color: '#999',
+          width: 100
         },
         {
           label: '发布日期',
@@ -51,9 +52,10 @@ export default {
         },
         {
           label: '发布人',
-          prop: 'publish_man',
+          prop: 'publish_man_name',
           show: true,
           color: '#999',
+          width: 100
         },
         {
           label: '开始有效期',
@@ -72,12 +74,14 @@ export default {
           prop: 'is_enable_name',
           show: true,
           color: '#999',
+          width: 100
         },
         {
           label: '是否弹窗',
           prop: 'is_popup_name',
           show: true,
           color: '#999',
+          width: 100
         },
         {
           label: '操作',
@@ -541,6 +545,25 @@ export default {
           this.showEnableSwitch = false
         }
       }
+    },
+    // 重置表单
+    resetForm() {
+      if (this.$refs.ruleForm) {
+        this.$refs.ruleForm.resetFields()
+      }
+      this.imgSrc = ''
+      this.imgList = []
+      this.coverFileInfo = []
+      this.coverFileList = []
+      if (this.$refs.coverImageUpload) {
+        this.$refs.coverImageUpload.clearFiles()
+      }
+      this.adFileInfo = []
+      this.adFileList = []
+      if (this.$refs.adImageUpload) {
+        this.$refs.adImageUpload.clearFiles()
+      }
+      this.showEnableSwitch = false
     },
     // 点击新增通告处理
     addInvoice() {
