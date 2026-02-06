@@ -16,6 +16,7 @@ export default {
         pubActivity: this.$api.state.Custom.pubActivity.url,
         uploadToken: this.$api.state.Public.uploadToken.url,
       },
+      title:'',
       activityTypeList: [
         { id: 1, name: '预缴活动' },
         { id: 2, name: ' 社区活动' },
@@ -210,6 +211,17 @@ export default {
    * 方法
    */
   methods: {
+    keySearch() {
+      this.conf = {
+        loadStatus: false,
+        emptyText: '',
+        curPage: 1,
+        limit: 20,
+        dataTotal: 0,
+      }
+      // 请求接口获取表单数据
+      this.tableLoad()
+    },
     // 获取文件上传 token
     getUploadToken() {
       this.$axios.post(this.urlObj.uploadToken).then((res) => {
@@ -421,6 +433,7 @@ export default {
         page: this.conf.curPage,
         limit: this.conf.limit,
         vid: this.vid,
+        title: this.title,
       }
       this.$axios
         .post(this.urlObj.getActivityList, params)
@@ -528,25 +541,6 @@ export default {
           this.showEnableSwitch = false
         }
       }
-    },
-    // 重置表单
-    resetForm() {
-      if (this.$refs.ruleForm) {
-        this.$refs.ruleForm.resetFields()
-      }
-      this.imgSrc = ''
-      this.imgList = []
-      this.coverFileInfo = []
-      this.coverFileList = []
-      if (this.$refs.coverImageUpload) {
-        this.$refs.coverImageUpload.clearFiles()
-      }
-      this.adFileInfo = []
-      this.adFileList = []
-      if (this.$refs.adImageUpload) {
-        this.$refs.adImageUpload.clearFiles()
-      }
-      this.showEnableSwitch = false
     },
     // 点击新增通告处理
     addInvoice() {

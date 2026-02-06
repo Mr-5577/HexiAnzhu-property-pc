@@ -1,7 +1,23 @@
 <template>
   <div id="activityManagement">
     <div class="main-wp">
-      <div class="title">活动管理列表</div>
+      <div class="common-left">
+        <input
+          type="text"
+          class="common-input"
+          placeholder="请输入活动名称"
+          v-model="title"
+          style="margin-left: 0"
+        />
+        <el-button
+          type="primary"
+          class="common-button"
+          icon="el-icon-search"
+          @click="keySearch()"
+        >
+          查询
+        </el-button>
+      </div>
       <el-button
         v-if="$menu.getters.judgeRole('Btn-Ebwpz7tsvyBdvNwfaeZ7Bozd')"
         class="addbtn"
