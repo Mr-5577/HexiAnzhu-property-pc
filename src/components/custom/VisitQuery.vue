@@ -3,7 +3,7 @@
     <div class="top">
       <div class="main">
         <div class="common-left">
-          <!-- <span
+          <span
             class="common-chose-info"
             @click="$refs.showFilterVillage.showDialog()"
           >
@@ -20,13 +20,12 @@
                 keySearch()
               "
             ></i>
-          </span> -->
+          </span>
           <input
             type="text"
             class="common-input"
             placeholder="请输入姓名"
             v-model="visitorName"
-            style="margin-left: 0"
           />
           <input
             type="text"
@@ -52,7 +51,7 @@
           v-model="visitorType"
           clearable
           placeholder="请选择来访类型"
-          @change="tableLoad"
+          @change="changeType"
         >
           <el-option
             v-for="itm in typeOptions"
@@ -68,7 +67,7 @@
           :picker-options="spickerOptions"
           placeholder="请选择开始日期"
           value-format="yyyy-MM-dd HH:mm:ss"
-          @change="tableLoad"
+          @change="keySearch"
         ></el-date-picker>
         ~
         <el-date-picker
@@ -77,7 +76,7 @@
           :picker-options="epickerOptions"
           placeholder="请选择截止日期"
           value-format="yyyy-MM-dd HH:mm:ss"
-          @change="tableLoad"
+          @change="keySearch"
         ></el-date-picker>
 
         <el-button type="primary empty" round @click="exportDetailExcel">

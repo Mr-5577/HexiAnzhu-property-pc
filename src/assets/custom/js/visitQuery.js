@@ -22,6 +22,12 @@ export default {
       // 表格列数据配置
       columns: [
         {
+          label: '小区名称',
+          prop: 'villagename',
+          show: true,
+          color: '#999',
+        },
+        {
           label: '访客类型',
           prop: 'visitor_type_name',
           show: true,
@@ -75,7 +81,7 @@ export default {
       // 姓名
       visitorName: '',
       // 类型
-      visitorType: '',
+      visitorType: null,
       typeOptions: [
         { typename: '外卖', id: 0 },
         { typename: '普通', id: 1 },
@@ -135,6 +141,15 @@ export default {
    * 方法
    */
   methods: {
+    changeType(value) {
+      // 处理所有清空情况：null、undefined、空字符串
+      if (value === null || value === undefined || value === '') {
+        this.visitorType = null
+      } else {
+        this.visitorType = value
+      }
+      this.keySearch()
+    },
     // 筛选选择项目
     filterVillage(choseInfo) {
       // 参数赋值
@@ -142,7 +157,7 @@ export default {
       this.choseVillageInfo.vid = choseInfo.vid
       this.visitorName = ''
       this.visitorTel = ''
-      this.visitorType = ''
+      this.visitorType = null
       this.startTime = ''
       this.endTime = ''
       this.keySearch()
@@ -276,6 +291,7 @@ export default {
           if (res.Code === 200) {
             let tableName = '来访历史数据表'
             let headers = [
+              '小区名称',
               '访客类型',
               '访客姓名',
               '身份证号',
@@ -290,6 +306,7 @@ export default {
             res.Data.forEach((item) => {
               const typeName = item.visitor_type == 1 ? '普通' : '外卖'
               let arr = [
+                item.villagename,
                 typeName,
                 item.visitor_name,
                 item.visitor_card_no,
