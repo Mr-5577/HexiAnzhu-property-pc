@@ -77,8 +77,8 @@ export default {
       // 类型
       visitorType: '',
       typeOptions: [
-        { typename: '访客', id: 0 },
-        { typename: '外卖', id: 1 },
+        { typename: '外卖', id: 0 },
+        { typename: '普通', id: 1 },
       ],
       visitorTel: '',
       // 开始日期
@@ -170,7 +170,7 @@ export default {
             if (res.Data.data && res.Data.data.length > 0) {
               res.Data.data.forEach((item) => {
                 item.visitor_type_name =
-                  item.visitor_type === 1 ? '外卖' : '访客'
+                  item.visitor_type == 1 ? '普通' : '外卖'
               })
             }
             // 设置查询总数
@@ -288,7 +288,7 @@ export default {
             // 整理需要导出的数据
             let datas = []
             res.Data.forEach((item) => {
-              const typeName = item.visitor_type === 1 ? '外卖' : '访客'
+              const typeName = item.visitor_type == 1 ? '普通' : '外卖'
               let arr = [
                 typeName,
                 item.visitor_name,
