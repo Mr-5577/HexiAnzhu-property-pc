@@ -184,8 +184,13 @@ export default {
           if (res.Code === 200) {
             if (res.Data.data && res.Data.data.length > 0) {
               res.Data.data.forEach((item) => {
-                item.visitor_type_name =
-                  item.visitor_type == 1 ? '普通' : '外卖'
+                const visitor_name = item.visitor_type == 1 ? '普通' : '外卖' // 注册类型
+                const visit_name = item.visit_type == 1 ? '普通' : '外卖' // 来访类型
+                if (item.visitor_type === item.visit_type) {
+                  item.visitor_type_name = visitor_name
+                } else {
+                  item.visitor_type_name = `${visitor_name}(${visit_name})`
+                }
               })
             }
             // 设置查询总数
@@ -304,7 +309,14 @@ export default {
             // 整理需要导出的数据
             let datas = []
             res.Data.forEach((item) => {
-              const typeName = item.visitor_type == 1 ? '普通' : '外卖'
+              let typeName = ''
+              const visitor_name = item.visitor_type == 1 ? '普通' : '外卖' // 注册类型
+              const visit_name = item.visit_type == 1 ? '普通' : '外卖' // 来访类型
+              if (item.visitor_type === item.visit_type) {
+                typeName = visitor_name
+              } else {
+                typeName = `${visitor_name}(${visit_name})`
+              }
               let arr = [
                 item.villagename,
                 typeName,
