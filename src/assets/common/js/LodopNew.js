@@ -117,12 +117,15 @@ function CreateDataBill (data) {
     LODOP.SET_PRINT_STYLE('FontColor', '#0000FF')
     LODOP.ADD_PRINT_TEXT(130, 540, 150, 20, data.date)
 
-    if(data.bz) {
-      const sliceStr = data.bz.slice(0, 75)
-      LODOP.SET_PRINT_STYLE('FontColor', '#000000')
-      LODOP.ADD_PRINT_TEXT(280, 130, 150, 20, '备注：')
-      LODOP.SET_PRINT_STYLE('FontColor', '#0000FF')
-      LODOP.ADD_PRINT_TEXT(280, 170, 450, 20, sliceStr)
+    if (data.bz) {
+      if (data.bz.endsWith('【打印】') || data.bz.endsWith('[打印]')) {
+        const remark = data.bz.slice(0, -4) // 去掉 【打印】后缀
+        const sliceStr = remark.slice(0, 75) // 字符串过长截取前75
+        LODOP.SET_PRINT_STYLE('FontColor', '#000000')
+        LODOP.ADD_PRINT_TEXT(280, 130, 150, 20, '备注：')
+        LODOP.SET_PRINT_STYLE('FontColor', '#0000FF')
+        LODOP.ADD_PRINT_TEXT(280, 170, 450, 20, sliceStr)
+      }
     }
 
     LODOP.SET_PRINT_STYLE('FontColor', '#000000')
@@ -281,12 +284,15 @@ function CreateDataBill (data) {
     LODOP.SET_PRINT_STYLE('FontColor', '#0000FF')
     LODOP.ADD_PRINT_TEXT(70, 540, 150, 20, data.date)
 
-    if(data.bz) {
-      const sliceStr = data.bz.slice(0, 75)
-      LODOP.SET_PRINT_STYLE('FontColor', '#000000')
-      LODOP.ADD_PRINT_TEXT(200, 130, 150, 20, '备注：')
-      LODOP.SET_PRINT_STYLE('FontColor', '#0000FF')
-      LODOP.ADD_PRINT_TEXT(200, 170, 450, 20, sliceStr)
+    if (data.bz) {
+      if (data.bz.endsWith('【打印】') || data.bz.endsWith('[打印]')) {
+        const remark = data.bz.slice(0, -4) // 去掉 【打印】后缀
+        const sliceStr = remark.slice(0, 75) // 字符串过长截取前75
+        LODOP.SET_PRINT_STYLE('FontColor', '#000000')
+        LODOP.ADD_PRINT_TEXT(200, 130, 150, 20, '备注：')
+        LODOP.SET_PRINT_STYLE('FontColor', '#0000FF')
+        LODOP.ADD_PRINT_TEXT(200, 170, 450, 20, sliceStr)
+      }
     }
 
     LODOP.SET_PRINT_STYLE('FontColor', '#000000')
