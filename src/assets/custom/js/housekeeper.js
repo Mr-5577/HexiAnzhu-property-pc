@@ -93,6 +93,7 @@ export default {
                 let users = []
                 let tels = []
                 let arr = []
+                let nickNames = []
                 item.unit.forEach(itm => {
                   let obj = {
                     id: itm.id,
@@ -100,15 +101,19 @@ export default {
                     name: itm.unit,
                     steward: itm.stewards ? itm.stewards.realname : '',
                     phone: itm.stewards_tel,
-                    uid: item.stewards_id,
+                    uid: itm.stewards_id,
                     level: 2,
-                    nodeid: `unit${itm.id}`
+                    nodeid: `unit${itm.id}`,
+                    stewards_nick_name: itm.stewards_nick_name || '',
                   }
                   if (!users.includes(obj.steward)) {
                     users.push(obj.steward)
                   }
                   if (!tels.includes(obj.phone)) {
                     tels.push(obj.phone)
+                  }
+                  if (obj.stewards_nick_name && !nickNames.includes(obj.stewards_nick_name)) {
+                    nickNames.push(obj.stewards_nick_name)
                   }
                   arr.push(obj)
                 })
@@ -118,10 +123,12 @@ export default {
                 item.children = arr
                 item.level = 1
                 item.nodeid = `build${item.id}`
+                item.stewards_nick_name = nickNames.join('/')
               })
             }
             // 存放查询数据
             this.tableData = res.Data ? res.Data : []
+            console.log(this.tableData)
             // 关闭加载状态
             this.conf.loadStatus = false
             // 清空空数据提示
@@ -221,12 +228,14 @@ export default {
 
     // 点击更换管家按钮处理
     stewardChange (row) {
+      console.log(row)
       this.isBatch = false
       this.currentObj = row
       this.currentUser = {
         uid: row.uid,
         realname: row.steward,
         mobile: row.phone,
+        stewards_nick_name: row.stewards_nick_name
       }
       this.showDialog = true
     },
@@ -276,6 +285,7 @@ export default {
           let data = {
             uid: this.currentUser.uid,
             mobile: this.currentUser.mobile,
+            stewards_nick_name: this.currentUser.stewards_nick_name,
             unit_ids: []
           }
           if (this.isBatch) {

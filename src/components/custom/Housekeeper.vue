@@ -131,6 +131,15 @@
           ></el-input>
         </div>
       </div>
+      <div class="input-wp">
+        <div class="input-item">
+          <div class="name">管家昵称</div>
+          <el-input
+            v-model="currentUser.stewards_nick_name"
+            placeholder="管家昵称"
+          ></el-input>
+        </div>
+      </div>
 
       <!-- dialog footer 部分 -->
       <span slot="footer">
