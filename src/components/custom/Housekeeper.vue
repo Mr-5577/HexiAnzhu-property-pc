@@ -44,6 +44,7 @@
           <el-table-column type="selection" width="100"></el-table-column>
           <el-table-column prop="name" label="楼栋单元"></el-table-column>
           <el-table-column prop="steward" label="楼栋管家"></el-table-column>
+          <el-table-column prop="stewards_nick_name" label="管家昵称"></el-table-column>
           <el-table-column prop="phone" label="管家电话"></el-table-column>
           <el-table-column label="操作">
             <template slot-scope="scope">

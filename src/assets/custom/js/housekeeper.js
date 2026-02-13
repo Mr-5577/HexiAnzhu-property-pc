@@ -123,7 +123,7 @@ export default {
                 item.children = arr
                 item.level = 1
                 item.nodeid = `build${item.id}`
-                item.stewards_nick_name = nickNames.join('/')
+                // item.stewards_nick_name = nickNames.join('/')
               })
             }
             // 存放查询数据
