@@ -24,7 +24,7 @@ export default {
         name: '全部项目',
         vid: 0,
       },
-      title:'',
+      title: '',
       activityTypeList: [
         { id: 1, name: '预缴活动' },
         { id: 2, name: ' 社区活动' },
@@ -50,7 +50,7 @@ export default {
           prop: 'class_name',
           show: true,
           color: '#999',
-          width: 100
+          width: 100,
         },
         {
           label: '发布日期',
@@ -63,7 +63,7 @@ export default {
           prop: 'publish_man_name',
           show: true,
           color: '#999',
-          width: 100
+          width: 100,
         },
         {
           label: '开始有效期',
@@ -82,14 +82,14 @@ export default {
           prop: 'is_enable_name',
           show: true,
           color: '#999',
-          width: 100
+          width: 100,
         },
         {
           label: '是否弹窗',
           prop: 'is_popup_name',
           show: true,
           color: '#999',
-          width: 100
+          width: 100,
         },
         {
           label: '操作',
@@ -325,8 +325,211 @@ export default {
     imgPreview(obj) {
       this.handlePictureCardPreview({ url: obj.image_host })
     },
+    /**
+     * 通用富文本内容清理函数 - 处理所有可能的污染情况
+     * @param {string} dirtyContent - 原始脏内容
+     * @returns {string} 清理后的干净HTML
+     */
+    cleanRichTextContent(dirtyContent) {
+      if (!dirtyContent) return ''
+      if (typeof dirtyContent !== 'string') {
+        try {
+          dirtyContent = String(dirtyContent)
+        } catch {
+          return ''
+        }
+      }
+
+      let content = dirtyContent
+
+      // ========== 阶段1：深度解码HTML实体 ==========
+      function deepDecode(str) {
+        let current = str
+        let previous = ''
+        let maxIterations = 10 // 防止死循环
+
+        // 循环解码直到没有实体为止
+        while (current !== previous && maxIterations-- > 0) {
+          previous = current
+
+          // 方法1：textarea解码（最标准）
+          try {
+            const textarea = document.createElement('textarea')
+            textarea.innerHTML = current
+            current = textarea.value
+          } catch (e) {
+            // 方法2：手动解码（降级方案）
+            current = current
+              .replace(/&lt;/g, '<')
+              .replace(/&gt;/g, '>')
+              .replace(/&amp;/g, '&')
+              .replace(/&quot;/g, '"')
+              .replace(/&#39;/g, "'")
+              .replace(/&nbsp;/g, ' ')
+              .replace(/&ensp;/g, ' ')
+              .replace(/&emsp;/g, '  ')
+              .replace(/&mdash;/g, '—')
+              .replace(/&ldquo;/g, '“')
+              .replace(/&rdquo;/g, '”')
+              .replace(/&lsquo;/g, '‘')
+              .replace(/&rsquo;/g, '’')
+              .replace(/&middot;/g, '·')
+              .replace(/&bull;/g, '•')
+              .replace(/&hellip;/g, '...')
+          }
+        }
+        return current
+      }
+
+      content = deepDecode(content)
+
+      // ========== 阶段2：创建DOM进行结构化清理 ==========
+      const parser = new DOMParser()
+      let doc
+
+      try {
+        // 尝试解析为HTML文档
+        doc = parser.parseFromString(content, 'text/html')
+      } catch (e) {
+        // 如果解析失败，创建简单div
+        const div = document.createElement('div')
+        div.innerHTML = content
+        doc = div
+      }
+
+      // 获取body内容（如果是完整文档）或直接使用
+      const container = doc.body || doc
+
+      // ========== 阶段3：递归清理节点 ==========
+      function cleanNode(node) {
+        if (!node) return
+
+        // 要删除的节点列表（从后往前遍历）
+        const nodesToRemove = []
+
+        for (let i = 0; i < node.childNodes.length; i++) {
+          const child = node.childNodes[i]
+
+          // 处理不同类型的节点
+          switch (child.nodeType) {
+            case 1: // 元素节点
+              // 清理属性
+              if (child.attributes) {
+                const attrsToRemove = []
+                for (let j = 0; j < child.attributes.length; j++) {
+                  const attr = child.attributes[j]
+                  // 删除所有以data-、mso-开头的属性和其他污染属性
+                  if (
+                    attr.name.startsWith('data-') ||
+                    attr.name.startsWith('mso-') ||
+                    attr.name.startsWith('o:') ||
+                    attr.name.startsWith('v:') ||
+                    attr.name === 'lang' ||
+                    attr.name === 'style' ||
+                    attr.name.includes(':')
+                  ) {
+                    attrsToRemove.push(attr.name)
+                  }
+                }
+                attrsToRemove.forEach((attrName) => {
+                  child.removeAttribute(attrName)
+                })
+              }
+
+              // 处理特定标签
+              const tagName = child.tagName.toLowerCase()
+
+              // 删除空的标签
+              if (
+                !child.innerHTML.trim() &&
+                !['br', 'img', 'hr'].includes(tagName)
+              ) {
+                nodesToRemove.push(child)
+                break
+              }
+
+              // 递归处理子节点
+              cleanNode(child)
+              break
+
+            case 3: // 文本节点
+              // 清理文本中的特殊字符
+              if (child.textContent) {
+                child.textContent = child.textContent
+                  .replace(/\u00A0/g, ' ') // 不间断空格
+                  .replace(/\u200B/g, '') // 零宽空格
+                  .replace(/\uFEFF/g, '') // 零宽不换行空格
+                  .replace(/\r?\n|\r/g, ' ') // 换行符转空格
+              }
+              break
+
+            case 8: // 注释节点 (如 <!--[if-->)
+              nodesToRemove.push(child)
+              break
+          }
+        }
+
+        // 删除标记的节点
+        nodesToRemove.forEach((n) => {
+          try {
+            n.parentNode?.removeChild(n)
+          } catch (e) {}
+        })
+      }
+
+      cleanNode(container)
+
+      // ========== 阶段4：处理特殊标签和结构 ==========
+      let html = container.innerHTML
+
+      // 移除空的段落和div
+      html = html
+        .replace(/<p>\s*<\/p>/g, '')
+        .replace(/<div>\s*<\/div>/g, '')
+        .replace(/<span>\s*<\/span>/g, '')
+
+      // 处理多余的嵌套（如p套p）
+      html = html.replace(/<p>(<p>.*<\/p>)<\/p>/g, '$1')
+
+      // 处理Word的特殊标记
+      html = html
+        .replace(/<!--\[if[^>]*\]>/g, '') // <!--[if-->
+        .replace(/<!\[endif\]-->/g, '') // <![endif]-->
+        .replace(/\[if[^>]*\]>/g, '') // [if -->
+        .replace(/<!\s*\[[^\]]*\]\s*>/g, '') // 其他条件注释
+
+      // 清理多余的空格和换行
+      html = html
+        .replace(/&nbsp;/g, ' ') // 所有空格实体转普通空格
+        .replace(/ +/g, ' ') // 多个空格合并
+        .replace(/\n\s*\n/g, '\n') // 多个换行合并
+        .trim()
+
+      // 给图片添加一个最大宽度样式
+      html = html.replace(/<img /g, '<img style="max-width: 100%; height: auto;" ')
+      // ========== 阶段5：最终安全检查 ==========
+      // 确保HTML结构完整
+      const finalDiv = document.createElement('div')
+      finalDiv.innerHTML = html
+
+      // 如果内容被包裹在多余的div中，提取出来
+      if (finalDiv.children.length === 1) {
+        const onlyChild = finalDiv.firstElementChild
+        if (onlyChild.tagName === 'DIV' && !onlyChild.attributes.length) {
+          return onlyChild.innerHTML
+        }
+      }
+
+      return finalDiv.innerHTML
+    },
     // 富文本初始化
     editorInit() {
+      // 确保没有旧编辑器
+      if (this.editor) {
+        this.editor.destroy()
+        this.editor = null
+      }
+
       this.editor = new Editor(this.$refs.editorElem)
       // 配置 onchange 回调函数
       this.editor.config.onchange = (newHtml) => {
@@ -543,7 +746,8 @@ export default {
         this.ruleForm.end_time = currentData.end_time
         this.ruleForm.is_enable = currentData.is_enable
         this.ruleForm.is_popup = currentData.is_popup
-        this.ruleForm.content = currentData.content
+        // this.ruleForm.content = currentData.content
+        this.ruleForm.content = this.cleanRichTextContent(currentData.content)
         if (currentData.head_pic) {
           this.coverFileInfo = [{ qiniu_key: currentData.head_pic }]
           this.coverFileList = [
@@ -676,7 +880,10 @@ export default {
     closeDialog() {
       this.resetForm()
       // 销毁编辑器
-      this.editor.destroy()
+      if (this.editor) {
+        this.editor.destroy()
+        this.editor = null
+      }
     },
 
     // 数据提交处理
@@ -731,7 +938,7 @@ export default {
               this.isCommit = false
             })
         } else {
-            this.$message.error('请检查表单！')
+          this.$message.error('请检查表单！')
         }
       })
     },
