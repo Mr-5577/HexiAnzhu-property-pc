@@ -425,7 +425,7 @@ export default {
                     attr.name.startsWith('o:') ||
                     attr.name.startsWith('v:') ||
                     attr.name === 'lang' ||
-                    attr.name === 'style' ||
+                    // attr.name === 'style' ||
                     attr.name.includes(':')
                   ) {
                     attrsToRemove.push(attr.name)
@@ -506,7 +506,8 @@ export default {
         .trim()
 
       // 给图片添加一个最大宽度样式
-      html = html.replace(/<img /g, '<img style="max-width: 100%; height: auto;" ')
+      // html = html.replace(/<img /g, '<img style="max-width: 100%; height: auto;" ')
+
       // ========== 阶段5：最终安全检查 ==========
       // 确保HTML结构完整
       const finalDiv = document.createElement('div')
@@ -536,6 +537,15 @@ export default {
         this.ruleForm.content = newHtml
         this.$refs.ruleForm.validateField('content')
       }
+
+      // V4 版本的粘贴处理，配置粘贴文本的内容处理 
+      this.editor.config.pasteTextHandle = (pasteStr) => {
+        // 使用清理函数清理HTML
+        const cleanHtml = this.cleanRichTextContent(pasteStr)
+        // 返回清理后的内容，编辑器会自动插入
+        return cleanHtml
+      }
+
       // 自定义菜单配置
       this.editor.config.menus = [
         'head',
