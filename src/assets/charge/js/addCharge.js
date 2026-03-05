@@ -304,6 +304,7 @@ export default {
       oldRecords: [],
       // 欠费记录资源名称列表
       recordNames: [],
+      // 选中的资源名称
       nameVal: '',
     }
   },
@@ -386,7 +387,26 @@ export default {
         total = _.add(Number(total), Number(item.money))
       })
       return _.round(total, 2).toFixed(2)
-    }
+    },
+    // 资源名称数据
+    resourceNameList() {
+      let resourceList = []
+      if (this.resourceInfo && this.resourceInfo.name) {
+        resourceList.push({
+          value: this.resourceInfo.name,
+          label: this.resourceInfo.name,
+        })
+      }
+      if (this.otherResourceInfo && this.otherResourceInfo.length > 0) {
+        this.otherResourceInfo.forEach((item) => {
+          resourceList.push({
+            value: item.name,
+            label: item.name,
+          })
+        })
+      }
+      return resourceList
+    },
   },
 
   /**
@@ -1001,15 +1021,20 @@ export default {
       let data = {
         oid: this.currentUser.oid,
         vid: this.currentVid,
+        is_page: 1,
+        page: this.recordConf.curPage,
+        limit: this.recordConf.limit,
+        title: this.nameVal,
       }
       // 获取项目列表数据
       this.$axios
         .post(this.urlObj.getownerarrears, data)
         .then(res => {
           if (res.Code === 200) {
+            let list = res.Data.data || []
             let money = 0
-            if (res.Data && res.Data.length > 0) {
-              res.Data.forEach(item => {
+            if (list && list.length > 0) {
+              list.forEach(item => {
                 item.subName = item.subject ? item.subject.name : ''
                 item.cname = item.creater ? item.creater.realname : ''
                 money = money + Number(item.money)
@@ -1029,24 +1054,25 @@ export default {
               item.index = index
               money = money + Number(item.money)
             })
-            res.Data = arr.concat(res.Data)
+            list = arr.concat(list)
             this.recordTotal = _.round(money, 2).toFixed(2)
             // 存放查询数据
-            this.recordTable = res.Data ? res.Data : []
-            this.oldRecords = JSON.parse(JSON.stringify(this.recordTable))
-            // 提取科目数据
-            this.nameVal = ""
-            this.recordNames = []
-            let names = []
-            this.oldRecords.forEach(item => {
-              if (!names.includes(item.title)) {
-                names.push(item.title)
-                this.recordNames.push({
-                  value: item.title,
-                  label: item.title
-                })
-              }
-            })
+            this.recordTable = list
+            this.recordConf.dataTotal = res.Data.total
+            // this.oldRecords = JSON.parse(JSON.stringify(this.recordTable))
+            // // 提取科目数据
+            // this.nameVal = ""
+            // this.recordNames = []
+            // let names = []
+            // this.oldRecords.forEach(item => {
+            //   if (!names.includes(item.title)) {
+            //     names.push(item.title)
+            //     this.recordNames.push({
+            //       value: item.title,
+            //       label: item.title
+            //     })
+            //   }
+            // })
             // 关闭加载状态
             this.recordConf.loadStatus = false
             // 清空空数据提示
@@ -1076,15 +1102,28 @@ export default {
           this.recordConf.loadStatus = false
         })
     },
+    // 表格每页条数改变处理
+    sizeChange(num) {
+      this.recordConf.limit = num
+      this.getChargeRecord()
+    },
 
+    // 当前页码改变处理
+    currentChange(num) {
+      this.recordConf.curPage = num
+      this.getChargeRecord()
+    },
     // 欠费记录筛选资源名称处理
     recordNameChange (value) {
       this.recordSelected = []
-      if (value) {
-        this.recordTable = this.oldRecords.filter(item => item.title == value)
-      } else {
-        this.recordTable = JSON.parse(JSON.stringify(this.oldRecords))
-      }
+      // if (value) {
+      //   this.recordTable = this.oldRecords.filter(item => item.title == value)
+      // } else {
+      //   this.recordTable = JSON.parse(JSON.stringify(this.oldRecords))
+      // }
+      this.recordConf.curPage = 1
+      this.recordConf.limit = 20
+      this.getChargeRecord() // 重新获取数据
     },
 
     selectAllEvent ({ records }) {
@@ -1095,10 +1134,10 @@ export default {
       this.recordSelected = records
     },
 
-    // // 欠费记录勾选处理
-    // recordSelectionChange (value) {
-    //   this.recordSelected = value
-    // },
+    // 欠费记录勾选处理
+    recordSelectionChange (value) {
+      this.recordSelected = value
+    },
 
     // 获取车辆最近缴费记录
     // getRecentlyTable () {

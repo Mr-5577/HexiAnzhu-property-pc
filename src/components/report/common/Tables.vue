@@ -1736,7 +1736,7 @@ export default {
                 item.tel,
                 Number(item.money) ? Number(item.money) : 0,
                 Number(item.pre_arrears_money) ? Number(item.pre_arrears_money) : 0,
-                Number(item.now_arrears_money) ? Number(item.now_arrears_money) :
+                Number(item.now_arrears_money) ? Number(item.now_arrears_money) : 0,
                 item.subject_text,
                 item.ymonth,
                 item.isdecorate,

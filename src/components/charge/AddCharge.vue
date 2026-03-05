@@ -361,7 +361,7 @@
               </li>
               <el-select v-if="opIndex === 0" v-model="nameVal" clearable filterable placeholder="请选择资源名称"
                 @change="recordNameChange">
-                <el-option v-for="itm in recordNames" :key="itm.value" :label="itm.label" :value="itm.value">
+                <el-option v-for="itm in resourceNameList" :key="itm.value" :label="itm.label" :value="itm.value">
                 </el-option>
               </el-select>
             </ul>
@@ -377,14 +377,17 @@
             <!-- 欠费记录部分 -->
             <div class="charge-record">
               <div class="table-wp">
-                <!-- <cus-table
+                <cus-table
                   :datas="recordTable"
                   :cusColums="recordColumns"
                   :cusConf="recordConf"
                   :check="true"
                   @selectionChange="recordSelectionChange"
-                ></cus-table> -->
-                <vxe-table stripe auto-resize height="auto" show-overflow highlight-hover-row ref="recordTable"
+                  :ispaging="true"
+                  @sizeChange="sizeChange"
+                  @currentChange="currentChange"
+                ></cus-table>
+                <!-- <vxe-table stripe auto-resize height="auto" show-overflow highlight-hover-row ref="recordTable"
                   align="center" :data="recordTable" v-loading="recordConf.loadStatus" element-loading-text="数据获取中..."
                   @checkbox-all="selectAllEvent" @checkbox-change="selectChangeEvent">
                   <vxe-column type="checkbox" width="60"></vxe-column>
@@ -396,7 +399,7 @@
                       </span>
                     </template>
                   </vxe-table-column>
-                </vxe-table>
+                </vxe-table> -->
               </div>
               <div class="total-ct">
                 <div class="total-wp">
