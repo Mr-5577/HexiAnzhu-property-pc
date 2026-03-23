@@ -1114,13 +1114,31 @@
           stripe
           border
           auto-resize
-          height="auto"
+          :height="tableHeight"
           show-overflow
           highlight-hover-row
           :ref="`xeTable${index}`"
           align="center"
           v-loading="item.isLoading"
           element-loading-text="数据获取中..."
+          :virtual-y-config="{
+            enabled: true,
+            itemSize: 38,      // 必须与实际行高一致
+            preloadSize: 5     // 预渲染行数，减少滚动闪白
+          }"
+          :row-config="{
+            height: 38,        // 必须与itemSize保持一致
+            useKey: true,      // 启用key提升性能
+            keyField: '_X_ROW_KEY'     // 建议指定唯一标识字段
+          }"
+          :scroll-y="{ // 添加纵向滚动配置
+            enabled: true,
+            gt: 100
+          }"
+          :scroll-x="{  // 添加横向滚动配置
+            enabled: true,
+            gt: 0  // 始终启用横向滚动
+          }"
         >
           <vxe-table-column
             :field="itm.prop"
@@ -1283,6 +1301,10 @@ export default {
     // 正在查询 id
     queryId() {
       return this.$store.state.queryId
+    },
+    // 动态高度，窗口高度减去其他元素占用的高度
+    tableHeight() {
+      return window.innerHeight - 270
     }
   },
 
@@ -1564,7 +1586,7 @@ export default {
     },
 
     // 表格返回数据处理
-    tableDataHandle(result, type) {
+    async tableDataHandle(result, type) {
       let index = 0
       switch (this.tableType) {
         case 'reportstatistics':
@@ -1641,6 +1663,21 @@ export default {
             index = 1
             result = result.return_data
             this.$refs['xeTable1'][0].loadData(result)
+            
+            // // 等待DOM更新
+            // await this.$nextTick()
+            // // 获取表格实例
+            // const xeTable = this.$refs[`xeTable${index}`]
+            // if (xeTable && xeTable[0]) {
+            //   const tableInstance = xeTable[0]                                
+            //   // 加载数据
+            //   await tableInstance.reloadData(result) 
+            //   // 强制刷新
+            //   this.$nextTick(() => {                  
+            //     tableInstance.refreshScroll()          
+            //     tableInstance.recalculate()           
+            //   })                                           
+            // }
             this.tableArrys[index].tableName = '应收明细表'
             this.tableArrys[index].headers = [
               '小区名称',
@@ -1703,6 +1740,21 @@ export default {
             index = 1
             result = result.return_data
             this.$refs['xeTable1'][0].loadData(result)
+            
+            // // 等待DOM更新
+            // await this.$nextTick()
+            // // 获取表格实例
+            // const xeTable = this.$refs[`xeTable${index}`]
+            // if (xeTable && xeTable[0]) {
+            //   const tableInstance = xeTable[0]                                
+            //   // 加载数据
+            //   await tableInstance.reloadData(result) 
+            //   // 强制刷新
+            //   this.$nextTick(() => {                  
+            //     tableInstance.refreshScroll()          
+            //     tableInstance.recalculate()           
+            //   })                                           
+            // }
             this.tableArrys[index].tableName = '欠费明细表'
             this.tableArrys[index].headers = [
               '小区名称',
@@ -2780,6 +2832,7 @@ export default {
 
     // 监听数据返回处理
     messageHandle(res) {
+      // console.log('report-websoket',res)
       if (res.data && res.data.startsWith('{')) {
         let result = JSON.parse(res.data)
         if (this.tableType == result.select) {
