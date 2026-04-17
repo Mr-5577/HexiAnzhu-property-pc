@@ -559,9 +559,7 @@ export default {
                   },
                   {
                     icon: img20,
-                    value: res.Data.isvacancy
-                      ? res.Data.isvacancy
-                      : res.Data.isvacancy == 0 ? '已售' : '未售',
+                    value: res.Data.isvacancy === 0 ? '已售' : '未售',
                     name: '销售状态'
                   }
                 ]
