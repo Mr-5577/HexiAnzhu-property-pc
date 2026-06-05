@@ -1665,35 +1665,31 @@ export default {
             const dataList = res.Data || []
             // 过滤掉没有 snOrder 的数据
             const validData = dataList.filter(item => item && item.snOrder)
-            this.allRcdInfoData = validData || []
-            // let total = 0
-            // validData.forEach(item => {
-            //   const snOrder = item.snOrder
-            //   item.cname = snOrder.realname || ''
-            //   item.code =
-            //     snOrder.fphm && snOrder.receipt
-            //       ? snOrder.fphm + '/' + snOrder.receipt
-            //       : snOrder.fphm
-            //         ? snOrder.fphm
-            //         : snOrder.receipt
-            //           ? snOrder.receipt
-            //           : ''
-            //   item.roomnum = snOrder.roomnum || ''
-            //   item.ssmoney = snOrder.money || '0'
-            //   item.type_text = snOrder.payment ? snOrder.payment.name : ''
-            //   item.vname = item.village.villagename || ''
-            //   item.description = snOrder.remark || ''
-            //   item.pay_time = snOrder.pay_time || ''
-            //   total = _.add(Number(total), Number(item.ssmoney))
-            // })
-            // this.totalMoney = _.round(total, 2)
-            // 存放查询数据
-            // this.rcdInfoData = validData
             let total = 0
             validData.forEach(item => {
-              total = _.add(Number(total), Number(item.snOrder?.money || 0))
+              const snOrder = item.snOrder
+              item.cname = snOrder.realname || ''
+              item.code =
+                snOrder.fphm && snOrder.receipt
+                  ? snOrder.fphm + '/' + snOrder.receipt
+                  : snOrder.fphm
+                    ? snOrder.fphm
+                    : snOrder.receipt
+                      ? snOrder.receipt
+                      : ''
+              item.roomnum = snOrder.roomnum || ''
+              item.ssmoney = snOrder.money || '0'
+              item.type_text = snOrder.payment ? snOrder.payment.name : ''
+              item.vname = item.village.villagename || ''
+              item.description = snOrder.remark || ''
+              item.pay_time = snOrder.pay_time || ''
+              total = _.add(Number(total), Number(item.ssmoney))
             })
             this.totalMoney = _.round(total, 2)
+            // 存放查询数据
+            // this.rcdInfoData = validData
+            // 保存全部数据手动分页处理
+            this.allRcdInfoData = validData || []
             this.handleRcdInfoData()
             // 设置查询总数
             this.rcdInfoConf.dataTotal = validData.length || 0
@@ -1747,24 +1743,6 @@ export default {
     // 手动处理记录明细表格数据
     handleRcdInfoData () {
       let dataList =  this.paginate(this.allRcdInfoData, this.rcdInfoConf.curPage, this.rcdInfoConf.limit)
-      dataList.forEach(item => {
-        const snOrder = item.snOrder
-        item.cname = snOrder.realname || ''
-        item.code =
-          snOrder.fphm && snOrder.receipt
-            ? snOrder.fphm + '/' + snOrder.receipt
-            : snOrder.fphm
-              ? snOrder.fphm
-              : snOrder.receipt
-                ? snOrder.receipt
-                : ''
-        item.roomnum = snOrder.roomnum || ''
-        item.ssmoney = snOrder.money || '0'
-        item.type_text = snOrder.payment ? snOrder.payment.name : ''
-        item.vname = item.village.villagename || ''
-        item.description = snOrder.remark || ''
-        item.pay_time = snOrder.pay_time || ''
-      })
       this.rcdInfoData = dataList || []
     },
 
