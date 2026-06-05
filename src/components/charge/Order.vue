@@ -326,12 +326,15 @@
       width="80%"
       :close-on-click-modal="true"
     >
-      <el-scrollbar style="height: 100%;">
+      <!-- <el-scrollbar style="height: 100%;"> -->
         <div class="table-wp">
           <cus-table
             :datas="rcdInfoData"
             :cusColums="rcdInfoColumns"
             :cusConf="rcdInfoConf"
+            :ispaging="true"
+            @sizeChange="rcdInfoSizeChange"
+            @currentChange="rcdInfoCurrentChange"
           ></cus-table>
         </div>
         <div class="total">
@@ -339,14 +342,14 @@
           <span class="money">{{ totalMoney }}元</span>
           <span class="num">
             共
-            <span style="color: #3ebb75;">{{ rcdInfoData.length }}</span>
+            <span style="color: #3ebb75;">{{ allRcdInfoData.length }}</span>
             条记录
           </span>
           <el-button type="primary empty" round @click="exportDetailExcel">
             导出Excel
           </el-button>
         </div>
-      </el-scrollbar>
+      <!-- </el-scrollbar> -->
     </el-dialog>
 
     <!-- 换票弹框 -->

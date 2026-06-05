@@ -172,6 +172,8 @@ export default {
       },
       // 是否显示记录明细弹框
       showInfoDialog: false,
+      // 全部的记录明细表格数据
+      allRcdInfoData: [],
       // 记录明细表格数据
       rcdInfoData: [],
       // 记录明细配置
@@ -1638,6 +1640,16 @@ export default {
 
     // 查看交账记录详情
     recordInfo (obj) {
+      this.rcdInfoConf = {
+        loadStatus: false,
+        emptyText: '',
+        curPage: 1,
+        limit: 20,
+        dataTotal: 0
+      }
+      this.totalMoney = '0.00'
+      this.allRcdInfoData = []
+      this.rcdInfoData = []
       this.showInfoDialog = true
       // 表格处于加载状态
       this.rcdInfoConf.loadStatus = true
@@ -1653,29 +1665,38 @@ export default {
             const dataList = res.Data || []
             // 过滤掉没有 snOrder 的数据
             const validData = dataList.filter(item => item && item.snOrder)
+            this.allRcdInfoData = validData || []
+            // let total = 0
+            // validData.forEach(item => {
+            //   const snOrder = item.snOrder
+            //   item.cname = snOrder.realname || ''
+            //   item.code =
+            //     snOrder.fphm && snOrder.receipt
+            //       ? snOrder.fphm + '/' + snOrder.receipt
+            //       : snOrder.fphm
+            //         ? snOrder.fphm
+            //         : snOrder.receipt
+            //           ? snOrder.receipt
+            //           : ''
+            //   item.roomnum = snOrder.roomnum || ''
+            //   item.ssmoney = snOrder.money || '0'
+            //   item.type_text = snOrder.payment ? snOrder.payment.name : ''
+            //   item.vname = item.village.villagename || ''
+            //   item.description = snOrder.remark || ''
+            //   item.pay_time = snOrder.pay_time || ''
+            //   total = _.add(Number(total), Number(item.ssmoney))
+            // })
+            // this.totalMoney = _.round(total, 2)
+            // 存放查询数据
+            // this.rcdInfoData = validData
             let total = 0
             validData.forEach(item => {
-              const snOrder = item.snOrder
-              item.cname = snOrder.realname || ''
-              item.code =
-                snOrder.fphm && snOrder.receipt
-                  ? snOrder.fphm + '/' + snOrder.receipt
-                  : snOrder.fphm
-                    ? snOrder.fphm
-                    : snOrder.receipt
-                      ? snOrder.receipt
-                      : ''
-              item.roomnum = snOrder.roomnum || ''
-              item.ssmoney = snOrder.money || '0'
-              item.type_text = snOrder.payment ? snOrder.payment.name : ''
-              item.vname = item.village.villagename || ''
-              item.description = snOrder.remark || ''
-              item.pay_time = snOrder.pay_time || ''
-              total = _.add(Number(total), Number(item.ssmoney))
+              total = _.add(Number(total), Number(item.snOrder?.money || 0))
             })
             this.totalMoney = _.round(total, 2)
-            // 存放查询数据
-            this.rcdInfoData = validData
+            this.handleRcdInfoData()
+            // 设置查询总数
+            this.rcdInfoConf.dataTotal = validData.length || 0
             // 关闭加载状态
             this.rcdInfoConf.loadStatus = false
             // 清空空数据提示
@@ -1704,6 +1725,47 @@ export default {
           this.rcdInfoConf.dataTotal = 0
           this.rcdInfoConf.loadStatus = false
         })
+    },
+    // 表格每页条数改变处理
+    rcdInfoSizeChange (num) {
+      this.rcdInfoConf.limit = num
+      // 处理数据
+      this.handleRcdInfoData()
+    },
+    // 当前页码改变处理
+    rcdInfoCurrentChange (num) {
+      this.rcdInfoConf.curPage = num
+      // 处理数据
+      this.handleRcdInfoData()
+    },
+    // 分页处理函数
+    paginate(data, page, size) {
+      const start = (page - 1) * size
+      const end = start + size
+      return data.slice(start, end)
+    },
+    // 手动处理记录明细表格数据
+    handleRcdInfoData () {
+      let dataList =  this.paginate(this.allRcdInfoData, this.rcdInfoConf.curPage, this.rcdInfoConf.limit)
+      dataList.forEach(item => {
+        const snOrder = item.snOrder
+        item.cname = snOrder.realname || ''
+        item.code =
+          snOrder.fphm && snOrder.receipt
+            ? snOrder.fphm + '/' + snOrder.receipt
+            : snOrder.fphm
+              ? snOrder.fphm
+              : snOrder.receipt
+                ? snOrder.receipt
+                : ''
+        item.roomnum = snOrder.roomnum || ''
+        item.ssmoney = snOrder.money || '0'
+        item.type_text = snOrder.payment ? snOrder.payment.name : ''
+        item.vname = item.village.villagename || ''
+        item.description = snOrder.remark || ''
+        item.pay_time = snOrder.pay_time || ''
+      })
+      this.rcdInfoData = dataList || []
     },
 
     // 撤回交账记录
@@ -1838,7 +1900,7 @@ export default {
 
         // 整理需要导出的数据
         let datas = []
-        this.rcdInfoData.forEach(item => {
+        this.allRcdInfoData.forEach(item => {
           let arr = [
             item.code,
             item.roomnum,
