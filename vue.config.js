@@ -57,11 +57,15 @@ module.exports = {
       entry: "src/h5/receipt/receipt.js",
       template: "src/h5/receipt/receipt.html",
       filename: "receipt.html",
+      // 固定收据页面的chunk名称
+      chunks: ['receipt']
     },
     invoice: {
       entry: "src/h5/invoice/invoice.js",
       template: "src/h5/invoice/invoice.html",
       filename: "invoice.html",
+      // 固定发票页面的chunk名称
+      chunks: ['invoice']
     }
   },
   css: {
