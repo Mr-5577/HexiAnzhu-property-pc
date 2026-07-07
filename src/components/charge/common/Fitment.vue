@@ -691,8 +691,8 @@ export default {
     allMoney() {
       return _.round(
         _.add(Number(this.total), Number(this.entryForm.lmoney)),
-        1
-      ).toFixed(1)
+        2
+      ).toFixed(2)
     }
   },
 
@@ -798,6 +798,7 @@ export default {
             this.fitmentInfo = res.Data
             if (this.subList.length > 0) {
               this.subList.forEach(item => {
+                const decimal = this.getDecimalPlaces(item.patterns);
                 if (item.formula == 3) {
                   item.day = 1
                   item.area = this.fitmentInfo.area ? this.fitmentInfo.area : 0
@@ -806,16 +807,16 @@ export default {
                       Number(item.day),
                       this.accMul(Number(item.area), Number(item.price))
                     ),
-                    1
-                  ).toFixed(1)
+                    decimal
+                  ).toFixed(decimal)
                 } else if (item.formula == 1) {
                   item.area = this.fitmentInfo.area ? this.fitmentInfo.area : 0
                   item.total = _.round(
                     this.accMul(Number(item.area), Number(item.price)),
-                    1
-                  ).toFixed(1)
+                    decimal
+                  ).toFixed(decimal)
                 } else if (item.formula == 2) {
-                  item.total = _.round(Number(item.price), 1).toFixed(1)
+                  item.total = _.round(Number(item.price), decimal).toFixed(decimal)
                 }
               })
             }
@@ -889,7 +890,13 @@ export default {
           this.isLoading = false
         })
     },
-
+    // 获取收费科目保留小数位数
+    getDecimalPlaces(patterns) {
+      if (patterns === 1) return 0;      // 四舍五入取整
+      if (patterns === 2) return 1;      // 保留1位
+      if (patterns === 3) return 2;      // 保留2位
+      return 2;                          // 默认2位
+    },
     // 获取收费标准（科目）
     getSubjects() {
       let data = {
@@ -906,6 +913,7 @@ export default {
               res.Data.forEach(item => {
                 item.check = true
                 ids.push(item.id)
+                const decimal = this.getDecimalPlaces(item.patterns);
                 if (this.fitmentInfo.area) {
                   if (item.formula == 3) {
                     item.day = 1
@@ -917,21 +925,21 @@ export default {
                         Number(item.day),
                         this.accMul(Number(item.area), Number(item.price))
                       ),
-                      1
-                    ).toFixed(1)
+                      decimal
+                    ).toFixed(decimal)
                   } else if (item.formula == 1) {
                     item.area = this.fitmentInfo.area
                       ? this.fitmentInfo.area
                       : 0
                     item.total = _.round(
                       this.accMul(Number(item.area), Number(item.price)),
-                      1
-                    ).toFixed(1)
+                      decimal
+                    ).toFixed(decimal)
                   } else if (item.formula == 2) {
-                    item.total = _.round(Number(item.price), 1).toFixed(1)
+                    item.total = _.round(Number(item.price), decimal).toFixed(decimal)
                   }
                 }
-                total = _.round(_.add(Number(total), Number(item.total)), 1)
+                total = _.round(_.add(Number(total), Number(item.total)), 2)
               })
             }
             this.subList = res.Data
@@ -1012,28 +1020,29 @@ export default {
 
     // 时间、面积、单价修改处理
     totalCount(item) {
+      const decimal = this.getDecimalPlaces(item.patterns);
       if (item.formula == 3) {
         item.total = _.round(
           this.accMul(
             Number(item.day),
             this.accMul(Number(item.area), Number(item.price))
           ),
-          1
-        ).toFixed(1)
+          decimal
+        ).toFixed(decimal)
       } else if (item.formula == 1) {
         item.total = _.round(
           this.accMul(Number(item.area), Number(item.price)),
-          1
-        ).toFixed(1)
+          decimal
+        ).toFixed(decimal)
       } else if (item.formula == 2) {
-        item.total = _.round(Number(item.price), 1).toFixed(1)
+        item.total = _.round(Number(item.price), decimal).toFixed(decimal)
       }
       // 重新计算合计值
       if (this.subjectIds.includes(item.id)) {
         let total = 0
         this.subList.forEach(item => {
           if (this.subjectIds.includes(item.id)) {
-            total = _.round(_.add(Number(total), Number(item.total)), 1)
+            total = _.round(_.add(Number(total), Number(item.total)), 2)
           }
         })
         this.total = total
@@ -1047,7 +1056,7 @@ export default {
         let total = 0
         this.subList.forEach(item => {
           if (this.subjectIds.includes(item.id)) {
-            total = _.round(_.add(Number(total), Number(item.total)), 1)
+            total = _.round(_.add(Number(total), Number(item.total)), 2)
           }
         })
         this.total = total
