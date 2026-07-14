@@ -27,6 +27,7 @@ export default {
         getpaymenttype: this.$api.state.Charge.getpaymenttype.url,
         repairReceipt: this.$api.state.Charge.repairReceipt.url,
         issueReceipt: this.$api.state.Charge.issueReceipt.url,
+        getBatchReceiptInfo: this.$api.state.Charge.getBatchReceiptInfo.url,
         resalesn: this.$api.state.Charge.resalesn.url,
         changepaytype: this.$api.state.Charge.changepaytype.url,
         sndetail: this.$api.state.Charge.sndetail.url,
@@ -758,7 +759,30 @@ export default {
         })
         .catch(() => { })
     },
-
+    // 合并打印
+    mergePrintOrder(obj) {
+       let data = {
+        id: obj.id,
+        type: 2
+      }
+      // 获取打印数据
+      this.$axios
+        .post(this.urlObj.getBatchReceiptInfo, data)
+        .then(res => {
+          if (res.Code === 200) {
+            res.Data.id = obj.id
+            // 开始打印
+            myPrint.startLodop(res.Data)
+          } else {
+            let msg = res.Message ? res.Message : '获取打印数据失败！'
+            this.$message({
+              message: msg,
+              type: 'error'
+            })
+          }
+        })
+        .catch(() => { })
+    },
     // 下载发票
     invoiceDownload (obj) {
       // 获取发票链接

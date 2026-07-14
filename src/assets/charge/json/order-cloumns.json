@@ -146,6 +146,13 @@
 					"token": "Btn-EQZwdMDo96McSceAy2nfIlUc"
 				},
 				{
+					"id": 11,
+					"name": "合并打印收据",
+					"hide": "dyhide",
+					"action": "mergePrint",
+					"token": "Btn-EQZwdMDo96McSceAy2nfIlUc"
+				},
+				{
 					"id": 5,
 					"name": "下载发票",
 					"hide": "xzhide",

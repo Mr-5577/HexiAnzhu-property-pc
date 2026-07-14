@@ -122,6 +122,7 @@
           @selectChange="selectChange"
           @detail="showDetial"
           @print="printOrder"
+          @mergePrint="mergePrintOrder"
           @download="invoiceDownload"
           @invoiceAgain="invoiceAgain"
           @receiptAgain="receiptAgain"

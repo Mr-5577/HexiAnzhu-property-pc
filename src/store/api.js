@@ -1269,6 +1269,10 @@ export default new Vuex.Store({
       issueReceipt: {
         url: '/charge/getreceiptinfo'
       },
+      // 合并打印收据
+      getBatchReceiptInfo: {
+        url: '/charge/getBatchReceiptInfo'
+      },
       // 获取订单小程序二维码
       getwxqrcode: {
         url: '/charge/createappletsqrcode'
