@@ -89,6 +89,29 @@ module.exports = {
         maxEntrypointSize: 10000000,
         maxAssetSize: 30000000
       };
+      config.output = {
+        ...config.output,
+        // 强制chunk固定命名格式，杜绝undefined哈希
+        chunkFilename: 'js/[name].[contenthash:8].js'
+      }
     }
+  },
+  chainWebpack: (config) => {
+    // 分割chunk稳定哈希，缓存友好
+    config.optimization.splitChunks({
+      chunks: 'all',
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'chunk-vendors',
+          chunks: 'all'
+        },
+        common: {
+          name: 'chunk-common',
+          minChunks: 2,
+          chunks: 'all'
+        }
+      }
+    })
   }
 };
